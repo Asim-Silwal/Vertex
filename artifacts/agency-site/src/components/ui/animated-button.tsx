@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ReactNode, useRef } from 'react';
+import { MouseEvent, ReactNode, useRef } from 'react';
 
 interface AnimatedButtonProps {
   children: ReactNode;
@@ -12,6 +12,33 @@ interface AnimatedButtonProps {
 
 export function AnimatedButton({ children, className = '', href, variant = 'primary', onClick, 'data-testid': testId }: AnimatedButtonProps) {
   const ref = useRef<HTMLAnchorElement & HTMLButtonElement>(null);
+
+  const handleClick = (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    if (onClick) {
+      onClick();
+    }
+
+    if (!href?.startsWith('#')) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const targetId = href.slice(1);
+    const target = document.getElementById(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    const offset = 96;
+    const top = window.scrollY + target.getBoundingClientRect().top - offset;
+
+    window.scrollTo({
+      top,
+      behavior: 'smooth',
+    });
+  };
 
   const shimmer = variant === 'primary' ? (
     <motion.span
@@ -36,7 +63,7 @@ export function AnimatedButton({ children, className = '', href, variant = 'prim
     <Tag
       ref={ref as any}
       href={href}
-      onClick={onClick}
+      onClick={handleClick}
       className={`relative overflow-hidden ${className}`}
       data-testid={testId}
       whileHover={{ 

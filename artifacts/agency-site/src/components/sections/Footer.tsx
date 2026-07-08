@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-16">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 bg-[#765EFF] rounded-sm flex items-center justify-center">
-              <span className="font-display font-bold text-white text-xs leading-none">O</span>
+              <span className="font-display font-bold text-white text-xs leading-none">V</span>
             </div>
-            <span className="font-display font-medium text-sm text-white tracking-tight">Osprey</span>
+            <span className="font-display font-medium text-sm text-white tracking-tight">Vertex Digital</span>
           </div>
           
           <ul className="flex flex-wrap items-center justify-center gap-6">
@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
         
         <div className="pt-8 border-t border-white/6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#555]">
-          <p>© {currentYear} Osprey Digital LLC. All rights reserved.</p>
+          <p>© {currentYear} Vertex Digital. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

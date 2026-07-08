@@ -11,7 +11,7 @@ export default function WhyUs() {
         <div className="mb-16">
           <div className="inline-block mb-4">
             <span className="text-xs font-medium bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-3 py-1">
-              Why Osprey
+              Why Vertex Digital
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white font-display">

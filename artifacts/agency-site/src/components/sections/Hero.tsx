@@ -16,6 +16,12 @@ export default function Hero() {
       className="relative min-h-[100dvh] flex items-center justify-center pt-32 pb-16 overflow-hidden bg-[#0A0A0A]"
       data-testid="section-hero"
     >
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-1/2 top-[-8%] h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(118,94,255,0.35),_transparent_70%)] blur-[140px] animate-gradient-shift" />
+        <div className="absolute left-[8%] top-[16%] h-[20rem] w-[20rem] rounded-full bg-[radial-gradient(circle,_rgba(75,110,255,0.24),_transparent_72%)] blur-[110px] animate-drift-slow" />
+        <div className="absolute right-[6%] top-[22%] h-[16rem] w-[16rem] rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.14),_transparent_70%)] blur-[100px] animate-drift-slow" style={{ animationDelay: '-8s' }} />
+      </div>
+
       <div className="container mx-auto px-4 md:px-6 z-10 flex flex-col items-center text-center max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,26 +88,6 @@ export default function Hero() {
           >
             See Our Work
           </AnimatedButton>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mt-16 h-40 flex items-end justify-center w-full overflow-hidden"
-        >
-          <motion.div 
-            style={{ y: glowY }}
-            animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.8, 0.6] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute bottom-0 w-[500px] h-[200px] bg-gradient-radial from-[#765EFF]/30 via-[#4B6EFF]/15 to-transparent rounded-full blur-[80px]" 
-          />
-          <motion.div 
-            style={{ y: glowY }}
-            animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.8, 0.6] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute bottom-0 w-[300px] h-[120px] bg-[#765EFF]/20 rounded-full blur-[60px]" 
-          />
         </motion.div>
       </div>
     </section>

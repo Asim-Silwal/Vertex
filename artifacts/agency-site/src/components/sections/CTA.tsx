@@ -20,7 +20,7 @@ export default function CTA() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <AnimatedButton 
-              href="mailto:hello@osprey.agency"
+              href="mailto:hello@vertexdigital.com"
               variant="primary"
               className="w-full sm:w-auto text-center bg-[#765EFF] text-white px-6 py-3 rounded-full text-sm font-medium"
             >

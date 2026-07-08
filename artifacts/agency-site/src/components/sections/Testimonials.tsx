@@ -6,7 +6,7 @@ import test3Img from "@assets/testimonial-3.jpg";
 
 const testimonials = [
   {
-    quote: "We were spending $5k/month on Google Ads sending traffic to a template website. Osprey rebuilt the site and our conversion rate went from 2% to 8%. We're booking an extra 15 roof replacements a month from the exact same ad spend.",
+    quote: "We were spending $5k/month on Google Ads sending traffic to a template website. Vertex Digital rebuilt the site and our conversion rate went from 2% to 8%. We're booking an extra 15 roof replacements a month from the exact same ad spend.",
     author: "James Mitchell",
     role: "Apex Roofing Co.",
     image: test1Img
@@ -18,7 +18,7 @@ const testimonials = [
     image: test2Img
   },
   {
-    quote: "Finally, an agency that actually delivers. Our old site looked like it was from 2005. Osprey gave us a digital presence that matches the quality of our actual plumbing work. It's night and day.",
+    quote: "Finally, an agency that actually delivers. Our old site looked like it was from 2005. Vertex Digital gave us a digital presence that matches the quality of our actual plumbing work. It's night and day.",
     author: "David Chen",
     role: "Precision Flow",
     image: test3Img
