@@ -1,0 +1,92 @@
+You are an award-winning UI/UX designer and senior frontend engineer with experience creating websites comparable to Stripe, Linear, Framer, Apple, Webflow Enterprise, and Vercel.
+
+Your task is to create a world-class website for a premium web design agency that specializes in building high-converting websites for Home Service Businesses (contractors, remodelers, roofers, HVAC, plumbing, electricians, painters, landscapers).
+
+The objective is not simply to make the site beautiful. Every design decision should increase trust, professionalism, and conversion.
+
+Design Philosophy:
+- Premium and minimal.
+- Enterprise-level quality.
+- Timeless rather than trendy.
+- Large typography.
+- Excellent visual hierarchy.
+- Generous whitespace.
+- Strong grid system.
+- Consistent spacing using an 8px system.
+- Every section should feel purposeful.
+- Every interaction should feel smooth and refined.
+
+Visual Direction:
+Take inspiration from:
+- Stripe
+- Linear
+- Framer
+- Apple
+- Vercel
+- Webflow Enterprise
+- Notion
+
+Avoid:
+- Generic agency templates
+- Bright neon gradients
+- Excessive glassmorphism
+- Cartoon illustrations
+- Busy layouts
+- Heavy shadows
+- Visual clutter
+- Template-like sections
+
+Brand Personality:
+- Professional
+- Premium
+- Trustworthy
+- Strategic
+- Confident
+- Modern
+- Sophisticated
+
+Color Palette:
+Background: #0B0F14
+Surface: #111827
+Primary Text: #F8FAFC
+Secondary Text: #94A3B8
+Accent: #2563EB
+Success: #10B981
+Border: #1F2937
+
+Typography:
+Headings: Space Grotesk
+Body: Inter
+
+Navigation:
+Minimal sticky navigation with smooth scroll and subtle blur.
+
+Homepage Sections:
+1. Hero with a strong value proposition
+2. Trusted by / credibility section
+3. Industries served
+4. Services
+5. Featured portfolio
+6. Why choose us
+7. Our process
+8. Testimonials
+9. FAQ
+10. Final call-to-action
+11. Premium footer
+
+Animations:
+- Framer Motion
+- Smooth fade-up
+- Elegant hover interactions
+- Soft scaling
+- Page transitions
+- Motion should feel premium and never distracting.
+
+Performance:
+- Mobile-first
+- Accessibility compliant (WCAG AA)
+- SEO-ready
+- Optimized Core Web Vitals
+- Semantic HTML
+
+The final result should look like a premium international agency that confidently charges $5,000–$20,000+ for website projects.
