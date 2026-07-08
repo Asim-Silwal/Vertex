@@ -1,4 +1,6 @@
 import { FadeIn, Section } from '@/components/ui/section';
+import { motion } from 'framer-motion';
+import { AnimatedButton } from '@/components/ui/animated-button';
 
 export default function CTA() {
   return (
@@ -17,25 +19,31 @@ export default function CTA() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
+            <AnimatedButton 
               href="mailto:hello@osprey.agency"
-              className="w-full sm:w-auto text-center bg-[#765EFF] hover:bg-[#8B7AFF] text-white px-6 py-3 rounded-full text-sm font-medium transition-all"
+              variant="primary"
+              className="w-full sm:w-auto text-center bg-[#765EFF] text-white px-6 py-3 rounded-full text-sm font-medium"
             >
               Get a Free Audit
-            </a>
-            <a 
+            </AnimatedButton>
+            <AnimatedButton 
               href="tel:+18005550199"
-              className="w-full sm:w-auto text-center bg-transparent border border-white/15 hover:border-white/30 hover:bg-white/5 text-white px-6 py-3 rounded-full text-sm font-medium transition-all"
+              variant="secondary"
+              className="w-full sm:w-auto text-center bg-transparent border border-white/15 text-white px-6 py-3 rounded-full text-sm font-medium"
             >
               See Our Work
-            </a>
+            </AnimatedButton>
           </div>
           
           <p className="mt-8 text-sm text-[#444]">
             Currently accepting 2 new projects for next month.
           </p>
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-radial from-[#765EFF]/20 via-[#4B6EFF]/10 to-transparent rounded-full blur-[100px] -z-10 pointer-events-none" />
+          <motion.div
+            animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-radial from-[#765EFF]/20 via-[#4B6EFF]/10 to-transparent rounded-full blur-[100px] -z-10 pointer-events-none" 
+          />
         </FadeIn>
       </div>
     </Section>

@@ -1,10 +1,16 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Star } from 'lucide-react';
 import test1Img from "@assets/testimonial-1.jpg";
 import test2Img from "@assets/testimonial-2.jpg";
 import test3Img from "@assets/testimonial-3.jpg";
+import { AnimatedButton } from '@/components/ui/animated-button';
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const headlineY = useTransform(scrollY, [0, 400], [0, -40]);
+  const subtitleY = useTransform(scrollY, [0, 400], [0, -20]);
+  const glowY = useTransform(scrollY, [0, 400], [0, 30]);
+
   return (
     <section 
       className="relative min-h-[100dvh] flex items-center justify-center pt-32 pb-16 overflow-hidden bg-[#0A0A0A]"
@@ -30,25 +36,29 @@ export default function Hero() {
           <span className="text-xs font-medium text-white/80 pr-1">Trusted by 50+ 7-figure home service businesses</span>
         </motion.div>
 
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col items-center mb-8"
-        >
-          <span className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-[1.1]">We Engineer Trust For</span>
-          <span className="italic-serif text-5xl md:text-7xl text-[#765EFF] leading-[1.1] mt-1">Home Service Brands.</span>
-        </motion.h1>
+        <motion.div style={{ y: headlineY }}>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center mb-8"
+          >
+            <span className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-[1.1]">We Engineer Trust For</span>
+            <span className="italic-serif text-5xl md:text-7xl text-[#765EFF] leading-[1.1] mt-1">Home Service Brands.</span>
+          </motion.h1>
+        </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[#999] text-lg max-w-xl mx-auto leading-relaxed mb-10"
-        >
-          Stop losing jobs to competitors with worse service but better websites. 
-          We build high-converting digital showrooms that turn local traffic into premium booked leads.
-        </motion.p>
+        <motion.div style={{ y: subtitleY }}>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="text-[#999] text-lg max-w-xl mx-auto leading-relaxed mb-10"
+          >
+            Stop losing jobs to competitors with worse service but better websites. 
+            We build high-converting digital showrooms that turn local traffic into premium booked leads.
+          </motion.p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,20 +66,22 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
-          <a 
+          <AnimatedButton 
             href="#contact"
-            className="w-full sm:w-auto text-center bg-[#765EFF] text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-[#8B7AFF] transition-all"
+            variant="primary"
+            className="w-full sm:w-auto text-center bg-[#765EFF] text-white px-6 py-3 rounded-full font-medium text-sm transition-all"
             data-testid="button-hero-primary"
           >
             Get a Free Audit
-          </a>
-          <a 
+          </AnimatedButton>
+          <AnimatedButton 
             href="#portfolio"
-            className="w-full sm:w-auto text-center bg-transparent text-white px-6 py-3 rounded-full font-medium text-sm border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all"
+            variant="secondary"
+            className="w-full sm:w-auto text-center bg-transparent text-white px-6 py-3 rounded-full font-medium text-sm border border-white/15 transition-all"
             data-testid="button-hero-secondary"
           >
             See Our Work
-          </a>
+          </AnimatedButton>
         </motion.div>
 
         <motion.div 
@@ -78,8 +90,18 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="relative mt-16 h-40 flex items-end justify-center w-full overflow-hidden"
         >
-          <div className="absolute bottom-0 w-[500px] h-[200px] bg-gradient-radial from-[#765EFF]/30 via-[#4B6EFF]/15 to-transparent rounded-full blur-[80px]" />
-          <div className="absolute bottom-0 w-[300px] h-[120px] bg-[#765EFF]/20 rounded-full blur-[60px]" />
+          <motion.div 
+            style={{ y: glowY }}
+            animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.8, 0.6] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute bottom-0 w-[500px] h-[200px] bg-gradient-radial from-[#765EFF]/30 via-[#4B6EFF]/15 to-transparent rounded-full blur-[80px]" 
+          />
+          <motion.div 
+            style={{ y: glowY }}
+            animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.8, 0.6] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute bottom-0 w-[300px] h-[120px] bg-[#765EFF]/20 rounded-full blur-[60px]" 
+          />
         </motion.div>
       </div>
     </section>

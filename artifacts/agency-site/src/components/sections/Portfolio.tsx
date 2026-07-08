@@ -1,5 +1,7 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import { ArrowRight } from 'lucide-react';
+import { CountUp } from '@/components/ui/count-up';
+import { motion } from 'framer-motion';
 import apexImg from "@assets/apex-roofing.jpg";
 import climateImg from "@assets/climate-hvac.jpg";
 import precisionImg from "@assets/precision-plumbing.jpg";
@@ -8,21 +10,31 @@ const projects = [
   {
     company: "Apex Roofing Co.",
     industry: "Roofing",
-    metric: "+340% inbound lead volume",
+    metricValue: 340,
+    metricPrefix: "+",
+    metricSuffix: "%",
+    metricLabel: "inbound lead volume",
     description: "Rebuilt from the ground up to dominate local search. Implemented an interactive roof estimate funnel that tripled conversion rates.",
     image: apexImg
   },
   {
     company: "Climate Masters",
     industry: "HVAC",
-    metric: "$2.1M pipeline generated",
+    metricValue: 2.1,
+    metricPrefix: "$",
+    metricSuffix: "M",
+    metricLabel: "pipeline generated",
+    decimals: 1,
     description: "A digital showroom designed to sell premium HVAC installations. Reduced bounce rate by 65% and increased average ticket size.",
     image: climateImg
   },
   {
     company: "Precision Flow",
     industry: "Plumbing",
-    metric: "41% lower cost-per-lead",
+    metricValue: 41,
+    metricPrefix: "",
+    metricSuffix: "%",
+    metricLabel: "lower cost-per-lead",
     description: "Emergency plumbing landing pages hyper-optimized for mobile. One-tap dispatch integration resulting in record response times.",
     image: precisionImg
   }
@@ -46,8 +58,11 @@ export default function Portfolio() {
 
         <FadeInStagger className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {projects.map((project, i) => (
-            <FadeIn key={i} className="group cursor-pointer">
-              <div className="rounded-2xl overflow-hidden bg-[#0F0F0F] border border-white/6 hover:-translate-y-1 hover:border-white/12 transition-all duration-300">
+            <FadeIn key={i} className="cursor-pointer">
+              <motion.div 
+                whileHover={{ y: -6, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
+                className="group rounded-2xl overflow-hidden bg-[#0F0F0F] border border-white/6 hover:border-white/12 transition-all duration-300"
+              >
                 <div className="h-52 w-full overflow-hidden">
                   <img 
                     src={project.image} 
@@ -61,8 +76,17 @@ export default function Portfolio() {
                     {project.industry}
                   </div>
                   <h3 className="font-semibold text-white text-lg mb-1">{project.company}</h3>
-                  <div className="text-2xl font-bold text-white mb-3">
-                    {project.metric}
+                  <div className="mb-3">
+                    <div className="text-3xl font-bold text-white mb-1">
+                      <CountUp 
+                        end={project.metricValue} 
+                        prefix={project.metricPrefix} 
+                        suffix={project.metricSuffix} 
+                        decimals={project.decimals || 0}
+                        duration={2000} 
+                      />
+                    </div>
+                    <div className="text-xs text-[#666] uppercase tracking-wide">{project.metricLabel}</div>
                   </div>
                   <p className="text-[#666] text-sm leading-relaxed">
                     {project.description}
@@ -71,7 +95,7 @@ export default function Portfolio() {
                     View Project <ArrowRight size={14} className="ml-1" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </FadeIn>
           ))}
         </FadeInStagger>

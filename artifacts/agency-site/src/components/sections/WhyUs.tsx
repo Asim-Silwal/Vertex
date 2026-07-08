@@ -1,5 +1,7 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import { Wrench, ShieldCheck, Zap, BarChart3 } from 'lucide-react';
+import { CountUp } from '@/components/ui/count-up';
+import { motion } from 'framer-motion';
 
 export default function WhyUs() {
   return (
@@ -37,6 +39,9 @@ export default function WhyUs() {
                 <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
                   We speak your language. We know the difference between a dispatch fee and a diagnostic fee.
                 </p>
+                <div className="mt-4 text-sm font-semibold text-white/80">
+                  <CountUp end={50} suffix="+ clients" />
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -56,6 +61,9 @@ export default function WhyUs() {
                 <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
                   Your website must project immediate safety. We use psychological triggers and professional imagery to build instant credibility.
                 </p>
+                <div className="mt-4 text-sm font-semibold text-emerald-400">
+                  <CountUp end={100} suffix="% satisfaction" />
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -72,7 +80,14 @@ export default function WhyUs() {
               
               <div className="mt-auto">
                 <div className="flex items-baseline gap-2 mb-2">
-                  <div className="text-5xl font-bold text-white tracking-tighter">&lt; 1s</div>
+                  <motion.div 
+                    initial={{ scale: 0.5, opacity: 0 }} 
+                    whileInView={{ scale: 1, opacity: 1 }} 
+                    transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.2 }}
+                    className="text-5xl font-bold text-white tracking-tighter"
+                  >
+                    &lt; 1s
+                  </motion.div>
                 </div>
                 <div className="text-[#444] text-xs uppercase tracking-widest font-semibold mb-3">Average load time</div>
                 <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
@@ -97,6 +112,9 @@ export default function WhyUs() {
                 <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
                   We install advanced analytics to track exactly where users click, scroll, and bounce.
                 </p>
+                <div className="mt-4 text-sm font-semibold text-blue-400">
+                  <CountUp end={4.9} decimals={1} suffix="/5 avg. rating" />
+                </div>
               </div>
             </div>
           </FadeIn>

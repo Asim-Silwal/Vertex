@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { AnimatedButton } from '@/components/ui/animated-button';
 
 export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,7 +16,10 @@ export default function Nav() {
 
   return (
     <header className="fixed top-6 left-0 right-0 flex justify-center z-50 px-4">
-      <div 
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="inline-flex items-center justify-between gap-6 px-4 py-2.5 rounded-full bg-[#111111]/90 backdrop-blur-md border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_8px_32px_rgba(0,0,0,0.4)] w-full max-w-fit"
         data-testid="header-nav"
       >
@@ -27,25 +32,28 @@ export default function Nav() {
 
         <nav className="hidden md:flex items-center gap-5">
           {navLinks.map((link) => (
-            <a 
+            <motion.a 
               key={link.name} 
               href={link.href}
-              className="text-sm font-medium text-[#999] hover:text-white transition-colors"
+              className="text-sm font-medium text-[#999] transition-colors"
+              whileHover={{ color: '#ffffff' }}
+              transition={{ duration: 0.15 }}
               data-testid={`link-nav-${link.name.toLowerCase()}`}
             >
               {link.name}
-            </a>
+            </motion.a>
           ))}
         </nav>
 
         <div className="hidden md:block">
-          <a 
+          <AnimatedButton 
             href="#contact"
-            className="bg-[#765EFF] hover:bg-[#8B7AFF] text-white px-4 py-2 rounded-full text-sm font-medium transition-all"
+            variant="primary"
+            className="bg-[#765EFF] text-white px-4 py-2 rounded-full text-sm font-medium"
             data-testid="button-nav-audit"
           >
             Get a Free Audit
-          </a>
+          </AnimatedButton>
         </div>
 
         <button 
@@ -55,7 +63,7 @@ export default function Nav() {
         >
           {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
-      </div>
+      </motion.div>
 
       {mobileMenuOpen && (
         <div className="absolute top-16 left-4 right-4 bg-[#111111] border border-white/10 p-4 rounded-2xl shadow-xl flex flex-col gap-4 z-40 md:hidden">
@@ -69,13 +77,14 @@ export default function Nav() {
               {link.name}
             </a>
           ))}
-          <a 
+          <AnimatedButton 
             href="#contact"
-            className="bg-[#765EFF] text-center hover:bg-[#8B7AFF] text-white px-5 py-3 rounded-full text-sm font-medium transition-colors w-full mt-2"
+            variant="primary"
+            className="bg-[#765EFF] text-center text-white px-5 py-3 rounded-full text-sm font-medium w-full mt-2"
             onClick={() => setMobileMenuOpen(false)}
           >
             Get a Free Audit
-          </a>
+          </AnimatedButton>
         </div>
       )}
     </header>

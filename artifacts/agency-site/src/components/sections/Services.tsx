@@ -1,4 +1,5 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
+import { motion } from 'framer-motion';
 import webdesignImg from '@assets/service-webdesign.jpg';
 import seoImg from '@assets/service-seo.jpg';
 import croImg from '@assets/service-cro.jpg';
@@ -28,9 +29,12 @@ export default function Services() {
           
           {/* Card 01 - Web Design */}
           <FadeIn className="md:col-span-2">
-            <div className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col">
-              <div className="mb-6 relative group">
-                <img src={webdesignImg} alt="High-Conversion Web Design" className="h-52 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+            <motion.div 
+              whileHover={{ y: -4, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
+              className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col group"
+            >
+              <div className="mb-6 relative">
+                <img src={webdesignImg} alt="High-Conversion Web Design" className="h-52 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
               </div>
               <div className="mt-auto">
                 <div className="flex items-center justify-between mb-3">
@@ -47,14 +51,17 @@ export default function Services() {
                   Custom sites that turn visitors into booked calls.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </FadeIn>
 
           {/* Card 02 - SEO */}
           <FadeIn className="md:col-span-1">
-            <div className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col">
-              <div className="mb-6 relative group">
-                <img src={seoImg} alt="Local SEO & Visibility" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+            <motion.div 
+              whileHover={{ y: -4, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
+              className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col group"
+            >
+              <div className="mb-6 relative">
+                <img src={seoImg} alt="Local SEO & Visibility" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
               </div>
               <div className="mt-auto">
                 <span className="inline-block text-xs bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-2.5 py-0.5 mb-3">
@@ -65,14 +72,17 @@ export default function Services() {
                   Own your local market completely.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </FadeIn>
 
           {/* Card 03 - CRO */}
           <FadeIn className="md:col-span-1">
-            <div className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col">
-              <div className="mb-6 relative group">
-                <img src={croImg} alt="Conversion Rate Optimization" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+            <motion.div 
+              whileHover={{ y: -4, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
+              className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col group"
+            >
+              <div className="mb-6 relative">
+                <img src={croImg} alt="Conversion Rate Optimization" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
               </div>
               <div className="mt-auto">
                 <span className="inline-block text-xs bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-2.5 py-0.5 mb-3">
@@ -83,14 +93,17 @@ export default function Services() {
                   More leads from the same traffic.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </FadeIn>
 
           {/* Card 04 - Reviews */}
           <FadeIn className="md:col-span-2">
-            <div className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col">
-              <div className="mb-6 relative group">
-                <img src={reviewsImg} alt="Review & Reputation Engine" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+            <motion.div 
+              whileHover={{ y: -4, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
+              className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col group"
+            >
+              <div className="mb-6 relative">
+                <img src={reviewsImg} alt="Review & Reputation Engine" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
               </div>
               <div className="mt-auto">
                 <span className="inline-block text-xs bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-2.5 py-0.5 mb-3">
@@ -101,7 +114,7 @@ export default function Services() {
                   5-star authority at every touchpoint.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </FadeIn>
 
         </FadeInStagger>

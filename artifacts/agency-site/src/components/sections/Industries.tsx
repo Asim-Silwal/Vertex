@@ -1,5 +1,6 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import { Home, Zap, Droplets, PaintRoller, TreePine, Hammer, HardHat } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const industries = [
   { name: 'Roofing', icon: Home, hook: 'Storm damage to full replacements.', color: 'text-blue-500' },
@@ -29,11 +30,14 @@ export default function Industries() {
             const Icon = ind.icon;
             return (
               <FadeIn key={i}>
-                <div className="group p-5 rounded-2xl bg-[#111] border border-white/6 hover:border-[#765EFF]/40 hover:bg-[#111]/80 transition-all duration-300 cursor-pointer hover:shadow-[inset_3px_0_0_#765EFF] h-full flex flex-col">
+                <motion.div 
+                  whileHover={{ scale: 1.03, y: -2, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
+                  className="group p-5 rounded-2xl bg-[#111] border border-white/6 hover:border-[#765EFF]/40 hover:bg-[#111]/80 transition-all duration-300 cursor-pointer hover:shadow-[inset_3px_0_0_#765EFF] h-full flex flex-col"
+                >
                   <Icon size={24} className={`${ind.color}`} />
                   <h3 className="font-medium text-white text-base mt-3">{ind.name}</h3>
                   <p className="text-[#666] text-sm mt-1">{ind.hook}</p>
-                </div>
+                </motion.div>
               </FadeIn>
             );
           })}
