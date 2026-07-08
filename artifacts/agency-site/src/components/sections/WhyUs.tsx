@@ -1,55 +1,106 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
-
-const points = [
-  {
-    id: "01",
-    title: "We Understand Your Operations",
-    description: "We know the difference between a dispatch fee and a diagnostic fee. We understand that water heater replacements are high-margin and drain clearings are entry offers. We speak your language, so you don't have to translate your business to a generic web designer."
-  },
-  {
-    id: "02",
-    title: "Engineered for Trust",
-    description: "Homeowners are inviting strangers into their homes. Your website must project immediate safety, authority, and reliability. We use specific psychological triggers, verified reviews, and professional imagery to eliminate friction and build instant credibility."
-  },
-  {
-    id: "03",
-    title: "Performance Without Compromise",
-    description: "Slow websites kill conversions. Our sites are built on modern edge infrastructure, loading in milliseconds even on 3G networks in the field. When a homeowner is standing in a flooded basement, they aren't going to wait for your site to load."
-  },
-  {
-    id: "04",
-    title: "Data-Driven Iteration",
-    description: "Launching the site is the starting line, not the finish line. We install advanced analytics to track exactly where users click, scroll, and bounce. We constantly refine the experience to squeeze every possible lead out of your traffic."
-  }
-];
+import { Wrench, ShieldCheck, Zap, BarChart3 } from 'lucide-react';
 
 export default function WhyUs() {
   return (
     <Section id="why-us" className="py-24 bg-[#0A0A0A]" data-testid="section-why-us">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Why Osprey.</h2>
-          <p className="text-[#666] text-lg">
-            Most agencies sell you a digital brochure. We build highly-calibrated lead generation engines designed specifically for the trades.
+        
+        <div className="mb-16">
+          <div className="inline-block mb-4">
+            <span className="text-xs font-medium bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-3 py-1">
+              Why Osprey
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white font-display">
+            Built different.
+          </h2>
+          <p className="text-[#555] text-lg max-w-xs">
+            We build highly-calibrated lead generation engines specifically for the trades.
           </p>
         </div>
 
-        <FadeInStagger className="max-w-3xl mx-auto">
-          {points.map((point, i) => (
-            <FadeIn key={i}>
-              <div className="flex gap-6 py-8 border-b border-white/6 last:border-0 group hover:opacity-100 opacity-85 transition-opacity">
-                <div className="text-[#222] font-mono text-sm group-hover:text-[#765EFF] transition-colors w-8 flex-shrink-0 pt-1">
-                  {point.id}
+        <FadeInStagger className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          {/* Card 01 */}
+          <FadeIn>
+            <div className="h-full p-8 rounded-2xl bg-[#0D0D0D] border border-white/8 hover:border-[#765EFF]/25 transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-12">
+                <div className="w-12 h-12 rounded-xl bg-[#765EFF]/10 flex items-center justify-center border border-[#765EFF]/20 group-hover:scale-110 transition-transform duration-500">
+                  <Wrench className="size-6 text-[#765EFF]" />
                 </div>
-                <div>
-                  <h3 className="font-display font-semibold text-xl text-white mb-2">{point.title}</h3>
-                  <p className="text-[#666] text-base leading-relaxed">
-                    {point.description}
-                  </p>
-                </div>
+                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Industry Expertise</span>
               </div>
-            </FadeIn>
-          ))}
+              
+              <div className="mt-auto">
+                <div className="font-serif italic text-3xl font-bold text-white mb-3">No translator needed.</div>
+                <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
+                  We speak your language. We know the difference between a dispatch fee and a diagnostic fee.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Card 02 */}
+          <FadeIn>
+            <div className="h-full p-8 rounded-2xl bg-[#0D0D0D] border border-white/8 hover:border-emerald-500/25 transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-12">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 group-hover:scale-110 transition-transform duration-500">
+                  <ShieldCheck className="size-6 text-emerald-500" />
+                </div>
+                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Conversion Science</span>
+              </div>
+              
+              <div className="mt-auto">
+                <div className="font-serif italic text-3xl font-bold text-white mb-3">Trust by design.</div>
+                <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
+                  Your website must project immediate safety. We use psychological triggers and professional imagery to build instant credibility.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Card 03 */}
+          <FadeIn>
+            <div className="h-full p-8 rounded-2xl bg-[#0D0D0D] border border-white/8 hover:border-yellow-500/25 transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-12">
+                <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20 group-hover:scale-110 transition-transform duration-500">
+                  <Zap className="size-6 text-yellow-500" />
+                </div>
+                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Edge Performance</span>
+              </div>
+              
+              <div className="mt-auto">
+                <div className="flex items-baseline gap-2 mb-2">
+                  <div className="text-5xl font-bold text-white tracking-tighter">&lt; 1s</div>
+                </div>
+                <div className="text-[#444] text-xs uppercase tracking-widest font-semibold mb-3">Average load time</div>
+                <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
+                  Slow websites kill conversions. Our sites load in milliseconds even on 3G networks in the field.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Card 04 */}
+          <FadeIn>
+            <div className="h-full p-8 rounded-2xl bg-[#0D0D0D] border border-white/8 hover:border-blue-400/25 transition-all duration-300 group">
+              <div className="flex justify-between items-start mb-12">
+                <div className="w-12 h-12 rounded-xl bg-blue-400/10 flex items-center justify-center border border-blue-400/20 group-hover:scale-110 transition-transform duration-500">
+                  <BarChart3 className="size-6 text-blue-400" />
+                </div>
+                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Analytics-First</span>
+              </div>
+              
+              <div className="mt-auto">
+                <div className="font-serif italic text-3xl font-bold text-white mb-3">Always improving.</div>
+                <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
+                  We install advanced analytics to track exactly where users click, scroll, and bounce.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
         </FadeInStagger>
       </div>
     </Section>
