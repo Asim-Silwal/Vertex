@@ -1,60 +1,50 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Star } from 'lucide-react';
-import heroImg from "@assets/hero-bg.jpg";
+import { Star } from 'lucide-react';
+import test1Img from "@assets/testimonial-1.jpg";
+import test2Img from "@assets/testimonial-2.jpg";
+import test3Img from "@assets/testimonial-3.jpg";
 
 export default function Hero() {
   return (
     <section 
-      className="relative min-h-[100dvh] flex items-center pt-20 overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center justify-center pt-32 pb-16 overflow-hidden bg-[#0A0A0A]"
       data-testid="section-hero"
     >
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-[0.15]"
-        style={{ backgroundImage: `url(${heroImg})` }}
-      />
-      <div className="absolute inset-0 z-0 bg-black/60" />
-
-      {/* Background Grid */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#1F2937_1px,transparent_1px),linear-gradient(to_bottom,#1F2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
-      
-      {/* Subtle Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-20 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#2563EB]/15 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="container mx-auto px-4 md:px-6 z-10 flex flex-col items-center text-center mt-12 md:mt-0">
+      <div className="container mx-auto px-4 md:px-6 z-10 flex flex-col items-center text-center max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-card/80 backdrop-blur-sm border border-border text-sm text-muted-foreground mb-8"
+          className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-[#111111]/90 backdrop-blur-md border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_8px_32px_rgba(0,0,0,0.4)] mb-8"
         >
-          <div className="flex -space-x-1">
+          <div className="flex -space-x-2">
+            <img src={test1Img} alt="Reviewer" className="w-6 h-6 rounded-full border border-[#111] object-cover" />
+            <img src={test2Img} alt="Reviewer" className="w-6 h-6 rounded-full border border-[#111] object-cover" />
+            <img src={test3Img} alt="Reviewer" className="w-6 h-6 rounded-full border border-[#111] object-cover" />
+          </div>
+          <div className="flex -space-x-0.5">
             {[1,2,3,4,5].map(i => (
-              <Star key={i} size={14} className="text-[#10B981] fill-[#10B981]" />
+              <Star key={i} size={12} className="text-[#F59E0B] fill-[#F59E0B]" />
             ))}
           </div>
-          <span className="mx-2 w-[1px] h-4 bg-border"></span>
-          Trusted by 50+ 7-figure home service businesses
+          <span className="text-xs font-medium text-white/80 pr-1">Trusted by 50+ 7-figure home service businesses</span>
         </motion.div>
 
         <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl md:text-7xl lg:text-[80px] font-bold leading-[1.1] tracking-tight max-w-5xl mb-6 relative"
+          className="flex flex-col items-center mb-8"
         >
-          We Engineer Trust For <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#2563EB]">
-            Home Service Brands.
-          </span>
+          <span className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-[1.1]">We Engineer Trust For</span>
+          <span className="italic-serif text-5xl md:text-7xl text-[#765EFF] leading-[1.1] mt-1">Home Service Brands.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed"
+          className="text-[#999] text-lg max-w-xl mx-auto leading-relaxed mb-10"
         >
           Stop losing jobs to competitors with worse service but better websites. 
           We build high-converting digital showrooms that turn local traffic into premium booked leads.
@@ -68,19 +58,28 @@ export default function Hero() {
         >
           <a 
             href="#contact"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-md text-base font-medium transition-all group"
+            className="w-full sm:w-auto text-center bg-[#765EFF] text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-[#8B7AFF] transition-all"
             data-testid="button-hero-primary"
           >
             Get a Free Audit
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <a 
             href="#portfolio"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-background/50 backdrop-blur-sm hover:bg-card border border-border text-foreground px-8 py-4 rounded-md text-base font-medium transition-all"
+            className="w-full sm:w-auto text-center bg-transparent text-white px-6 py-3 rounded-full font-medium text-sm border border-white/15 hover:border-white/30 hover:bg-white/5 transition-all"
             data-testid="button-hero-secondary"
           >
             See Our Work
           </a>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mt-16 h-40 flex items-end justify-center w-full overflow-hidden"
+        >
+          <div className="absolute bottom-0 w-[500px] h-[200px] bg-gradient-radial from-[#765EFF]/30 via-[#4B6EFF]/15 to-transparent rounded-full blur-[80px]" />
+          <div className="absolute bottom-0 w-[300px] h-[120px] bg-[#765EFF]/20 rounded-full blur-[60px]" />
         </motion.div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -22,26 +22,22 @@
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-primary-border: var(--primary-border);
 
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-secondary-border: var(--secondary-border);
 
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-muted-border: var(--muted-border);
 
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-accent-border: var(--accent-border);
 
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-destructive-border: var(--destructive-border);
 
   --font-sans: var(--app-font-sans);
   --font-display: var(--app-font-display);
+  --font-serif: var(--app-font-serif);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -50,40 +46,41 @@
 }
 
 :root, .dark {
-  --background: 213 29% 6%;
-  --foreground: 210 40% 98%;
-  --border: 215 28% 17%;
+  --background: 0 0% 4%;
+  --foreground: 0 0% 99%;
+  --border: 0 0% 12%;
   
-  --card: 221 39% 11%;
-  --card-foreground: 210 40% 98%;
-  --card-border: 215 28% 17%;
+  --card: 0 0% 7%;
+  --card-foreground: 0 0% 99%;
+  --card-border: 0 0% 12%;
   
-  --popover: 221 39% 11%;
-  --popover-foreground: 210 40% 98%;
-  --popover-border: 215 28% 17%;
+  --popover: 0 0% 7%;
+  --popover-foreground: 0 0% 99%;
+  --popover-border: 0 0% 12%;
   
-  --primary: 221 83% 53%;
-  --primary-foreground: 210 40% 98%;
+  --primary: 253 100% 69%;
+  --primary-foreground: 0 0% 100%;
   
-  --secondary: 221 39% 11%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 0 0% 7%;
+  --secondary-foreground: 0 0% 99%;
   
-  --muted: 215 28% 17%;
-  --muted-foreground: 215 16% 65%;
+  --muted: 0 0% 10%;
+  --muted-foreground: 0 0% 60%;
   
-  --accent: 221 83% 53%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 253 100% 69%;
+  --accent-foreground: 0 0% 100%;
   
   --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: 0 0% 100%;
   
-  --input: 215 28% 17%;
-  --ring: 221 83% 53%;
+  --input: 0 0% 12%;
+  --ring: 253 100% 69%;
   
+  --radius: 0.75rem;
+
   --app-font-sans: 'Inter', sans-serif;
   --app-font-display: 'Space Grotesk', sans-serif;
-  
-  --radius: 0.5rem;
+  --app-font-serif: 'Instrument Serif', serif;
 }
 
 @layer base {
@@ -98,6 +95,12 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
   }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--app-font-serif); }
+  .italic-serif { font-family: var(--app-font-serif); font-style: italic; }
+  .bg-gradient-radial { background-image: radial-gradient(var(--tw-gradient-stops)); }
 }
 
 @keyframes marquee {
