@@ -1,5 +1,8 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import { Star, Quote } from 'lucide-react';
+import test1Img from "@assets/testimonial-1.jpg";
+import test2Img from "@assets/testimonial-2.jpg";
+import test3Img from "@assets/testimonial-3.jpg";
 
 const testimonials = [
   {
@@ -7,21 +10,24 @@ const testimonials = [
     author: "James Mitchell",
     role: "Owner, Apex Roofing Co.",
     rating: 5,
-    initials: "JM"
+    image: test1Img,
+    glow: "bg-blue-500"
   },
   {
     quote: "They don't just know web design, they know the HVAC business. The new site highlights our emergency service and financing options perfectly. The ROI was realized in the first two weeks of launch.",
     author: "Sarah Jenkins",
     role: "CMO, Climate Masters",
     rating: 5,
-    initials: "SJ"
+    image: test2Img,
+    glow: "bg-emerald-500"
   },
   {
     quote: "Finally, an agency that actually delivers. Our old site looked like it was from 2005. Osprey gave us a digital presence that matches the quality of our actual plumbing work. It's night and day.",
     author: "David Chen",
     role: "Founder, Precision Flow",
     rating: 5,
-    initials: "DC"
+    image: test3Img,
+    glow: "bg-purple-500"
   }
 ];
 
@@ -38,27 +44,32 @@ export default function Testimonials() {
 
         <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
-            <FadeIn key={i}>
-              <div className="bg-card border border-border p-8 rounded-2xl relative h-full flex flex-col hover:border-primary/30 transition-colors">
-                <Quote size={40} className="text-primary/10 absolute top-6 right-6" />
-                
-                <div className="flex gap-1 mb-6">
-                  {[...Array(t.rating)].map((_, j) => (
-                    <Star key={j} size={18} className="text-[#10B981] fill-[#10B981]" />
-                  ))}
-                </div>
-                
-                <p className="text-foreground text-lg leading-relaxed mb-8 flex-1">
-                  "{t.quote}"
-                </p>
-                
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-12 h-12 rounded-full bg-muted border border-border flex items-center justify-center font-display font-bold text-muted-foreground">
-                    {t.initials}
+            <FadeIn key={i} className="h-full">
+              <div className="relative h-full flex flex-col group">
+                <div className={`absolute inset-0 ${t.glow} opacity-[0.05] group-hover:opacity-[0.1] blur-xl transition-opacity duration-500 rounded-3xl`} />
+                <div className="bg-card border border-border p-8 rounded-2xl relative h-full flex flex-col hover:border-primary/30 transition-colors z-10">
+                  <Quote size={40} className="text-primary/10 absolute top-6 right-6" />
+                  
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(t.rating)].map((_, j) => (
+                      <Star key={j} size={18} className="text-[#10B981] fill-[#10B981]" />
+                    ))}
                   </div>
-                  <div>
-                    <div className="font-bold">{t.author}</div>
-                    <div className="text-sm text-muted-foreground">{t.role}</div>
+                  
+                  <p className="text-foreground text-lg leading-relaxed mb-8 flex-1">
+                    "{t.quote}"
+                  </p>
+                  
+                  <div className="flex items-center gap-4 mt-auto">
+                    <img 
+                      src={t.image} 
+                      alt={t.author}
+                      className="w-12 h-12 rounded-full border border-border object-cover"
+                    />
+                    <div>
+                      <div className="font-bold">{t.author}</div>
+                      <div className="text-sm text-muted-foreground">{t.role}</div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -14,15 +14,15 @@ export default function Credibility() {
       
       <div className="relative flex w-full max-w-full overflow-hidden">
         {/* Left fade */}
-        <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         
         {/* Right fade */}
-        <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
         <div className="flex animate-marquee whitespace-nowrap">
           {[...logos, ...logos, ...logos].map((logo, i) => (
-            <div key={i} className="flex items-center justify-center px-12">
-              <span className="text-xl font-display font-semibold text-muted-foreground/30 uppercase tracking-wider">
+            <div key={i} className="flex items-center justify-center px-12 group cursor-default">
+              <span className="text-2xl font-display font-semibold text-muted-foreground/60 uppercase tracking-wider transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#2563EB] group-hover:to-[#10B981]">
                 {logo}
               </span>
             </div>

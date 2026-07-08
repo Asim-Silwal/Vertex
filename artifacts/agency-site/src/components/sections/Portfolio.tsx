@@ -1,5 +1,8 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import { ArrowUpRight } from 'lucide-react';
+import apexImg from "@assets/apex-roofing.jpg";
+import climateImg from "@assets/climate-hvac.jpg";
+import precisionImg from "@assets/precision-plumbing.jpg";
 
 const projects = [
   {
@@ -7,30 +10,33 @@ const projects = [
     industry: "Roofing",
     metric: "+340% inbound lead volume",
     description: "Rebuilt from the ground up to dominate local search. Implemented an interactive roof estimate funnel that tripled conversion rates.",
-    gradient: "from-blue-900 to-slate-900",
+    gradient: "from-blue-900/80 to-slate-900",
     accent: "text-blue-400",
     accentBg: "bg-blue-400/10",
-    border: "border-blue-400/20"
+    border: "border-blue-400/20",
+    image: apexImg
   },
   {
     company: "Climate Masters",
     industry: "HVAC",
     metric: "$2.1M pipeline generated",
     description: "A digital showroom designed to sell premium HVAC installations. Reduced bounce rate by 65% and increased average ticket size.",
-    gradient: "from-emerald-900 to-slate-900",
+    gradient: "from-emerald-900/80 to-slate-900",
     accent: "text-emerald-400",
     accentBg: "bg-emerald-400/10",
-    border: "border-emerald-400/20"
+    border: "border-emerald-400/20",
+    image: climateImg
   },
   {
     company: "Precision Flow",
     industry: "Plumbing",
     metric: "41% lower cost-per-lead",
     description: "Emergency plumbing landing pages hyper-optimized for mobile. One-tap dispatch integration resulting in record response times.",
-    gradient: "from-purple-900 to-slate-900",
+    gradient: "from-purple-900/80 to-slate-900",
     accent: "text-purple-400",
     accentBg: "bg-purple-400/10",
-    border: "border-purple-400/20"
+    border: "border-purple-400/20",
+    image: precisionImg
   }
 ];
 
@@ -54,19 +60,15 @@ export default function Portfolio() {
           {projects.map((project, i) => (
             <FadeIn key={i} className="group cursor-pointer">
               <div className="rounded-2xl overflow-hidden border border-border bg-card transition-all duration-300 hover:border-border/80 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50">
-                <div className={`h-64 w-full bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                  {/* Abstract UI representation */}
-                  <div className="absolute inset-x-8 -bottom-16 top-12 bg-background rounded-t-xl border-t border-x border-white/10 shadow-2xl overflow-hidden transition-transform duration-500 group-hover:translate-y-4">
-                    <div className="h-6 border-b border-white/5 flex items-center px-3 gap-1.5 bg-muted/50">
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                    </div>
-                    <div className="p-6">
-                      <div className="w-1/3 h-4 bg-white/10 rounded mb-6" />
-                      <div className="w-3/4 h-8 bg-white/20 rounded mb-4" />
-                      <div className="w-1/2 h-8 bg-white/20 rounded" />
-                    </div>
+                <div className={`h-64 w-full bg-gradient-to-br ${project.gradient} relative overflow-hidden flex items-end justify-center pt-8 px-8`}>
+                  <div className="absolute inset-0 mix-blend-overlay opacity-50 bg-gradient-to-t from-background/80 to-transparent z-10" />
+                  
+                  <div className="relative z-20 w-full h-full rounded-t-xl overflow-hidden border-t border-x border-white/10 shadow-2xl transition-transform duration-500 group-hover:translate-y-2 bg-background/50 backdrop-blur-sm">
+                    <img 
+                      src={project.image} 
+                      alt={`${project.company} website`} 
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                 </div>
                 

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
+import heroImg from "@assets/hero-bg.jpg";
 
 export default function Hero() {
   return (
@@ -7,18 +8,26 @@ export default function Hero() {
       className="relative min-h-[100dvh] flex items-center pt-20 overflow-hidden"
       data-testid="section-hero"
     >
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-[0.15]"
+        style={{ backgroundImage: `url(${heroImg})` }}
+      />
+      <div className="absolute inset-0 z-0 bg-black/60" />
+
       {/* Background Grid */}
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#1F2937_1px,transparent_1px),linear-gradient(to_bottom,#1F2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
       
       {/* Subtle Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] opacity-20 pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#2563EB]/15 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 z-10 flex flex-col items-center text-center mt-12 md:mt-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border text-sm text-muted-foreground mb-8"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-card/80 backdrop-blur-sm border border-border text-sm text-muted-foreground mb-8"
         >
           <div className="flex -space-x-1">
             {[1,2,3,4,5].map(i => (
@@ -33,10 +42,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl md:text-7xl lg:text-[80px] font-bold leading-[1.1] tracking-tight max-w-5xl mb-6"
+          className="text-5xl md:text-7xl lg:text-[80px] font-bold leading-[1.1] tracking-tight max-w-5xl mb-6 relative"
         >
           We Engineer Trust For <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#2563EB]">
             Home Service Brands.
           </span>
         </motion.h1>
@@ -67,7 +76,7 @@ export default function Hero() {
           </a>
           <a 
             href="#portfolio"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent hover:bg-card border border-border text-foreground px-8 py-4 rounded-md text-base font-medium transition-all"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-background/50 backdrop-blur-sm hover:bg-card border border-border text-foreground px-8 py-4 rounded-md text-base font-medium transition-all"
             data-testid="button-hero-secondary"
           >
             See Our Work
