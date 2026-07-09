@@ -1,5 +1,9 @@
-import app from "./app";
-import { logger } from "./lib/logger";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const { default: app } = await import("./app");
+const { logger } = await import("./lib/logger");
 
 const rawPort = process.env["PORT"];
 
