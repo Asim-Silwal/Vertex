@@ -70,6 +70,13 @@
       fs: {
         strict: true,
       },
+      proxy: {
+        '/api': {
+          target: 'http://localhost:4000',
+          changeOrigin: true,
+          secure: false,
+        },
+      },
     },
     preview: {
       port,

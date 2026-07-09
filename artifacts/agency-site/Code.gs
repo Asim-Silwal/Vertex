@@ -1,6 +1,16 @@
 const SPREADSHEET_ID = '1vhVbb3tEA0TG9-R_ncYm0GV9MaFP4AgrHC_j5Ajd1m0';
 const SHEET_NAME = 'Sheet1';
 const NOTIFICATION_EMAIL = 'digital.vertex26@gmail.com';
+const SHEET_HEADERS = [
+  'Timestamp',
+  'Name',
+  'Email',
+  'Country Code',
+  'Phone',
+  'Full Phone',
+  'Needs',
+  'Source',
+];
 
 function doPost(e) {
   try {
@@ -37,27 +47,34 @@ function doPost(e) {
       'Website contact form',
     ]);
 
-    MailApp.sendEmail({
-      to: NOTIFICATION_EMAIL,
-      subject: `New Vertex Digital Lead: ${name}`,
-      replyTo: email,
-      body: [
-        'A new website lead has been submitted.',
-        '',
-        `Time: ${timestamp.toISOString()}`,
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${countryCode} ${phone}`,
-        '',
-        'Needs:',
-        needs,
-      ].join('\n'),
-    });
+    try {
+      MailApp.sendEmail({
+        to: NOTIFICATION_EMAIL,
+        subject: `New Vertex Digital Lead: ${name}`,
+        replyTo: email,
+        body: [
+          'A new website lead has been submitted.',
+          '',
+          `Time: ${timestamp.toISOString()}`,
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Phone: ${countryCode} ${phone}`,
+          '',
+          'Needs:',
+          needs,
+        ].join('\n'),
+      });
+    } catch (error) {
+      console.error('Email notification failed', error);
+    }
 
     return jsonResponse({ success: true, message: 'Inquiry saved successfully.' });
   } catch (error) {
     console.error(error);
-    return jsonResponse({ success: false, message: 'Failed to process submission.' });
+    return jsonResponse({
+      success: false,
+      message: error && error.message ? String(error.message) : 'Failed to process submission.',
+    });
   }
 }
 
@@ -67,10 +84,14 @@ function doGet() {
 
 function getSheet() {
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
-  const sheet = spreadsheet.getSheetByName(SHEET_NAME);
+  let sheet = spreadsheet.getSheetByName(SHEET_NAME);
 
   if (!sheet) {
-    throw new Error(`Sheet not found: ${SHEET_NAME}`);
+    sheet = spreadsheet.insertSheet(SHEET_NAME);
+  }
+
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(SHEET_HEADERS);
   }
 
   return sheet;

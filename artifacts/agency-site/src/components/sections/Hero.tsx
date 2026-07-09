@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Star } from 'lucide-react';
+import whiteLogo from '@assets/White Logo.png';
 import test1Img from "@assets/testimonial-1.jpg";
 import test2Img from "@assets/testimonial-2.jpg";
 import test3Img from "@assets/testimonial-3.jpg";
@@ -43,15 +44,18 @@ export default function Hero() {
         </motion.div>
 
         <motion.div style={{ y: headlineY }}>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col items-center mb-8"
-          >
-            <span className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-[1.1]">We Engineer Trust For</span>
-            <span className="italic-serif text-5xl md:text-7xl text-[#765EFF] leading-[1.1] mt-1">Home Service Brands.</span>
-          </motion.h1>
+          <div className="mb-8 flex flex-col items-center gap-6">
+            <img src={whiteLogo} alt="Vertex Digital logo" className="h-44 w-auto object-contain" />
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col items-center"
+            >
+              <span className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-[1.1]">We Engineer Trust For</span>
+              <span className="italic-serif text-5xl md:text-7xl text-[#765EFF] leading-[1.1] mt-1">Home Service Brands.</span>
+            </motion.h1>
+          </div>
         </motion.div>
 
         <motion.div style={{ y: subtitleY }}>
