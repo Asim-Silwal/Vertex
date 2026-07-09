@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Star } from 'lucide-react';
-import whiteLogo from '@assets/White Logo.png';
 import test1Img from "@assets/testimonial-1.jpg";
 import test2Img from "@assets/testimonial-2.jpg";
 import test3Img from "@assets/testimonial-3.jpg";
@@ -45,7 +44,6 @@ export default function Hero() {
 
         <motion.div style={{ y: headlineY }}>
           <div className="mb-8 flex flex-col items-center gap-6">
-            <img src={whiteLogo} alt="Vertex Digital logo" className="h-44 w-auto object-contain" />
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
