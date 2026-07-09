@@ -11,10 +11,12 @@ import FAQ from '@/components/sections/FAQ';
 import CTA from '@/components/sections/CTA';
 import Footer from '@/components/sections/Footer';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
+import { CursorGlow } from '@/components/ui/cursor-glow';
 
 export default function Home() {
   return (
     <div className="bg-background text-foreground min-h-[100dvh] flex flex-col font-sans">
+      <CursorGlow />
       <ScrollProgress />
       <Nav />
       <main className="flex-1">
