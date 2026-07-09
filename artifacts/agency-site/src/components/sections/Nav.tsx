@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AnimatedButton } from '@/components/ui/animated-button';
+import whiteLogo from '@assets/White Logo.png';
 
 export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,9 +33,7 @@ export default function Nav() {
         data-testid="header-nav"
       >
         <div className="flex items-center cursor-pointer" onClick={handleLogoClick}>
-          <div className="w-8 h-8 bg-gradient-to-br from-[#765EFF] via-[#8F7CFF] to-[#4B6EFF] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(118,94,255,0.35)] ring-1 ring-white/15">
-            <span className="font-display font-bold text-white text-sm leading-none">V</span>
-          </div>
+          <img src={whiteLogo} alt="Vertex Digital logo" className="h-8 w-auto object-contain" />
         </div>
 
         <nav className="hidden md:flex items-center gap-8">
