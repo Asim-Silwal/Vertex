@@ -4,7 +4,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Check, ChevronDown, Mail, Search } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
-const APPS_SCRIPT_URL = import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL;
+const DEFAULT_APPS_SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbxwjoWerSl-mdwLdcBThYfQ99pjzBQQjqOjI48a4chaxpbRFpgg_Ntm8olYe_E7ctYD/exec';
+const APPS_SCRIPT_URL =
+  import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || DEFAULT_APPS_SCRIPT_URL;
 
 const COUNTRY_CODES = [
   { label: '🇦🇫 Afghanistan +93', value: '+93' },
