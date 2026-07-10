@@ -1,6 +1,6 @@
-const SPREADSHEET_ID = '1vhVbb3tEA0TG9-R_ncYm0GV9MaFP4AgrHC_j5Ajd1m0';
+const SPREADSHEET_ID = '1LF7dK9brbf3VmlqG7ntOKiMcGLPxXz4plAjVyT8G-iM';
 const SHEET_NAME = 'Sheet1';
-const NOTIFICATION_EMAIL = 'digital.vertex26@gmail.com';
+const NOTIFICATION_EMAIL = 'fashionmyth12@gmail.com';
 const SHEET_HEADERS = [
   'Timestamp',
   'Name',
