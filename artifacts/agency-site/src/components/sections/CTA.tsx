@@ -5,7 +5,7 @@ import { Check, ChevronDown, Mail, Search } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 const DEFAULT_APPS_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbxwjoWerSl-mdwLdcBThYfQ99pjzBQQjqOjI48a4chaxpbRFpgg_Ntm8olYe_E7ctYD/exec';
+  'https://script.google.com/macros/s/AKfycbzncAGA30UmB_LF5v9acJQFSR01LIkkbsXwMTSPlSVCLgj9XC2ZPifbE40o7PmQP-jp/exec';
 const APPS_SCRIPT_URL =
   import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || DEFAULT_APPS_SCRIPT_URL;
 
