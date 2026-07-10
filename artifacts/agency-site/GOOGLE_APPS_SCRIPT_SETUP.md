@@ -3,9 +3,9 @@
 This setup sends the existing website contact form directly to a Google Apps Script Web App.
 The script appends each lead to this spreadsheet:
 
-- Spreadsheet: https://docs.google.com/spreadsheets/d/1vhVbb3tEA0TG9-R_ncYm0GV9MaFP4AgrHC_j5Ajd1m0/edit
+- Spreadsheet: https://docs.google.com/spreadsheets/d/14NfuKCLz_PjEDzVk7-9dMdXZVpHgKXbkXLMtTNSuNeQ/edit?gid=0#gid=0
 - Sheet: Sheet1
-- Notification email: digital.vertex26@gmail.com
+- Notification email: vertex.d10@gmail.com
 
 ## What the script does
 
