@@ -1,0 +1,12 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#050608"/>
+  <ellipse cx="260" cy="120" rx="240" ry="240" fill="#765EFF" fill-opacity="0.18"/>
+  <ellipse cx="960" cy="510" rx="280" ry="220" fill="#4B6EFF" fill-opacity="0.14"/>
+  <ellipse cx="720" cy="180" rx="180" ry="180" fill="#67E8F9" fill-opacity="0.10"/>
+  <rect x="86" y="86" width="1028" height="458" rx="36" stroke="white" stroke-opacity="0.08"/>
+  <text x="120" y="198" fill="#FFFFFF" font-size="70" font-family="Inter, Arial, sans-serif" font-weight="700">Vertex Digital</text>
+  <text x="120" y="272" fill="#C7CCD6" font-size="32" font-family="Inter, Arial, sans-serif" font-weight="500">Websites for U.S. home service businesses</text>
+  <text x="120" y="338" fill="#A1ACBE" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="400">Conversion-focused design, SEO readiness, and long-term support.</text>
+  <rect x="120" y="392" width="228" height="64" rx="999" fill="#765EFF" fill-opacity="0.95"/>
+  <text x="164" y="433" fill="#FFFFFF" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="600">Premium. Clear. Trusted.</text>
+</svg>

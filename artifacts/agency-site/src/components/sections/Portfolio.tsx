@@ -58,7 +58,7 @@ export default function Portfolio() {
 
         <FadeInStagger className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {projects.map((project, i) => (
-            <FadeIn key={i} className="cursor-pointer">
+            <FadeIn key={i}>
               <motion.div 
                 whileHover={{ y: -6, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
                 className="group rounded-2xl overflow-hidden bg-[#0F0F0F] border border-white/6 hover:border-white/12 transition-all duration-300"

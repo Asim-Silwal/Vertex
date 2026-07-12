@@ -1,8 +1,10 @@
-import { Twitter, Linkedin, Instagram } from 'lucide-react';
+import { ArrowRight, Linkedin, Mail } from 'lucide-react';
 import whiteLogo from '@assets/White Logo.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const businessEmail = 'verted.d10@gmail.com';
+  const linkedinUrl = 'https://www.linkedin.com/company/vertex-digital/';
   
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#050608] py-16" data-testid="section-footer">
@@ -16,8 +18,11 @@ export default function Footer() {
         <div className="flex flex-col gap-5 lg:max-w-sm">
           <img src={whiteLogo} alt="Vertex Digital logo" className="h-36 w-auto object-contain" />
           <p className="max-w-sm text-sm leading-7 text-[#D1D5DB]">
-            Premium web design and growth marketing for ambitious brands who want a refined digital presence.
+            Premium digital experiences for U.S. home service businesses that want stronger trust, better leads, and a more professional presence.
           </p>
+          <a href={`mailto:${businessEmail}`} className="text-sm font-medium text-[#A1ACBE] transition duration-300 hover:text-white">
+            {businessEmail}
+          </a>
         </div>
 
         <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-[#A1ACBE] lg:justify-center">
@@ -29,14 +34,14 @@ export default function Footer() {
         </nav>
 
         <div className="flex items-center gap-3 text-[#A1ACBE]">
-          <a href="#" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#A1ACBE] transition duration-300 hover:bg-white/15 hover:text-white">
-            <Twitter size={20} />
+          <a href="#contact" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#A1ACBE] transition duration-300 hover:bg-white/15 hover:text-white" aria-label="Contact Vertex Digital">
+            <ArrowRight size={20} />
           </a>
-          <a href="#" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#A1ACBE] transition duration-300 hover:bg-white/15 hover:text-white">
+          <a href={linkedinUrl} target="_blank" rel="noreferrer" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#A1ACBE] transition duration-300 hover:bg-white/15 hover:text-white" aria-label="Vertex Digital on LinkedIn">
             <Linkedin size={20} />
           </a>
-          <a href="#" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#A1ACBE] transition duration-300 hover:bg-white/15 hover:text-white">
-            <Instagram size={20} />
+          <a href={`mailto:${businessEmail}`} className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#A1ACBE] transition duration-300 hover:bg-white/15 hover:text-white" aria-label={`Email Vertex Digital at ${businessEmail}`}>
+            <Mail size={20} />
           </a>
         </div>
       </div>
@@ -44,8 +49,9 @@ export default function Footer() {
       <div className="relative mx-auto mt-10 flex max-w-7xl flex-col gap-4 border-t border-white/10 px-4 pt-6 text-sm text-[#8B95A4] md:flex-row md:items-center md:justify-between md:px-6">
         <p>© {currentYear} Vertex Digital. All rights reserved.</p>
         <div className="flex flex-wrap items-center gap-5">
-          <a href="#" className="transition duration-300 hover:text-white">Privacy Policy</a>
-          <a href="#" className="transition duration-300 hover:text-white">Terms of Service</a>
+          <a href="/privacy" className="transition duration-300 hover:text-white">Privacy Policy</a>
+          <a href="/terms" className="transition duration-300 hover:text-white">Terms of Service</a>
+          <a href="#contact" className="transition duration-300 hover:text-white">Contact Vertex Digital</a>
         </div>
       </div>
     </footer>

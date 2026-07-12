@@ -7,7 +7,7 @@ import { toast } from '@/hooks/use-toast';
 const DEFAULT_APPS_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbzncAGA30UmB_LF5v9acJQFSR01LIkkbsXwMTSPlSVCLgj9XC2ZPifbE40o7PmQP-jp/exec';
 const APPS_SCRIPT_URL =
-  import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL || DEFAULT_APPS_SCRIPT_URL;
+  (import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL ?? '').trim();
 
 const COUNTRY_CODES = [
   { label: '🇦🇫 Afghanistan +93', value: '+93' },
@@ -243,8 +243,12 @@ export default function CTA() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<'name' | 'email' | 'phone' | 'needs', string>>>({});
 
   const countryPickerRef = useRef<HTMLDivElement | null>(null);
+  const submissionLockRef = useRef(false);
+  const successRef = useRef<HTMLDivElement | null>(null);
+  const errorRef = useRef<HTMLDivElement | null>(null);
 
   const filteredCountries = useMemo(
     () =>
@@ -268,20 +272,93 @@ export default function CTA() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (submitting) {
-      return;
+  useEffect(() => {
+    if (submitted) {
+      successRef.current?.focus();
     }
+  }, [submitted]);
+
+  useEffect(() => {
+    if (error) {
+      errorRef.current?.focus();
+    }
+  }, [error]);
+
+  const clearFieldError = (field: 'name' | 'email' | 'phone' | 'needs') => {
+    setFieldErrors((current) => {
+      if (!current[field]) {
+        return current;
+      }
+
+      const next = { ...current };
+      delete next[field];
+      return next;
+    });
+  };
+
+  const validateForm = () => {
+    const nextFieldErrors: Partial<Record<'name' | 'email' | 'phone' | 'needs', string>> = {};
 
     const trimmedName = name.trim();
     const trimmedEmail = email.trim();
     const trimmedPhone = phone.trim();
     const trimmedNeeds = needs.trim();
+    const digitsOnlyPhone = trimmedPhone.replace(/\D/g, '');
+
+    if (trimmedName.length < 2) {
+      nextFieldErrors.name = 'Please enter your full name.';
+    }
+
+    if (!trimmedEmail) {
+      nextFieldErrors.email = 'Please enter your email address.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      nextFieldErrors.email = 'Please enter a valid email address.';
+    }
+
+    if (!trimmedPhone) {
+      nextFieldErrors.phone = 'Please enter your phone number.';
+    } else if (digitsOnlyPhone.length < 7) {
+      nextFieldErrors.phone = 'Please enter a valid phone number.';
+    }
+
+    if (trimmedNeeds.length < 10) {
+      nextFieldErrors.needs = 'Please add a short description of what you need.';
+    }
+
+    return {
+      nextFieldErrors,
+      hasErrors: Object.keys(nextFieldErrors).length > 0,
+      trimmedName,
+      trimmedEmail,
+      trimmedPhone,
+      trimmedNeeds,
+    };
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (submitting || submissionLockRef.current) {
+      return;
+    }
+
+    const { nextFieldErrors, hasErrors, trimmedName, trimmedEmail, trimmedPhone, trimmedNeeds } = validateForm();
+
+    if (hasErrors) {
+      setSubmitted(false);
+      setFieldErrors(nextFieldErrors);
+      setError('Please review the highlighted fields and try again.');
+      toast({
+        title: 'Missing details',
+        description: 'Please review the highlighted fields and try again.',
+      });
+      return;
+    }
 
     if (!APPS_SCRIPT_URL) {
-      const message = 'Contact form is not configured yet. Add the Google Apps Script URL.';
+      const message = 'Contact form is not configured yet. Please use the email address in the footer instead.';
+      setSubmitted(false);
       setError(message);
+      setFieldErrors({});
       toast({
         title: 'Configuration missing',
         description: message,
@@ -289,28 +366,11 @@ export default function CTA() {
       return;
     }
 
-    if (!trimmedName || !trimmedEmail || !trimmedPhone || !trimmedNeeds) {
-      const message = 'Please complete all fields before submitting.';
-      setError(message);
-      toast({
-        title: 'Missing details',
-        description: message,
-      });
-      return;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
-      const message = 'Enter a valid email address.';
-      setError(message);
-      toast({
-        title: 'Invalid email',
-        description: message,
-      });
-      return;
-    }
-
+    submissionLockRef.current = true;
     setSubmitting(true);
     setError(null);
+    setFieldErrors({});
+    setSubmitted(false);
 
     const payload = {
       name: trimmedName,
@@ -351,19 +411,22 @@ export default function CTA() {
       setNeeds("");
       setCountrySearch("");
       setCountryMenuOpen(false);
+      setFieldErrors({});
 
       toast({
         title: "Message sent",
-        description: "Your inquiry was delivered successfully.",
+        description: "Your inquiry was delivered successfully. We will review it and follow up soon.",
       });
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Failed to send inquiry.";
+      const message = err instanceof Error && err.message ? err.message : "Failed to send inquiry.";
+      const friendlyMessage = `We could not send your request right now. Please try again or email us directly at verted.d10@gmail.com.`;
       setError(message);
       toast({
         title: "Send failed",
-        description: message,
+        description: friendlyMessage,
       });
     } finally {
+      submissionLockRef.current = false;
       setSubmitting(false);
     }
   };
@@ -392,8 +455,10 @@ export default function CTA() {
                 type="submit"
                 form="contact-form"
                 className="inline-flex items-center justify-center rounded-full bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#8F7CFF]"
+                aria-busy={submitting}
+                disabled={submitting}
               >
-                Submit Inquiry
+                {submitting ? 'Sending...' : 'Submit Inquiry'}
               </button>
               <button
                 type="button"
@@ -407,9 +472,12 @@ export default function CTA() {
           </FadeIn>
 
           <FadeIn>
-            <form id="contact-form" onSubmit={handleSubmit} className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-[0_40px_120px_rgba(0,0,0,0.3)] backdrop-blur-md">
+            <form id="contact-form" onSubmit={handleSubmit} className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-[0_40px_120px_rgba(0,0,0,0.3)] backdrop-blur-md" aria-busy={submitting} noValidate>
               <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#765EFF]/20 to-transparent" />
               <div className="space-y-6">
+                <div className="sr-only" aria-live="polite" aria-atomic="true">
+                  {submitting ? 'Sending your inquiry.' : submitted ? 'Inquiry sent successfully.' : error || ''}
+                </div>
                 <AnimatePresence>
                   {submitted && (
                     <motion.div
@@ -419,6 +487,9 @@ export default function CTA() {
                       exit={{ opacity: 0, y: 16, scale: 0.98 }}
                       transition={{ duration: 0.35, ease: 'easeOut' }}
                       className="rounded-[1.75rem] border border-emerald-500/20 bg-emerald-500/5 p-4 shadow-[0_20px_60px_rgba(16,185,129,0.12)]"
+                      tabIndex={-1}
+                      ref={successRef}
+                      aria-live="polite"
                     >
                       <div className="flex items-center gap-3">
                         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-300 shadow-[0_0_0_8px_rgba(16,185,129,0.05)]">
@@ -429,7 +500,7 @@ export default function CTA() {
                             Inquiry sent successfully.
                           </p>
                           <p className="text-sm text-slate-400">
-                            We have delivered your request to the team and will reply soon.
+                            We received your request and will reply soon.
                           </p>
                         </div>
                       </div>
@@ -437,26 +508,52 @@ export default function CTA() {
                   )}
                 </AnimatePresence>
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-[#B0B7C3]">Full Name</label>
+                  <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-[#B0B7C3]">Full Name</label>
                   <input
+                    id="contact-name"
+                    autoComplete="name"
                     value={name}
-                    onChange={(event) => setName(event.target.value)}
+                    onChange={(event) => {
+                      setName(event.target.value);
+                      clearFieldError('name');
+                      setError(null);
+                    }}
                     placeholder="Your full name"
                     required
+                    aria-invalid={Boolean(fieldErrors.name)}
+                    aria-describedby={fieldErrors.name ? 'contact-name-error' : undefined}
                     className="w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                   />
+                  {fieldErrors.name ? (
+                    <p id="contact-name-error" className="mt-2 text-xs text-red-200">
+                      {fieldErrors.name}
+                    </p>
+                  ) : null}
                 </div>
                 <div className="space-y-4">
                   <label className="block text-sm font-medium text-[#B0B7C3]">
                     <span className="mb-2 block">Email</span>
                     <input
+                      id="contact-email"
                       type="email"
+                      autoComplete="email"
                       value={email}
-                      onChange={(event) => setEmail(event.target.value)}
+                      onChange={(event) => {
+                        setEmail(event.target.value);
+                        clearFieldError('email');
+                        setError(null);
+                      }}
                       placeholder="you@example.com"
                       required
+                      aria-invalid={Boolean(fieldErrors.email)}
+                      aria-describedby={fieldErrors.email ? 'contact-email-error' : undefined}
                       className="w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                     />
+                    {fieldErrors.email ? (
+                      <p id="contact-email-error" className="mt-2 text-xs text-red-200">
+                        {fieldErrors.email}
+                      </p>
+                    ) : null}
                   </label>
                   <div className="grid gap-4 sm:grid-cols-[0.45fr_0.55fr]">
                     <div className="relative" ref={countryPickerRef}>
@@ -466,17 +563,21 @@ export default function CTA() {
                       <button
                         type="button"
                         onClick={() => setCountryMenuOpen((open) => !open)}
+                        aria-haspopup="listbox"
+                        aria-expanded={countryMenuOpen}
+                        aria-controls="country-code-listbox"
                         className="flex h-14 w-full items-center justify-between rounded-2xl border border-white/10 bg-[#070707] px-4 text-left text-white transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                       >
                         <span className="truncate text-sm">{selectedCountry.label}</span>
                         <ChevronDown className="h-4 w-4 text-white/70" />
                       </button>
                       {countryMenuOpen && (
-                        <div className="absolute inset-x-0 top-full z-50 mt-2 max-h-[28rem] overflow-hidden rounded-3xl border border-white/10 bg-[#020202] shadow-2xl">
+                        <div id="country-code-listbox" role="listbox" aria-label="Country code options" className="absolute inset-x-0 top-full z-50 mt-2 max-h-[28rem] overflow-hidden rounded-3xl border border-white/10 bg-[#020202] shadow-2xl">
                           <div className="border-b border-white/10 p-3">
                             <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[#0D0D0D] px-3 py-2">
                               <Search className="h-4 w-4 text-white/60" />
                               <input
+                                aria-label="Search country codes"
                                 value={countrySearch}
                                 onChange={(event) => setCountrySearch(event.target.value)}
                                 autoFocus
@@ -491,10 +592,13 @@ export default function CTA() {
                                 <button
                                   key={country.label}
                                   type="button"
+                                  role="option"
+                                  aria-selected={selectedCountry.value === country.value}
                                   onClick={() => {
                                     setSelectedCountry(country);
                                     setCountrySearch('');
                                     setCountryMenuOpen(false);
+                                    setError(null);
                                   }}
                                   className="flex w-full items-center justify-between gap-3 rounded-none border-b border-white/10 px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
                                 >
@@ -514,33 +618,60 @@ export default function CTA() {
                     <label className="block text-sm font-medium text-[#B0B7C3]">
                       <span className="mb-2 block">Phone</span>
                       <input
+                        id="contact-phone"
                         type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
                         value={phone}
-                        onChange={(event) => setPhone(event.target.value)}
+                        onChange={(event) => {
+                          setPhone(event.target.value);
+                          clearFieldError('phone');
+                          setError(null);
+                        }}
                         placeholder="123 456 7890"
                         required
+                        aria-invalid={Boolean(fieldErrors.phone)}
+                        aria-describedby={fieldErrors.phone ? 'contact-phone-error' : undefined}
                         className="w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                       />
+                      {fieldErrors.phone ? (
+                        <p id="contact-phone-error" className="mt-2 text-xs text-red-200">
+                          {fieldErrors.phone}
+                        </p>
+                      ) : null}
                     </label>
                   </div>
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-[#B0B7C3]">Tell us about your needs</label>
+                  <label htmlFor="contact-needs" className="mb-2 block text-sm font-medium text-[#B0B7C3]">Tell us about your needs</label>
                   <textarea
+                    id="contact-needs"
+                    autoComplete="off"
                     value={needs}
-                    onChange={(event) => setNeeds(event.target.value)}
+                    onChange={(event) => {
+                      setNeeds(event.target.value);
+                      clearFieldError('needs');
+                      setError(null);
+                    }}
                     placeholder="What are you looking to build or improve?"
                     rows={5}
                     required
+                    aria-invalid={Boolean(fieldErrors.needs)}
+                    aria-describedby={fieldErrors.needs ? 'contact-needs-error' : undefined}
                     className="w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                   />
+                  {fieldErrors.needs ? (
+                    <p id="contact-needs-error" className="mt-2 text-xs text-red-200">
+                      {fieldErrors.needs}
+                    </p>
+                  ) : null}
                 </div>
                 <button
                   type="submit"
                   disabled={submitting}
                   className="relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-2xl bg-[#765EFF] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-[#8F7CFF] focus:outline-none focus:ring-2 focus:ring-[#765EFF]/40 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  <span className={submitting ? 'opacity-40' : ''}>Send Request</span>
+                  <span className={submitting ? 'opacity-40' : ''}>{submitting ? 'Sending Request' : 'Send Request'}</span>
                   {submitting && (
                     <motion.span
                       className="absolute inset-y-0 left-0 flex w-full items-center justify-center"
@@ -552,7 +683,7 @@ export default function CTA() {
                   )}
                 </button>
                 {error ? (
-                  <div className="rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                  <div ref={errorRef} tabIndex={-1} role="alert" aria-live="assertive" className="rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-100">
                     {error}
                   </div>
                 ) : null}

@@ -5,33 +5,33 @@ import { ChevronRight } from 'lucide-react';
 const steps = [
   {
     id: "01",
-    title: "Discovery",
-    desc: "We audit your current digital footprint, analyze your local competitors, and map out your highest-margin service offerings."
+    title: "Discovery Call",
+    desc: "We learn about your business, your goals, and the customers you want more of before recommending anything."
   },
   {
     id: "02",
     title: "Strategy",
-    desc: "We blueprint the site architecture, conversion funnels, and local SEO plan tailored strictly for your service area."
+    desc: "We define the messaging, structure, and lead-generation plan that best fits your market and services."
   },
   {
     id: "03",
     title: "Design",
-    desc: "We craft a premium, high-trust visual identity that positions you as the unquestioned authority in your market."
+    desc: "We design a clean, premium experience that builds trust quickly and makes it easy for visitors to take action."
   },
   {
     id: "04",
-    title: "Build",
-    desc: "We engineer the site using edge-compute technology for blazing fast load times and bulletproof security."
+    title: "Development",
+    desc: "We build the site carefully, keeping it reliable, easy to maintain, and ready for future growth."
   },
   {
     id: "05",
     title: "Launch",
-    desc: "Rigorous QA testing, CRM integrations, tracking setup, and a seamless zero-downtime deployment."
+    desc: "We handle launch details, checks, and setup so the website goes live smoothly and confidently."
   },
   {
     id: "06",
-    title: "Support",
-    desc: "Ongoing optimization, technical maintenance, content updates, and continuous performance monitoring."
+    title: "Ongoing Support",
+    desc: "We stay available for updates, improvements, and maintenance so the site continues to support your business."
   }
 ];
 
@@ -41,9 +41,9 @@ export default function Process() {
       <div className="container mx-auto px-4 md:px-6">
         
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">The Blueprint.</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Our Process.</h2>
           <p className="text-[#666] text-lg">
-            Six steps. Zero guesswork.
+            A clear six-step process built for trust, clarity, and smooth delivery.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function Process() {
             <FadeInStagger className="flex flex-col">
               {steps.map((step, i) => (
                 <FadeIn key={i}>
-                  <div className="py-5 border-b border-white/6 cursor-pointer group last:border-0">
+                  <div className="py-5 border-b border-white/6 group last:border-0">
                     <div className="flex items-center gap-6">
                       <div className="w-7 h-7 rounded-full border border-white/10 flex items-center justify-center text-xs font-mono text-[#555] flex-shrink-0 group-hover:border-[#765EFF]/60 group-hover:text-[#765EFF] transition-colors duration-300">
                         {step.id}

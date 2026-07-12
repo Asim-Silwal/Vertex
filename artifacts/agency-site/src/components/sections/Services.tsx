@@ -48,7 +48,7 @@ export default function Services() {
                 </div>
                 <h3 className="font-semibold text-white text-xl md:text-2xl mt-3">High-Conversion Web Design</h3>
                 <p className="text-[#666] text-sm md:text-base mt-1">
-                  Custom sites that turn visitors into booked calls.
+                  Turn more visitors into qualified calls by building trust faster and making it easier for homeowners to take the next step.
                 </p>
               </div>
             </motion.div>
@@ -69,7 +69,7 @@ export default function Services() {
                 </span>
                 <h3 className="font-semibold text-white text-lg mt-3">Local SEO & Visibility</h3>
                 <p className="text-[#666] text-sm mt-1">
-                  Own your local market completely.
+                  Improve local visibility so more of the right customers can find your business when they are ready to request a quote.
                 </p>
               </div>
             </motion.div>
@@ -90,7 +90,7 @@ export default function Services() {
                 </span>
                 <h3 className="font-semibold text-white text-lg mt-3">Conversion Rate Optimization</h3>
                 <p className="text-[#666] text-sm mt-1">
-                  More leads from the same traffic.
+                  Increase the number of leads you get from your existing traffic by removing friction and making inquiries feel simple.
                 </p>
               </div>
             </motion.div>
@@ -111,7 +111,7 @@ export default function Services() {
                 </span>
                 <h3 className="font-semibold text-white text-xl md:text-2xl mt-3">Review & Reputation Engine</h3>
                 <p className="text-[#666] text-sm md:text-base mt-1">
-                  5-star authority at every touchpoint.
+                  Strengthen customer trust with a reputation presence that helps visitors feel confident choosing your company.
                 </p>
               </div>
             </motion.div>

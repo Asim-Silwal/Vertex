@@ -23,7 +23,7 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 z-10 flex flex-col items-center text-center max-w-4xl">
-        <motion.div
+          <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -39,7 +39,7 @@ export default function Hero() {
               <Star key={i} size={12} className="text-[#F59E0B] fill-[#F59E0B]" />
             ))}
           </div>
-          <span className="text-xs font-medium text-white/80 pr-1">Trusted by 50+ 7-figure home service businesses</span>
+          <span className="text-xs font-medium text-white/80 pr-1">Built for U.S. contractors and service businesses</span>
         </motion.div>
 
         <motion.div style={{ y: headlineY }}>
@@ -50,8 +50,8 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-center"
             >
-              <span className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-[1.1]">We Engineer Trust For</span>
-              <span className="italic-serif text-5xl md:text-7xl text-[#765EFF] leading-[1.1] mt-1">Home Service Brands.</span>
+              <span className="font-display font-bold text-5xl md:text-7xl text-white tracking-tight leading-[1.1]">Get More Calls From</span>
+              <span className="italic-serif text-5xl md:text-7xl text-[#765EFF] leading-[1.1] mt-1">Your Website.</span>
             </motion.h1>
           </div>
         </motion.div>
@@ -63,8 +63,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-[#999] text-lg max-w-xl mx-auto leading-relaxed mb-10"
           >
-            Stop losing jobs to competitors with worse service but better websites. 
-            We build high-converting digital showrooms that turn local traffic into premium booked leads.
+            Vertex Digital helps roofers, HVAC companies, plumbers, electricians, remodelers, landscapers, and other home service businesses turn more local traffic into qualified calls and quote requests.
           </motion.p>
         </motion.div>
 
@@ -80,7 +79,7 @@ export default function Hero() {
             className="w-full sm:w-auto text-center bg-[#765EFF] text-white px-6 py-3 rounded-full font-medium text-sm transition-all"
             data-testid="button-hero-primary"
           >
-            Get a Free Audit
+            Get a Growth Plan
           </AnimatedButton>
           <AnimatedButton 
             href="#portfolio"
@@ -88,7 +87,7 @@ export default function Hero() {
             className="w-full sm:w-auto text-center bg-transparent text-white px-6 py-3 rounded-full font-medium text-sm border border-white/15 transition-all"
             data-testid="button-hero-secondary"
           >
-            See Our Work
+            View Results
           </AnimatedButton>
         </motion.div>
       </div>

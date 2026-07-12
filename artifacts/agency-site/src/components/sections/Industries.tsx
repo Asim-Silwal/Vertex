@@ -32,7 +32,7 @@ export default function Industries() {
               <FadeIn key={i}>
                 <motion.div 
                   whileHover={{ scale: 1.03, y: -2, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
-                  className="group p-5 rounded-2xl bg-[#111] border border-white/6 hover:border-[#765EFF]/40 hover:bg-[#111]/80 transition-all duration-300 cursor-pointer hover:shadow-[inset_3px_0_0_#765EFF] h-full flex flex-col"
+                  className="group p-5 rounded-2xl bg-[#111] border border-white/6 hover:border-[#765EFF]/40 hover:bg-[#111]/80 transition-all duration-300 hover:shadow-[inset_3px_0_0_#765EFF] h-full flex flex-col"
                 >
                   <Icon size={24} className={`${ind.color}`} />
                   <h3 className="font-medium text-white text-base mt-3">{ind.name}</h3>

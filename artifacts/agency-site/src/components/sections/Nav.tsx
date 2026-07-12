@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AnimatedButton } from '@/components/ui/animated-button';
@@ -6,6 +6,8 @@ import whiteLogo from '@assets/White Logo.png';
 
 export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLElement | null>(null);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const handleLogoClick = () => {
     window.location.hash = '';
@@ -23,6 +25,28 @@ export default function Nav() {
     { name: 'FAQ', href: '#faq' },
   ];
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false);
+        mobileMenuButtonRef.current?.focus();
+      }
+    };
+
+    if (mobileMenuOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const firstLink = mobileMenuRef.current?.querySelector<HTMLAnchorElement>('a');
+      firstLink?.focus();
+    }
+  }, [mobileMenuOpen]);
+
   return (
     <header className="fixed top-6 left-0 right-0 flex justify-center z-50 px-4">
       <motion.div 
@@ -32,11 +56,16 @@ export default function Nav() {
         className="inline-flex items-center justify-between gap-8 px-6 py-3 rounded-full bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_12px_40px_rgba(0,0,0,0.35)]"
         data-testid="header-nav"
       >
-        <div className="flex items-center cursor-pointer" onClick={handleLogoClick}>
+        <button
+          type="button"
+          onClick={handleLogoClick}
+          className="flex items-center"
+          aria-label="Vertex Digital home"
+        >
           <img src={whiteLogo} alt="Vertex Digital logo" className="h-8 w-auto object-contain" />
-        </div>
+        </button>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
           {navLinks.map((link) => (
             <motion.a 
               key={link.name} 
@@ -63,8 +92,13 @@ export default function Nav() {
         </div>
 
         <button 
+          ref={mobileMenuButtonRef}
+          type="button"
           className="md:hidden text-white p-1"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? 'Close mobile navigation' : 'Open mobile navigation'}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
           data-testid="button-mobile-menu"
         >
           {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -72,7 +106,7 @@ export default function Nav() {
       </motion.div>
 
       {mobileMenuOpen && (
-        <div className="absolute top-20 left-4 right-4 bg-black/40 border border-white/10 p-4 rounded-2xl flex flex-col gap-4 z-40 md:hidden backdrop-blur-xl">
+        <nav ref={mobileMenuRef} id="mobile-navigation" aria-label="Mobile navigation" className="absolute top-20 left-4 right-4 bg-black/40 border border-white/10 p-4 rounded-2xl flex flex-col gap-4 z-40 md:hidden backdrop-blur-xl">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
@@ -91,7 +125,7 @@ export default function Nav() {
           >
             Get a Free Audit
           </AnimatedButton>
-        </div>
+        </nav>
       )}
     </header>
   );

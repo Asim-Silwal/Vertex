@@ -1,6 +1,5 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import { Wrench, ShieldCheck, Zap, BarChart3 } from 'lucide-react';
-import { CountUp } from '@/components/ui/count-up';
 import { motion } from 'framer-motion';
 
 export default function WhyUs() {
@@ -15,11 +14,22 @@ export default function WhyUs() {
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white font-display">
-            Built different.
+            Why contractors choose Vertex Digital.
           </h2>
-          <p className="text-[#555] text-lg max-w-xs">
-            We build highly-calibrated lead generation engines specifically for the trades.
+          <p className="text-[#555] text-lg max-w-md">
+            We help roofing, HVAC, plumbing, remodeling, and other home service businesses grow with clear communication, conversion-focused design, and dependable support.
           </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-[#C7CCD6]">
+              Professional communication
+            </span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-[#C7CCD6]">
+              Reliable delivery
+            </span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-[#C7CCD6]">
+              Long-term support
+            </span>
+          </div>
         </div>
 
         <FadeInStagger className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -31,17 +41,15 @@ export default function WhyUs() {
                 <div className="w-12 h-12 rounded-xl bg-[#765EFF]/10 flex items-center justify-center border border-[#765EFF]/20 group-hover:scale-110 transition-transform duration-500">
                   <Wrench className="size-6 text-[#765EFF]" />
                 </div>
-                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Industry Expertise</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Professional Communication</span>
               </div>
               
               <div className="mt-auto">
-                <div className="font-serif italic text-3xl font-bold text-white mb-3">No translator needed.</div>
+                <div className="font-serif italic text-3xl font-bold text-white mb-3">Clear from the start.</div>
                 <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
-                  We speak your language. We know the difference between a dispatch fee and a diagnostic fee.
+                  You get direct communication, practical timelines, and a partner who understands how contractors actually run their business.
                 </p>
-                <div className="mt-4 text-sm font-semibold text-white/80">
-                  <CountUp end={50} suffix="+ clients" />
-                </div>
+                <div className="mt-4 text-sm font-semibold text-white/80">Clear updates throughout the project</div>
               </div>
             </div>
           </FadeIn>
@@ -53,17 +61,15 @@ export default function WhyUs() {
                 <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 group-hover:scale-110 transition-transform duration-500">
                   <ShieldCheck className="size-6 text-emerald-500" />
                 </div>
-                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Conversion Science</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Conversion-Focused Design</span>
               </div>
               
               <div className="mt-auto">
-                <div className="font-serif italic text-3xl font-bold text-white mb-3">Trust by design.</div>
+                <div className="font-serif italic text-3xl font-bold text-white mb-3">Built to earn calls.</div>
                 <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
-                  Your website must project immediate safety. We use psychological triggers and professional imagery to build instant credibility.
+                  Every page is designed to build trust quickly, guide visitors toward action, and turn more local traffic into qualified leads.
                 </p>
-                <div className="mt-4 text-sm font-semibold text-emerald-400">
-                  <CountUp end={100} suffix="% satisfaction" />
-                </div>
+                <div className="mt-4 text-sm font-semibold text-emerald-400">Focused on qualified inquiries</div>
               </div>
             </div>
           </FadeIn>
@@ -75,23 +81,21 @@ export default function WhyUs() {
                 <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20 group-hover:scale-110 transition-transform duration-500">
                   <Zap className="size-6 text-yellow-500" />
                 </div>
-                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Edge Performance</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">SEO Readiness</span>
               </div>
               
               <div className="mt-auto">
-                <div className="flex items-baseline gap-2 mb-2">
-                  <motion.div 
-                    initial={{ scale: 0.5, opacity: 0 }} 
-                    whileInView={{ scale: 1, opacity: 1 }} 
-                    transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.2 }}
-                    className="text-5xl font-bold text-white tracking-tighter"
-                  >
-                    &lt; 1s
-                  </motion.div>
-                </div>
-                <div className="text-[#444] text-xs uppercase tracking-widest font-semibold mb-3">Average load time</div>
+                <motion.div 
+                  initial={{ scale: 0.5, opacity: 0 }} 
+                  whileInView={{ scale: 1, opacity: 1 }} 
+                  transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.2 }}
+                  className="text-5xl font-bold text-white tracking-tighter mb-2"
+                >
+                  SEO-ready
+                </motion.div>
+                <div className="text-[#444] text-xs uppercase tracking-widest font-semibold mb-3">Local visibility foundation</div>
                 <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
-                  Slow websites kill conversions. Our sites load in milliseconds even on 3G networks in the field.
+                  The site structure, content hierarchy, and metadata are built to support local search visibility from day one.
                 </p>
               </div>
             </div>
@@ -104,17 +108,15 @@ export default function WhyUs() {
                 <div className="w-12 h-12 rounded-xl bg-blue-400/10 flex items-center justify-center border border-blue-400/20 group-hover:scale-110 transition-transform duration-500">
                   <BarChart3 className="size-6 text-blue-400" />
                 </div>
-                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Analytics-First</span>
+                <span className="text-[10px] uppercase tracking-wider text-[#555] font-medium px-2 py-1 rounded border border-white/5">Long-Term Support</span>
               </div>
               
               <div className="mt-auto">
-                <div className="font-serif italic text-3xl font-bold text-white mb-3">Always improving.</div>
+                <div className="font-serif italic text-3xl font-bold text-white mb-3">Reliable after launch.</div>
                 <p className="text-[#555] text-sm leading-relaxed line-clamp-2">
-                  We install advanced analytics to track exactly where users click, scroll, and bounce.
+                  We stay available for updates, improvements, and maintenance so the website keeps working as the business grows.
                 </p>
-                <div className="mt-4 text-sm font-semibold text-blue-400">
-                  <CountUp end={4.9} decimals={1} suffix="/5 avg. rating" />
-                </div>
+                <div className="mt-4 text-sm font-semibold text-blue-400">Support that continues after launch</div>
               </div>
             </div>
           </FadeIn>

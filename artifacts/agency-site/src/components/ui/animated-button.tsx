@@ -7,10 +7,12 @@ interface AnimatedButtonProps {
   href?: string;
   variant?: 'primary' | 'secondary';
   onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  ariaLabel?: string;
   'data-testid'?: string;
 }
 
-export function AnimatedButton({ children, className = '', href, variant = 'primary', onClick, 'data-testid': testId }: AnimatedButtonProps) {
+export function AnimatedButton({ children, className = '', href, variant = 'primary', onClick, type = 'button', ariaLabel, 'data-testid': testId }: AnimatedButtonProps) {
   const ref = useRef<HTMLAnchorElement & HTMLButtonElement>(null);
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
@@ -63,7 +65,9 @@ export function AnimatedButton({ children, className = '', href, variant = 'prim
     <Tag
       ref={ref as any}
       href={href}
+      type={href ? undefined : type}
       onClick={handleClick}
+      aria-label={ariaLabel}
       className={`relative overflow-hidden ${className}`}
       data-testid={testId}
       whileHover={{ 
