@@ -10,7 +10,6 @@
     <meta property="og:description" content="Vertex Digital builds premium, conversion-focused websites for U.S. home service businesses that want stronger trust, better leads, and more booked calls." />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Vertex Digital" />
-    <meta property="og:url" content="/" />
     <meta property="og:image" content="/og-image.svg" />
     <meta property="og:image:alt" content="Vertex Digital social preview" />
     <meta property="og:locale" content="en_US" />
@@ -69,6 +68,11 @@
         var ogUrl = document.querySelector('meta[property="og:url"]');
         if (ogUrl) {
           ogUrl.setAttribute('content', pageUrl);
+        } else {
+          ogUrl = document.createElement('meta');
+          ogUrl.setAttribute('property', 'og:url');
+          ogUrl.setAttribute('content', pageUrl);
+          document.head.appendChild(ogUrl);
         }
 
         var jsonLd = document.getElementById('vertex-digital-jsonld');
