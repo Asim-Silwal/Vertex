@@ -6,7 +6,6 @@
     <title>Vertex Digital | Websites for U.S. Home Service Businesses</title>
     <meta name="description" content="Vertex Digital builds premium, conversion-focused websites for U.S. home service businesses that want stronger trust, better leads, and more booked calls." />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="/" id="canonical-link" />
     <meta property="og:title" content="Vertex Digital | Websites for U.S. Home Service Businesses" />
     <meta property="og:description" content="Vertex Digital builds premium, conversion-focused websites for U.S. home service businesses that want stronger trust, better leads, and more booked calls." />
     <meta property="og:type" content="website" />
@@ -57,7 +56,12 @@
         }
 
         var pageUrl = window.location.origin + pathname;
-        var canonical = document.getElementById('canonical-link');
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+          canonical = document.createElement('link');
+          canonical.setAttribute('rel', 'canonical');
+          document.head.appendChild(canonical);
+        }
         if (canonical) {
           canonical.setAttribute('href', pageUrl);
         }
