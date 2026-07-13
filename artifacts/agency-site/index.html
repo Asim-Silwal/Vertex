@@ -83,7 +83,7 @@
             data['@id'] = pageUrl + '#vertex-digital';
             jsonLd.textContent = JSON.stringify(data);
           } catch (error) {
-            console.warn('Unable to update structured data', error);
+            void error;
           }
         }
       })();

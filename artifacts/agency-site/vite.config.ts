@@ -3,19 +3,8 @@
   import tailwindcss from '@tailwindcss/vite';
   import { defineConfig } from 'vite';
 
-  // Only require environment variables in development
-  const isDev = process.env.NODE_ENV !== 'production';
-
-  const rawPort = process.env.PORT || '3000';
-  const basePath = process.env.BASE_PATH || '/';
-
-  if (isDev && !process.env.PORT) {
-    console.warn('PORT environment variable not provided, using default: 3000');
-  }
-
-  if (isDev && !process.env.BASE_PATH) {
-    console.warn('BASE_PATH environment variable not provided, using default: /');
-  }
+  const rawPort = (process.env.PORT ?? '3000').trim();
+  const basePath = (process.env.BASE_PATH ?? '/').trim();
 
   const port = Number(rawPort);
 
@@ -45,6 +34,7 @@
     build: {
       outDir: 'dist',
       emptyOutDir: true,
+      sourcemap: false,
     },
     server: {
       port,

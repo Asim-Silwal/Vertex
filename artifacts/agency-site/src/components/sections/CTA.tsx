@@ -4,8 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Check, ChevronDown, Mail, Search } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
-const DEFAULT_APPS_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbzncAGA30UmB_LF5v9acJQFSR01LIkkbsXwMTSPlSVCLgj9XC2ZPifbE40o7PmQP-jp/exec';
 const APPS_SCRIPT_URL =
   (import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL ?? '').trim();
 
@@ -418,9 +416,8 @@ export default function CTA() {
         description: "Your inquiry was delivered successfully. We will review it and follow up soon.",
       });
     } catch (err) {
-      const message = err instanceof Error && err.message ? err.message : "Failed to send inquiry.";
-      const friendlyMessage = `We could not send your request right now. Please try again or email us directly at verted.d10@gmail.com.`;
-      setError(message);
+      const friendlyMessage = 'We could not send your request right now. Please try again or email us directly at verted.d10@gmail.com.';
+      setError(friendlyMessage);
       toast({
         title: "Send failed",
         description: friendlyMessage,
