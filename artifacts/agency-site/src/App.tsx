@@ -4,6 +4,9 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import Home from '@/pages/Home';
+import Privacy from '@/pages/privacy';
+import Terms from '@/pages/terms';
+import USAStormRoofingCaseStudy from '@/pages/case-studies/usa-storm-roofing';
 
 const queryClient = new QueryClient();
 
@@ -11,6 +14,9 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
+      <Route path="/case-studies/usa-storm-roofing" component={USAStormRoofingCaseStudy} />
       <Route component={NotFound} />
     </Switch>
   );

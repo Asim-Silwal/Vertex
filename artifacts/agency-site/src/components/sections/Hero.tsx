@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="absolute right-[6%] top-[22%] h-[16rem] w-[16rem] rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.14),_transparent_70%)] blur-[100px] animate-drift-slow" style={{ animationDelay: '-8s' }} />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 z-10 flex flex-col items-center text-center max-w-4xl">
+      <div className="page-gutter z-10 flex flex-col items-center text-center max-w-4xl">
           <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

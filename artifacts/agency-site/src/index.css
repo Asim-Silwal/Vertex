@@ -110,6 +110,7 @@
   .font-serif { font-family: var(--app-font-serif); }
   .italic-serif { font-family: var(--app-font-serif); font-style: italic; }
   .bg-gradient-radial { background-image: radial-gradient(var(--tw-gradient-stops)); }
+  .page-gutter { @apply container mx-auto px-10 sm:px-12 md:px-16 lg:px-24 xl:px-32; }
 }
 
 @keyframes marquee {

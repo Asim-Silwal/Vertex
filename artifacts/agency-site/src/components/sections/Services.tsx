@@ -8,7 +8,7 @@ import reviewsImg from '@assets/service-reviews.jpg';
 export default function Services() {
   return (
     <Section id="services" className="py-24 bg-[#0A0A0A]" data-testid="section-services">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="page-gutter">
         
         <div className="mb-16">
           <div className="inline-block mb-4">
@@ -34,7 +34,7 @@ export default function Services() {
               className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col group"
             >
               <div className="mb-6 relative">
-                <img src={webdesignImg} alt="High-Conversion Web Design" className="h-52 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                <img src={webdesignImg} alt="High-Conversion Web Design" className="h-52 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" decoding="async" />
               </div>
               <div className="mt-auto">
                 <div className="flex items-center justify-between mb-3">
@@ -61,7 +61,7 @@ export default function Services() {
               className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col group"
             >
               <div className="mb-6 relative">
-                <img src={seoImg} alt="Local SEO & Visibility" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                <img src={seoImg} alt="Local SEO & Visibility" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" decoding="async" />
               </div>
               <div className="mt-auto">
                 <span className="inline-block text-xs bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-2.5 py-0.5 mb-3">
@@ -82,7 +82,7 @@ export default function Services() {
               className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col group"
             >
               <div className="mb-6 relative">
-                <img src={croImg} alt="Conversion Rate Optimization" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                <img src={croImg} alt="Conversion Rate Optimization" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" decoding="async" />
               </div>
               <div className="mt-auto">
                 <span className="inline-block text-xs bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-2.5 py-0.5 mb-3">
@@ -103,7 +103,7 @@ export default function Services() {
               className="h-full bg-[#0D0D0D] rounded-2xl border border-white/8 p-8 overflow-hidden relative transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)] flex flex-col group"
             >
               <div className="mb-6 relative">
-                <img src={reviewsImg} alt="Review & Reputation Engine" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                <img src={reviewsImg} alt="Review & Reputation Engine" className="h-36 w-full object-cover rounded-xl opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" loading="lazy" decoding="async" />
               </div>
               <div className="mt-auto">
                 <span className="inline-block text-xs bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-2.5 py-0.5 mb-3">

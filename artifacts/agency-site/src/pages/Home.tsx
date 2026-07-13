@@ -3,7 +3,7 @@ import Hero from '@/components/sections/Hero';
 import Credibility from '@/components/sections/Credibility';
 import Industries from '@/components/sections/Industries';
 import Services from '@/components/sections/Services';
-import Portfolio from '@/components/sections/Portfolio';
+import CaseStudies from '@/components/sections/CaseStudies';
 import WhyUs from '@/components/sections/WhyUs';
 import Process from '@/components/sections/Process';
 import Testimonials from '@/components/sections/Testimonials';
@@ -24,7 +24,7 @@ export default function Home() {
         <Credibility />
         <Industries />
         <Services />
-        <Portfolio />
+        <CaseStudies />
         <WhyUs />
         <Process />
         <Testimonials />

@@ -16,7 +16,7 @@ const industries = [
 export default function Industries() {
   return (
     <Section id="industries" className="py-24 bg-[#0A0A0A]" data-testid="section-industries">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="page-gutter">
         <div className="max-w-2xl mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">The Trades We Serve.</h2>
           <p className="text-[#666] text-lg">

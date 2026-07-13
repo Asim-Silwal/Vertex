@@ -23,7 +23,7 @@ export default function Credibility() {
 
   return (
     <section className="py-20 border-t border-white/5 bg-[#0A0A0A]" data-testid="section-credibility">
-      <div className="container mx-auto px-4">
+      <div className="page-gutter">
         <p className="text-sm text-[#666] text-center mb-10">
           You're in good hands:
         </p>
@@ -33,7 +33,7 @@ export default function Credibility() {
             <div key={i} className="flex items-center justify-center">
               {logo.logoImg ? (
                 <div className="bg-gradient-to-br from-white via-white to-slate-100 rounded-xl px-4 py-2 shadow-[0_0_32px_rgba(118,94,255,0.15),0_2px_12px_rgba(0,0,0,0.4)] opacity-80 hover:opacity-100 transition-opacity border border-white/10">
-                  <img src={logo.logoImg} alt={logo.name} className="h-10 w-auto object-contain" />
+                  <img src={logo.logoImg} alt={logo.name} className="h-10 w-auto object-contain" loading="lazy" decoding="async" />
                 </div>
               ) : (
                 <span className={`font-display tracking-tight ${logo.weight} ${logo.size} ${logo.color} uppercase`}>
@@ -55,6 +55,8 @@ export default function Credibility() {
                 src={owner.img} 
                 alt={owner.name} 
                 className="w-12 h-12 rounded-full object-cover border-2 border-white/10"
+                loading="lazy"
+                decoding="async"
               />
               <div className="text-center">
                 <div className="text-white text-sm font-medium">{owner.name}</div>

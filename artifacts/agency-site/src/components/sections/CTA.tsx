@@ -437,7 +437,7 @@ export default function CTA() {
 
   return (
     <Section id="contact" className="py-32 relative overflow-hidden bg-[#0A0A0A]" data-testid="section-cta">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="page-gutter relative z-10">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <FadeIn className="space-y-6">
             <div className="text-[#765EFF] text-sm font-medium uppercase tracking-[0.35em]">Ready to grow?</div>

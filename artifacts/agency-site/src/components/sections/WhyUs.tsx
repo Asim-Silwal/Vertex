@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function WhyUs() {
   return (
     <Section id="why-us" className="py-24 bg-[#0A0A0A]" data-testid="section-why-us">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="page-gutter">
         
         <div className="mb-16">
           <div className="inline-block mb-4">

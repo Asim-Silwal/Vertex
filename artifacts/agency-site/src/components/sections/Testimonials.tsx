@@ -28,15 +28,15 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <Section id="testimonials" className="py-24 bg-[#0A0A0A]" data-testid="section-testimonials">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+      <div className="page-gutter">
+        <div className="mx-auto max-w-3xl text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">What Our Clients Say.</h2>
           <p className="text-[#666] text-lg">
             Hear from the owners and operators who trusted us to rebuild their digital foundation.
           </p>
         </div>
 
-        <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        <FadeInStagger className="mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <FadeIn key={i} className="h-full">
               <div className="p-8 rounded-2xl bg-[#0D0D0D] border border-white/6 h-full flex flex-col">
@@ -55,6 +55,8 @@ export default function Testimonials() {
                     src={t.image} 
                     alt={t.author}
                     className="w-10 h-10 rounded-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div>
                     <div className="font-medium text-white text-sm">{t.author}</div>

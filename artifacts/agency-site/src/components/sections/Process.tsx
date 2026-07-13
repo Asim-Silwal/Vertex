@@ -38,7 +38,7 @@ const steps = [
 export default function Process() {
   return (
     <Section id="process" className="py-24 bg-[#070707]" data-testid="section-process">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="page-gutter">
         
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Our Process.</h2>
@@ -59,6 +59,8 @@ export default function Process() {
                       src={processVisualImg} 
                       alt="Process comparison visual" 
                       className="w-full aspect-[4/5] object-cover opacity-90 group-hover:opacity-100 transition-transform duration-700 group-hover:scale-105" 
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 border border-white/5 rounded-xl pointer-events-none"></div>
                   </div>

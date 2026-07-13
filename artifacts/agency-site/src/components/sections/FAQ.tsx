@@ -36,15 +36,15 @@ const faqs = [
 export default function FAQ() {
   return (
     <Section id="faq" className="py-24 bg-[#070707]" data-testid="section-faq">
-      <div className="container mx-auto px-4 md:px-6 max-w-2xl">
-        <div className="text-center mb-16">
+      <div className="page-gutter">
+        <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Got Questions.</h2>
           <p className="text-[#666] text-lg">
             Everything you need to know about working with us.
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="mx-auto w-full max-w-2xl">
           {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`} className="border-b border-white/6">
               <AccordionTrigger className="text-white font-medium text-base py-5 hover:text-[#765EFF] hover:no-underline">

@@ -47,7 +47,7 @@ const projects = [
 export default function Portfolio() {
   return (
     <Section id="portfolio" className="py-24 bg-[#070707]" data-testid="section-portfolio">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="page-gutter">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Results That Speak.</h2>
@@ -85,6 +85,8 @@ export default function Portfolio() {
                         alt={`${project.company} website`}
                         className="w-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                         style={{ height: '100%', objectPosition: 'top' }}
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   </div>
@@ -94,6 +96,8 @@ export default function Portfolio() {
                       src={project.image} 
                       alt={`${project.company} website`} 
                       className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 )}

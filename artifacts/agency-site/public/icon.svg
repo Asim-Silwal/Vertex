@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Vertex Digital">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#050608" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8F7CFF" />
+      <stop offset="100%" stop-color="#765EFF" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#bg)" />
+  <circle cx="256" cy="256" r="176" fill="none" stroke="url(#accent)" stroke-width="20" opacity="0.24" />
+  <path d="M154 146h56l46 120 46-120h56l-87 220h-30z" fill="white" />
+  <path d="M334 146h24v220h-24z" fill="url(#accent)" />
+</svg>

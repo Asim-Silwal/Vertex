@@ -2,6 +2,8 @@ import CaseStudyPage, { type CaseStudyPageData } from '@/components/sections/Cas
 import heroImage from '@assets/usa-storm-roofing-hero.jpg';
 import homeImage from '@assets/usa-storm-roofing-home.jpg';
 import stormImage from '@assets/usa-storm-roofing-storm.jpg';
+import afterLiveImage from '@assets/usa-storm-roofing-after-live.png';
+import beforeLiveImage from '@assets/usa-storm-roofing-before-live.png';
 import screenshotImage from '@assets/usa-storm-roofing-screenshot.jpg';
 
 const caseStudy: CaseStudyPageData = {
@@ -47,13 +49,13 @@ const caseStudy: CaseStudyPageData = {
   ],
   beforeAfterComparison: {
     beforeLabel: 'Before',
-    beforeDescription: 'Original website reference used for the portfolio comparison.',
-    beforeImage: screenshotImage,
-    beforeImageAlt: 'Original USA Storm Roofing website screenshot',
+    beforeDescription: 'Original website: https://usastormroofing.com/',
+    beforeImage: beforeLiveImage,
+    beforeImageAlt: 'Original USA Storm Roofing website homepage screenshot',
     afterLabel: 'After',
-    afterDescription: 'Redesigned homepage concept with stronger hierarchy and clearer action.',
-    afterImage: heroImage,
-    afterImageAlt: 'USA Storm Roofing redesign hero concept',
+    afterDescription: 'Redesign: https://usa-storm-roofin.vercel.app/',
+    afterImage: afterLiveImage,
+    afterImageAlt: 'USA Storm Roofing redesigned website homepage screenshot',
     rows: [
       {
         label: 'Visual hierarchy',
