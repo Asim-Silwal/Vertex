@@ -1,15 +1,24 @@
 import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'wouter';
 import { AnimatedButton } from '@/components/ui/animated-button';
 import whiteLogo from '@assets/White Logo.png';
 
 export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [pathname, navigate] = useLocation();
   const mobileMenuRef = useRef<HTMLElement | null>(null);
   const mobileMenuButtonRef = useRef<HTMLButtonElement | null>(null);
 
+  const resolveSectionHref = (hash: string) => (pathname === '/' ? hash : `/${hash}`);
+
   const handleLogoClick = () => {
+    if (pathname !== '/') {
+      navigate('/');
+      return;
+    }
+
     window.location.hash = '';
     window.scrollTo({
       top: 0,
@@ -69,7 +78,7 @@ export default function Nav() {
           {navLinks.map((link) => (
             <motion.a 
               key={link.name} 
-              href={link.href}
+              href={resolveSectionHref(link.href)}
               className="text-sm font-medium text-white/70 hover:text-white transition-colors"
               whileHover={{ color: '#ffffff' }}
               transition={{ duration: 0.15 }}
@@ -82,7 +91,7 @@ export default function Nav() {
 
         <div className="hidden md:block">
           <AnimatedButton 
-            href="#contact"
+            href={resolveSectionHref('#contact')}
             variant="primary"
             className="bg-[#765EFF] text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#8F7CFF] transition-colors"
             data-testid="button-nav-audit"
@@ -110,7 +119,7 @@ export default function Nav() {
           {navLinks.map((link) => (
             <a 
               key={link.name} 
-              href={link.href}
+              href={resolveSectionHref(link.href)}
               className="text-sm font-medium text-white/70 hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -118,7 +127,7 @@ export default function Nav() {
             </a>
           ))}
           <AnimatedButton 
-            href="#contact"
+            href={resolveSectionHref('#contact')}
             variant="primary"
             className="bg-[#765EFF] text-center text-white px-5 py-2.5 rounded-lg text-sm font-medium w-full mt-2"
             onClick={() => setMobileMenuOpen(false)}
