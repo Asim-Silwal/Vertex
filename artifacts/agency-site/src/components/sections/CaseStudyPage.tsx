@@ -1,10 +1,13 @@
 ﻿import type { LucideIcon } from 'lucide-react';
-import { ArrowLeft, ArrowRight, BadgeCheck, CheckCircle2, ExternalLink, Gauge, LayoutGrid, ShieldCheck, Smartphone, Workflow } from 'lucide-react';
-import { Link } from 'wouter';
+import { ArrowRight, BadgeCheck, CheckCircle2, ExternalLink, Gauge, LayoutGrid, ShieldCheck, Smartphone, Workflow } from 'lucide-react';
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import PageMeta from '@/components/seo/page-meta';
-import originalHeroImage from '@assets/usa-storm-original-hero.webp';
+import Nav from '@/components/sections/Nav';
+import CTA from '@/components/sections/CTA';
+import Footer from '@/components/sections/Footer';
+import originalWebsiteHeroImage from '@assets/usa-storm-roofing-before-live.png';
 import redesignHeroImage from '@assets/usa-storm-redesign-hero.jpg';
+import redesignHeroFullImage from '@assets/usa-storm-redesign-hero-full.png';
 import redesignHomeImage from '@assets/usa-storm-redesign-home.jpg';
 import redesignStormImage from '@assets/usa-storm-redesign-storm.jpg';
 
@@ -48,7 +51,7 @@ const caseStudy: CaseStudyPageData = {
   projectType: 'Independent Website Redesign',
   industry: 'Roofing / Storm Restoration',
   overview:
-    'A premium, trust-first concept that makes the offer easier to understand at a glance.',
+    'Trust-first redesign with clearer messaging, faster scanning, and stronger lead focus.',
   liveRedesignHref: 'https://usa-storm-roofin.vercel.app/',
   liveRedesignLabel: 'View redesign',
   originalWebsiteHref: 'https://usastormroofing.com/',
@@ -69,10 +72,10 @@ const caseStudy: CaseStudyPageData = {
   beforeAfterComparison: {
     beforeDescription: 'Original website: https://usastormroofing.com/',
     afterDescription: 'Redesign: https://usa-storm-roofin.vercel.app/',
-    beforeImage: originalHeroImage,
-    beforeImageAlt: 'Original USA Storm Roofing website hero image',
-    afterImage: redesignHeroImage,
-    afterImageAlt: 'USA Storm Roofing redesigned website hero image',
+    beforeImage: originalWebsiteHeroImage,
+    beforeImageAlt: 'Original USA Storm Roofing homepage hero screenshot',
+    afterImage: redesignHeroFullImage,
+    afterImageAlt: 'USA Storm Roofing redesigned landing page screenshot',
     rows: [
       { label: 'Navigation', original: 'The original structure is broader and less guided.', redesign: 'The redesign keeps the path simpler to scan.' },
       { label: 'Visual hierarchy', original: 'Important content competes for attention.', redesign: 'The key message is visually prioritized.' },
@@ -161,23 +164,11 @@ export default function USAStormRoofingCaseStudy() {
   const { title, subtitle, description, projectType, industry, overview, liveRedesignHref, liveRedesignLabel, originalWebsiteHref, originalWebsiteLabel, summary, challengeCards, beforeAfterComparison, keyFeatures, designDecisions, gallery, technologies, finalOutcome } = caseStudy;
 
   return (
-    <div className="min-h-screen bg-[#050608] text-white">
+    <div className="bg-background text-foreground min-h-[100dvh] flex flex-col font-sans">
       <PageMeta title={`${title} Case Study | Vertex Digital`} description={description} canonicalPath={caseStudy.canonicalPath} />
+      <Nav />
 
-      <header className="border-b border-white/10 bg-black/20 backdrop-blur-xl">
-        <div className="page-gutter flex items-center justify-between py-4">
-          <Link to="/" className="inline-flex items-center gap-3 text-sm font-medium text-white/80 transition hover:text-white">
-            <span className="h-8 w-8 rounded-full border border-white/10 bg-white/[0.04]" />
-            <span>Vertex Digital</span>
-          </Link>
-          <Link to="/" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white">
-            <ArrowLeft size={16} />
-            Back home
-          </Link>
-        </div>
-      </header>
-
-      <main className="pb-20">
+      <main className="flex-1 pb-20 pt-28">
         <section className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute left-1/2 top-[-8%] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(118,94,255,0.18),_transparent_68%)] blur-[120px]" />
@@ -216,7 +207,7 @@ export default function USAStormRoofingCaseStudy() {
                     Hero visual
                   </div>
                 </div>
-                <img src={beforeAfterComparison.afterImage} alt={beforeAfterComparison.afterImageAlt} className="h-[440px] w-full object-cover object-top md:h-[520px]" loading="eager" decoding="async" />
+                <img src={redesignHeroFullImage} alt="USA Storm Roofing live redesign hero section" className="h-[440px] w-full object-cover object-top md:h-[520px]" loading="eager" decoding="async" />
               </div>
             </FadeIn>
           </div>
@@ -227,7 +218,6 @@ export default function USAStormRoofingCaseStudy() {
             <div className="rounded-[2.25rem] border border-[#765EFF]/20 bg-[linear-gradient(135deg,rgba(118,94,255,0.16),rgba(255,255,255,0.04))] p-7 md:p-10">
               <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
                 <div className="space-y-3">
-                  <div className="text-[10px] font-medium uppercase tracking-[0.38em] text-[#C9BFFF]">Call to action</div>
                   <h2 className="max-w-2xl text-2xl font-bold tracking-tight text-white md:text-4xl">Imagine what your business could look like with a website designed to generate more trust and more leads.</h2>
                 </div>
                 <div className="flex flex-wrap gap-3 lg:justify-end">
@@ -400,7 +390,6 @@ export default function USAStormRoofingCaseStudy() {
             <div className="rounded-[2.5rem] border border-white/10 bg-[linear-gradient(135deg,rgba(118,94,255,0.22),rgba(13,13,13,0.95))] p-8 md:p-12">
               <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
                 <div className="space-y-4">
-                  <div className="text-[10px] font-medium uppercase tracking-[0.38em] text-[#D8D0FF]">Final CTA</div>
                   <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-white md:text-5xl">Imagine what your business could look like with a website designed to generate more trust and more leads.</h2>
                 </div>
                 <div className="flex flex-wrap gap-3 lg:justify-end">
@@ -417,7 +406,11 @@ export default function USAStormRoofingCaseStudy() {
             </div>
           </div>
         </Section>
+
+        <CTA />
       </main>
+
+      <Footer />
     </div>
   );
 }
