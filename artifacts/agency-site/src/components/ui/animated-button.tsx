@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MouseEvent, ReactNode, useRef } from 'react';
+import { MouseEvent, ReactNode } from 'react';
 
 interface AnimatedButtonProps {
   children: ReactNode;
@@ -13,8 +13,6 @@ interface AnimatedButtonProps {
 }
 
 export function AnimatedButton({ children, className = '', href, variant = 'primary', onClick, type = 'button', ariaLabel, 'data-testid': testId }: AnimatedButtonProps) {
-  const ref = useRef<HTMLAnchorElement & HTMLButtonElement>(null);
-
   const handleClick = (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     if (onClick) {
       onClick();
@@ -63,7 +61,6 @@ export function AnimatedButton({ children, className = '', href, variant = 'prim
 
   return (
     <Tag
-      ref={ref as any}
       href={href}
       type={href ? undefined : type}
       onClick={handleClick}
