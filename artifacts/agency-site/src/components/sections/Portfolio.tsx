@@ -2,20 +2,22 @@ import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import { ArrowRight } from 'lucide-react';
 import { CountUp } from '@/components/ui/count-up';
 import { motion } from 'framer-motion';
-import apexImg from "@assets/apex-roofing.jpg";
+import usaStormImg from "@assets/usa-storm-roofing-screenshot.jpg";
 import climateImg from "@assets/climate-hvac.jpg";
 import precisionImg from "@assets/precision-plumbing.jpg";
 
 const projects = [
   {
-    company: "Apex Roofing Co.",
+    company: "USA Storm Roofing",
     industry: "Roofing",
     metricValue: 340,
     metricPrefix: "+",
     metricSuffix: "%",
     metricLabel: "inbound lead volume",
-    description: "Rebuilt from the ground up to dominate local search. Implemented an interactive roof estimate funnel that tripled conversion rates.",
-    image: apexImg
+    description: "Built from the ground up to dominate local storm-damage search in VA, MD & DC. Claim-ready documentation flow that tripled conversion rates.",
+    image: usaStormImg,
+    url: "https://usa-storm-roofin.vercel.app/",
+    isBrowserMockup: true
   },
   {
     company: "Climate Masters",
@@ -26,7 +28,8 @@ const projects = [
     metricLabel: "pipeline generated",
     decimals: 1,
     description: "A digital showroom designed to sell premium HVAC installations. Reduced bounce rate by 65% and increased average ticket size.",
-    image: climateImg
+    image: climateImg,
+    url: ""
   },
   {
     company: "Precision Flow",
@@ -36,7 +39,8 @@ const projects = [
     metricSuffix: "%",
     metricLabel: "lower cost-per-lead",
     description: "Emergency plumbing landing pages hyper-optimized for mobile. One-tap dispatch integration resulting in record response times.",
-    image: precisionImg
+    image: precisionImg,
+    url: ""
   }
 ];
 
@@ -63,13 +67,36 @@ export default function Portfolio() {
                 whileHover={{ y: -6, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
                 className="group rounded-2xl overflow-hidden bg-[#0F0F0F] border border-white/6 hover:border-white/12 transition-all duration-300"
               >
-                <div className="h-52 w-full overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={`${project.company} website`} 
-                    className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+                {(project as any).isBrowserMockup ? (
+                  <div className="w-full bg-[#1a1a1a] border-b border-white/8">
+                    {/* Browser chrome bar */}
+                    <div className="flex items-center gap-2 px-3 py-2 bg-[#222] border-b border-white/6">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+                      <div className="ml-2 flex-1 bg-[#2a2a2a] rounded text-[10px] text-white/30 px-2 py-0.5 truncate">
+                        usa-storm-roofin.vercel.app
+                      </div>
+                    </div>
+                    {/* Screenshot */}
+                    <div className="h-44 overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={`${project.company} website`}
+                        className="w-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        style={{ height: '100%', objectPosition: 'top' }}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="h-52 w-full overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={`${project.company} website`} 
+                      className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
                 
                 <div className="p-6">
                   <div className="text-xs font-medium text-[#765EFF] mb-3">
@@ -91,9 +118,20 @@ export default function Portfolio() {
                   <p className="text-[#666] text-sm leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="text-[#765EFF] text-sm mt-4 inline-flex items-center group-hover:gap-2 transition-all">
-                    View Project <ArrowRight size={14} className="ml-1" />
-                  </div>
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#765EFF] text-sm mt-4 inline-flex items-center gap-1 group-hover:gap-2 transition-all hover:text-[#8B7AFF]"
+                    >
+                      View Project <ArrowRight size={14} className="ml-1" />
+                    </a>
+                  ) : (
+                    <div className="text-[#765EFF] text-sm mt-4 inline-flex items-center group-hover:gap-2 transition-all">
+                      View Project <ArrowRight size={14} className="ml-1" />
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </FadeIn>

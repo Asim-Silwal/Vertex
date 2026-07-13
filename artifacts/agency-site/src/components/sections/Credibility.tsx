@@ -1,10 +1,11 @@
 import test1Img from "@assets/testimonial-1.jpg";
 import test2Img from "@assets/testimonial-2.jpg";
 import test3Img from "@assets/testimonial-3.jpg";
+import usaStormLogo from "@assets/usa-storm-roofing-logo.webp";
 
 export default function Credibility() {
   const logos = [
-    { name: "Apex Roofing", weight: "font-bold", size: "text-2xl", color: "text-white/60", prefix: "" },
+    { name: "USA Storm Roofing", weight: "font-bold", size: "text-2xl", color: "text-white/60", prefix: "", logoImg: usaStormLogo },
     { name: "Elite HVAC", weight: "font-black", size: "text-xl", color: "text-white/40", prefix: "// " },
     { name: "Precision Flow", weight: "font-medium", size: "text-2xl", color: "text-[#765EFF]/50", prefix: "● " },
     { name: "Summit Landscapes", weight: "font-semibold", size: "text-xl", color: "text-white/50", prefix: "" },
@@ -12,10 +13,10 @@ export default function Credibility() {
     { name: "Beacon Electric", weight: "font-bold", size: "text-xl", color: "text-[#765EFF]/60", prefix: "⚡ " },
     { name: "Titan Contracting", weight: "font-black", size: "text-2xl", color: "text-white/50", prefix: "" },
     { name: "Oasis Pools", weight: "font-medium", size: "text-xl", color: "text-white/40", prefix: "~ " }
-  ];
+  ] as { name: string; weight: string; size: string; color: string; prefix: string; logoImg?: string }[];
 
   const owners = [
-    { name: "James Mitchell", company: "Apex Roofing", img: test1Img },
+    { name: "James Mitchell", company: "USA Storm Roofing", img: test1Img },
     { name: "Sarah Jenkins", company: "Climate Masters", img: test2Img },
     { name: "David Chen", company: "Precision Flow", img: test3Img }
   ];
@@ -30,9 +31,15 @@ export default function Credibility() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto mb-14 text-center items-center">
           {logos.map((logo, i) => (
             <div key={i} className="flex items-center justify-center">
-              <span className={`font-display tracking-tight ${logo.weight} ${logo.size} ${logo.color} uppercase`}>
-                {logo.prefix}{logo.name}
-              </span>
+              {logo.logoImg ? (
+                <div className="bg-gradient-to-br from-white via-white to-slate-100 rounded-xl px-4 py-2 shadow-[0_0_32px_rgba(118,94,255,0.15),0_2px_12px_rgba(0,0,0,0.4)] opacity-80 hover:opacity-100 transition-opacity border border-white/10">
+                  <img src={logo.logoImg} alt={logo.name} className="h-10 w-auto object-contain" />
+                </div>
+              ) : (
+                <span className={`font-display tracking-tight ${logo.weight} ${logo.size} ${logo.color} uppercase`}>
+                  {logo.prefix}{logo.name}
+                </span>
+              )}
             </div>
           ))}
         </div>

@@ -8,7 +8,7 @@ const testimonials = [
   {
     quote: "We were spending $5k/month on Google Ads sending traffic to a template website. Vertex Digital rebuilt the site and our conversion rate went from 2% to 8%. We're booking an extra 15 roof replacements a month from the exact same ad spend.",
     author: "James Mitchell",
-    role: "Apex Roofing Co.",
+    role: "USA Storm Roofing",
     image: test1Img
   },
   {
