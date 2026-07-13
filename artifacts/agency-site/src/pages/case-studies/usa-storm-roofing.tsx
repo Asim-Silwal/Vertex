@@ -1,10 +1,8 @@
 import CaseStudyPage, { type CaseStudyPageData } from '@/components/sections/CaseStudyPage';
-import heroImage from '@assets/usa-storm-roofing-hero.jpg';
-import homeImage from '@assets/usa-storm-roofing-home.jpg';
-import stormImage from '@assets/usa-storm-roofing-storm.jpg';
-import afterLiveImage from '@assets/usa-storm-roofing-after-live.png';
-import beforeLiveImage from '@assets/usa-storm-roofing-before-live.png';
-import screenshotImage from '@assets/usa-storm-roofing-screenshot.jpg';
+import originalHeroImage from '@assets/usa-storm-original-hero.webp';
+import redesignHeroImage from '@assets/usa-storm-redesign-hero.jpg';
+import redesignHomeImage from '@assets/usa-storm-redesign-home.jpg';
+import redesignStormImage from '@assets/usa-storm-redesign-storm.jpg';
 
 const caseStudy: CaseStudyPageData = {
   title: 'USA Storm Roofing',
@@ -50,11 +48,11 @@ const caseStudy: CaseStudyPageData = {
   beforeAfterComparison: {
     beforeLabel: 'Before',
     beforeDescription: 'Original website: https://usastormroofing.com/',
-    beforeImage: beforeLiveImage,
+    beforeImage: originalHeroImage,
     beforeImageAlt: 'Original USA Storm Roofing website homepage screenshot',
     afterLabel: 'After',
     afterDescription: 'Redesign: https://usa-storm-roofin.vercel.app/',
-    afterImage: afterLiveImage,
+    afterImage: redesignHeroImage,
     afterImageAlt: 'USA Storm Roofing redesigned website homepage screenshot',
     rows: [
       {
@@ -128,22 +126,22 @@ const caseStudy: CaseStudyPageData = {
   ],
   gallery: [
     {
-      title: 'Hero concept',
-      description: 'The primary homepage view emphasizes the home, the roofline, and the premium storm-ready tone.',
-      image: heroImage,
-      imageAlt: 'USA Storm Roofing redesign hero concept',
+      title: 'Homepage hero',
+      description: 'Primary redesign view.',
+      image: redesignHeroImage,
+      imageAlt: 'USA Storm Roofing redesigned homepage hero',
     },
     {
-      title: 'Residential trust framing',
-      description: 'A warmer sunset composition supports the premium, high-confidence positioning of the redesign.',
-      image: homeImage,
-      imageAlt: 'USA Storm Roofing redesign home concept',
+      title: 'Residential framing',
+      description: 'Warmer, trust-led composition.',
+      image: redesignHomeImage,
+      imageAlt: 'USA Storm Roofing redesigned residential home concept',
     },
     {
-      title: 'Storm-response framing',
-      description: 'The darker weather treatment reinforces urgency without sacrificing the polished visual language.',
-      image: stormImage,
-      imageAlt: 'USA Storm Roofing redesign storm concept',
+      title: 'Storm response',
+      description: 'Urgency with clearer contrast.',
+      image: redesignStormImage,
+      imageAlt: 'USA Storm Roofing redesigned storm response concept',
     },
   ],
   technologies: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'wouter', 'TypeScript', 'Lucide React'],
