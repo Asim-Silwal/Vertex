@@ -51,7 +51,7 @@ const caseStudy: CaseStudyPageData = {
   projectType: 'Independent Website Redesign',
   industry: 'Roofing / Storm Restoration',
   overview:
-    'Trust-first redesign with clearer messaging, faster scanning, and stronger lead focus.',
+    'Built to demonstrate how a modern roofing company website can improve trust, readability, and lead generation.',
   liveRedesignHref: 'https://usa-storm-roofin.vercel.app/',
   liveRedesignLabel: 'View redesign',
   originalWebsiteHref: 'https://usastormroofing.com/',

@@ -46,9 +46,9 @@ export default function Services() {
                     +340% avg lead increase
                   </div>
                 </div>
-                <h3 className="font-semibold text-white text-xl md:text-2xl mt-3">High-Conversion Web Design</h3>
+                <h3 className="font-semibold text-white text-xl md:text-2xl mt-3">Turn More Visitors Into Qualified Leads</h3>
                 <p className="text-[#666] text-sm md:text-base mt-1">
-                  Turn more visitors into qualified calls by building trust faster and making it easier for homeowners to take the next step.
+                  Guide homeowners from first impression to inquiry with a clearer path that increases qualified calls.
                 </p>
               </div>
             </motion.div>
@@ -67,9 +67,9 @@ export default function Services() {
                 <span className="inline-block text-xs bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-2.5 py-0.5 mb-3">
                   SEO
                 </span>
-                <h3 className="font-semibold text-white text-lg mt-3">Local SEO & Visibility</h3>
+                <h3 className="font-semibold text-white text-lg mt-3">Get Found by High-Intent Local Buyers</h3>
                 <p className="text-[#666] text-sm mt-1">
-                  Improve local visibility so more of the right customers can find your business when they are ready to request a quote.
+                  Improve visibility in the moments customers are ready to choose a provider and request a quote.
                 </p>
               </div>
             </motion.div>
@@ -88,9 +88,9 @@ export default function Services() {
                 <span className="inline-block text-xs bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-2.5 py-0.5 mb-3">
                   CRO
                 </span>
-                <h3 className="font-semibold text-white text-lg mt-3">Conversion Rate Optimization</h3>
+                <h3 className="font-semibold text-white text-lg mt-3">Remove Friction From the Buying Journey</h3>
                 <p className="text-[#666] text-sm mt-1">
-                  Increase the number of leads you get from your existing traffic by removing friction and making inquiries feel simple.
+                  Make inquiries feel faster and easier so more existing traffic turns into real customer conversations.
                 </p>
               </div>
             </motion.div>
@@ -109,9 +109,9 @@ export default function Services() {
                 <span className="inline-block text-xs bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-2.5 py-0.5 mb-3">
                   Reputation
                 </span>
-                <h3 className="font-semibold text-white text-xl md:text-2xl mt-3">Review & Reputation Engine</h3>
+                <h3 className="font-semibold text-white text-xl md:text-2xl mt-3">Build Trust Before the First Call</h3>
                 <p className="text-[#666] text-sm md:text-base mt-1">
-                  Strengthen customer trust with a reputation presence that helps visitors feel confident choosing your company.
+                  Present stronger proof and credibility signals so your business feels safer and more professional to choose.
                 </p>
               </div>
             </motion.div>

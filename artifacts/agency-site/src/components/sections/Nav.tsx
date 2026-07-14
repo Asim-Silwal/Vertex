@@ -29,7 +29,7 @@ export default function Nav() {
   const navLinks = [
     { name: 'Industries', href: '#industries' },
     { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Work', href: '#portfolio' },
     { name: 'Process', href: '#process' },
     { name: 'FAQ', href: '#faq' },
   ];
