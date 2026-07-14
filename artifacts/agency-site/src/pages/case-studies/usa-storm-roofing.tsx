@@ -39,6 +39,53 @@ const caseStudy: CaseStudyPageData = {
     'Kept typography restrained and structured so the page reads more confidently.',
     'Preserved the existing motion language while keeping the interface calm and minimal.',
   ],
+  designDecisions: [
+    {
+      title: 'Hero layout',
+      description:
+        'The hero was structured to communicate value, trust, and next action in one view so urgent visitors can decide quickly without extra scrolling.',
+    },
+    {
+      title: 'CTA placement',
+      description:
+        'Primary and repeated CTAs were placed near high-intent moments to reduce hesitation and keep the inquiry path visible throughout the page.',
+    },
+    {
+      title: 'Typography choices',
+      description:
+        'Type scale and spacing were tightened to create a clearer reading hierarchy, helping homeowners scan key points faster during time-sensitive decisions.',
+    },
+    {
+      title: 'Color choices',
+      description:
+        'The dark premium palette was retained for brand continuity, while accent usage was made more deliberate to highlight actions and separate content zones.',
+    },
+    {
+      title: 'Card layouts',
+      description:
+        'Card groupings were used to break complex information into short, scannable units so trust cues and service details are easier to absorb at a glance.',
+    },
+    {
+      title: 'Mobile navigation',
+      description:
+        'Navigation and tap targets were simplified for small screens to support one-handed use and faster movement between proof, services, and contact actions.',
+    },
+    {
+      title: 'Service presentation',
+      description:
+        'Services were reorganized by homeowner intent so storm response and exterior work feel clearer, reducing confusion about what help is available.',
+    },
+    {
+      title: 'Lead generation improvements',
+      description:
+        'Content order was designed to move from problem to reassurance to action, increasing readiness to submit an inquiry without adding form friction.',
+    },
+    {
+      title: 'Trust-building improvements',
+      description:
+        'Trust signals were surfaced earlier and repeated with restraint so credibility is felt continuously rather than appearing only in later sections.',
+    },
+  ],
   mobileFirstApproach: [
     'Stacked the hero content so the main message stays readable on small screens.',
     'Kept CTA targets large enough for easy tapping without adding visual noise.',
@@ -104,24 +151,44 @@ const caseStudy: CaseStudyPageData = {
   },
   keyFeatures: [
     {
-      title: 'Trust-led homepage framing',
+      title: 'Clearer navigation',
       description:
-        'The redesigned concept surfaces credibility, service scope, and conversion intent in the first screenful.',
+        'Navigation labels and section flow were simplified so visitors can locate services, proof, and contact paths faster.',
     },
     {
-      title: 'Clear homeowner journey',
+      title: 'Stronger visual hierarchy',
       description:
-        'The page sequence follows the way a homeowner actually looks for help: problem, proof, service, and action.',
+        'Headline, supporting proof, and primary actions are visually prioritized with clearer spacing and contrast.',
     },
     {
-      title: 'Service-focused content blocks',
+      title: 'Better readability',
       description:
-        'Supporting sections are organized so roofing, storm response, and exterior services are easy to scan.',
+        'Type scale, line length, and paragraph rhythm were tightened to improve scan speed across key sections.',
     },
     {
-      title: 'Premium but restrained execution',
+      title: 'Improved mobile experience',
       description:
-        'The interface keeps the existing brand direction while tightening spacing, contrast, and hierarchy.',
+        'Content stacks more cleanly on small screens with clearer touch targets and less visual crowding.',
+    },
+    {
+      title: 'Better CTA placement',
+      description:
+        'Primary and supporting CTAs are placed near high-intent content so the next step stays obvious throughout the page.',
+    },
+    {
+      title: 'Cleaner service presentation',
+      description:
+        'Service content is grouped into scannable blocks that reduce ambiguity between storm response and exterior work.',
+    },
+    {
+      title: 'Stronger brand consistency',
+      description:
+        'The redesign keeps the established dark premium aesthetic while applying accent color and card styling more consistently.',
+    },
+    {
+      title: 'Improved trust signals',
+      description:
+        'Credibility cues are introduced earlier and repeated with restraint to reinforce confidence during the browsing journey.',
     },
   ],
   gallery: [
