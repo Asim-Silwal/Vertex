@@ -24,7 +24,7 @@ export default function LegalPage({
   canonicalPath,
   sections,
 }: LegalPageProps) {
-  const businessEmail = 'verted.d10@gmail.com';
+  const businessEmail = 'info@vertex-digital.site';
 
   return (
     <div className="min-h-screen bg-[#050608] text-white">

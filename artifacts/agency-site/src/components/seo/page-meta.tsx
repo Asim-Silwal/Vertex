@@ -47,6 +47,17 @@ function setOrCreateMeta(selector: string, attr: string, value: string) {
   document.head.appendChild(newElement);
 }
 
+const SITE_URL = 'https://vertex-digital.site';
+
+function toAbsoluteCanonical(pathOrUrl: string) {
+  if (/^https?:\/\//i.test(pathOrUrl)) {
+    return pathOrUrl;
+  }
+
+  const normalizedPath = pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`;
+  return `${SITE_URL}${normalizedPath}`;
+}
+
 export default function PageMeta({
   title,
   description,
@@ -71,7 +82,7 @@ export default function PageMeta({
 
     const canonical =
       canonicalPath ?? `${window.location.pathname}${window.location.search}`;
-    const canonicalUrl = `${window.location.origin}${canonical}`;
+    const canonicalUrl = toAbsoluteCanonical(canonical);
 
     setOrCreateMeta('link[rel="canonical"]', 'href', canonicalUrl);
     setOrCreateMeta('meta[property="og:url"]', 'content', canonicalUrl);

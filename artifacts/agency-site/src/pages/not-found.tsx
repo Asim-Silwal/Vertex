@@ -37,7 +37,7 @@ export default function NotFound() {
                 Back to home
               </Link>
               <a
-                href="/#contact"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-transparent px-6 py-3 text-sm font-medium text-white transition hover:border-white/30"
               >
                 Contact Vertex Digital

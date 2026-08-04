@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vertexdigital.com/sitemap.xml
+Sitemap: https://vertex-digital.site/sitemap.xml

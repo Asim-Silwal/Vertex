@@ -1,12 +1,13 @@
 const SPREADSHEET_ID = '14NfuKCLz_PjEDzVk7-9dMdXZVpHgKXbkXLMtTNSuNeQ';
 const SHEET_NAME = 'Sheet1';
-const NOTIFICATION_EMAIL = 'vertex.d10@gmail.com';
+const NOTIFICATION_EMAIL = 'info@vertex-digital.site';
 const SHEET_HEADERS = [
   'Timestamp',
   'Name',
   'Email',
   'Country Code',
   'Phone',
+  'Company',
   'Full Phone',
   'Needs',
   'Source',
@@ -23,6 +24,7 @@ function doPost(e) {
     const email = String(payload.email || '').trim();
     const countryCode = String(payload.countryCode || '').trim();
     const phone = String(payload.phone || '').trim();
+    const company = String(payload.company || '').trim();
     const needs = String(payload.needs || '').trim();
 
     if (!name || !email || !countryCode || !phone || !needs) {
@@ -42,6 +44,7 @@ function doPost(e) {
       email,
       countryCode,
       phone,
+      company,
       `${countryCode} ${phone}`,
       needs,
       'Website contact form',
@@ -59,6 +62,7 @@ function doPost(e) {
           `Name: ${name}`,
           `Email: ${email}`,
           `Phone: ${countryCode} ${phone}`,
+          `Company: ${company || 'Not provided'}`,
           '',
           'Needs:',
           needs,

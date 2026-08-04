@@ -416,7 +416,7 @@ export default function CTA() {
         description: "Your inquiry was delivered successfully. We will review it and follow up soon.",
       });
     } catch (err) {
-      const friendlyMessage = 'We could not send your request right now. Please try again or email us directly at verted.d10@gmail.com.';
+      const friendlyMessage = 'We could not send your request right now. Please try again or email us directly at info@vertex-digital.site.';
       setError(friendlyMessage);
       toast({
         title: "Send failed",

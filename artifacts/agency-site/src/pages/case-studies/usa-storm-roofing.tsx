@@ -4,7 +4,7 @@ import redesignHeroImage from '@assets/usa-storm-redesign-hero.jpg';
 import redesignHomeImage from '@assets/usa-storm-redesign-home.jpg';
 import redesignStormImage from '@assets/usa-storm-redesign-storm.jpg';
 
-const caseStudy: CaseStudyPageData = {
+export const usaStormRoofingCaseStudy: CaseStudyPageData = {
   title: 'USA Storm Roofing',
   subtitle:
     'An independent concept redesign focused on trust, clarity, and a stronger inquiry path for a storm restoration and exterior services brand.',
@@ -228,5 +228,5 @@ const caseStudy: CaseStudyPageData = {
 };
 
 export default function USAStormRoofingCaseStudy() {
-  return <CaseStudyPage caseStudy={caseStudy} />;
+  return <CaseStudyPage caseStudy={usaStormRoofingCaseStudy} />;
 }

@@ -27,11 +27,11 @@ export default function Nav() {
   };
 
   const navLinks = [
-    { name: 'Industries', href: '#industries' },
-    { name: 'Services', href: '#services' },
-    { name: 'Work', href: '#portfolio' },
-    { name: 'Process', href: '#process' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Work', href: '/work' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   useEffect(() => {
@@ -78,7 +78,7 @@ export default function Nav() {
           {navLinks.map((link) => (
             <motion.a 
               key={link.name} 
-              href={resolveSectionHref(link.href)}
+              href={link.href}
               className="text-sm font-medium text-white/70 hover:text-white transition-colors"
               whileHover={{ color: '#ffffff' }}
               transition={{ duration: 0.15 }}
@@ -91,7 +91,7 @@ export default function Nav() {
 
         <div className="hidden md:block">
           <AnimatedButton 
-            href={resolveSectionHref('#contact')}
+            href="/contact"
             variant="primary"
             className="bg-[#765EFF] text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#8F7CFF] transition-colors"
             data-testid="button-nav-audit"
@@ -119,7 +119,7 @@ export default function Nav() {
           {navLinks.map((link) => (
             <a 
               key={link.name} 
-              href={resolveSectionHref(link.href)}
+              href={link.href}
               className="text-sm font-medium text-white/70 hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -127,7 +127,7 @@ export default function Nav() {
             </a>
           ))}
           <AnimatedButton 
-            href={resolveSectionHref('#contact')}
+            href="/contact"
             variant="primary"
             className="bg-[#765EFF] text-center text-white px-5 py-2.5 rounded-lg text-sm font-medium w-full mt-2"
             onClick={() => setMobileMenuOpen(false)}

@@ -3,7 +3,7 @@ import whiteLogo from '@assets/White Logo.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const businessEmail = 'verted.d10@gmail.com';
+  const businessEmail = 'info@vertex-digital.site';
   const linkedinUrl = 'https://www.linkedin.com/company/vertex-digital/';
   
   return (
@@ -25,16 +25,25 @@ export default function Footer() {
           </a>
         </div>
 
-        <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-[#A1ACBE] lg:justify-center">
-          <a href="#services" className="transition duration-300 hover:text-white">Services</a>
-          <a href="#portfolio" className="transition duration-300 hover:text-white">Case Studies</a>
-          <a href="#process" className="transition duration-300 hover:text-white">Our Process</a>
-          <a href="#faq" className="transition duration-300 hover:text-white">FAQ</a>
-          <a href="#contact" className="transition duration-300 hover:text-white">Contact</a>
-        </nav>
+        <div className="flex flex-col gap-4 lg:items-center">
+          <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-[#A1ACBE] lg:justify-center">
+            <a href="/" className="transition duration-300 hover:text-white">Home</a>
+            <a href="/about" className="transition duration-300 hover:text-white">About</a>
+            <a href="/services" className="transition duration-300 hover:text-white">Services</a>
+            <a href="/work" className="transition duration-300 hover:text-white">Work</a>
+            <a href="/contact" className="transition duration-300 hover:text-white">Contact</a>
+          </nav>
+
+          <nav className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-[#8B95A4] lg:justify-center">
+            <a href="/#services" className="transition duration-300 hover:text-white">Home Services Section</a>
+            <a href="/#portfolio" className="transition duration-300 hover:text-white">Home Work Section</a>
+            <a href="/#process" className="transition duration-300 hover:text-white">Home Process Section</a>
+            <a href="/#faq" className="transition duration-300 hover:text-white">Home FAQ Section</a>
+          </nav>
+        </div>
 
         <div className="flex items-center gap-3 text-[#A1ACBE]">
-          <a href="#contact" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#A1ACBE] transition duration-300 hover:bg-white/15 hover:text-white" aria-label="Contact Vertex Digital">
+          <a href="/contact" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#A1ACBE] transition duration-300 hover:bg-white/15 hover:text-white" aria-label="Contact Vertex Digital">
             <ArrowRight size={20} />
           </a>
           <a href={linkedinUrl} target="_blank" rel="noreferrer" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#A1ACBE] transition duration-300 hover:bg-white/15 hover:text-white" aria-label="Vertex Digital on LinkedIn">
@@ -51,7 +60,7 @@ export default function Footer() {
         <div className="flex flex-wrap items-center gap-5">
           <a href="/privacy" className="transition duration-300 hover:text-white">Privacy Policy</a>
           <a href="/terms" className="transition duration-300 hover:text-white">Terms of Service</a>
-          <a href="#contact" className="transition duration-300 hover:text-white">Contact Vertex Digital</a>
+          <a href="/contact" className="transition duration-300 hover:text-white">Contact Vertex Digital</a>
         </div>
       </div>
     </footer>
