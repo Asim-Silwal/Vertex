@@ -35,10 +35,10 @@ export default function Footer() {
           </nav>
 
           <nav className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-[#8B95A4] lg:justify-center">
-            <a href="/#services" className="transition duration-300 hover:text-white">Home Services Section</a>
-            <a href="/#portfolio" className="transition duration-300 hover:text-white">Home Work Section</a>
-            <a href="/#process" className="transition duration-300 hover:text-white">Home Process Section</a>
-            <a href="/#faq" className="transition duration-300 hover:text-white">Home FAQ Section</a>
+            <a href="/#services" className="transition duration-300 hover:text-white"> Services Section</a>
+            <a href="/#portfolio" className="transition duration-300 hover:text-white">Work Section</a>
+            <a href="/#process" className="transition duration-300 hover:text-white">Process Section</a>
+            <a href="/#faq" className="transition duration-300 hover:text-white">FAQ Section</a>
           </nav>
         </div>
 
