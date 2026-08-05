@@ -1,7 +1,31 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/about",
+      "destination": "/"
+    },
+    {
+      "source": "/services",
+      "destination": "/"
+    },
+    {
+      "source": "/work",
+      "destination": "/"
+    },
+    {
+      "source": "/contact",
+      "destination": "/"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/"
+    },
+    {
+      "source": "/terms",
+      "destination": "/"
+    },
+    {
+      "source": "/case-studies/(.*)",
       "destination": "/"
     }
   ],
