@@ -9,27 +9,27 @@ import {
 const faqs = [
   {
     question: "How much does a custom website cost?",
-    answer: "Our projects typically range from $5,000 to $15,000+, depending on the complexity of the build, the size of your service area, and whether you need custom CRM integrations or advanced local SEO mapping. We provide a firm quote after our initial discovery call."
+    answer: "Project scope varies based on strategy, design complexity, product requirements, and ongoing support. We’ll outline a clear recommendation after discovery so the plan fits your goals and budget."
   },
   {
     question: "How long does it take to launch?",
-    answer: "A standard custom build takes 4 to 6 weeks from kickoff to launch. We don't sacrifice quality for speed, but we also stick strictly to our timeline. Delays usually only happen if we are waiting on content or approvals from your team."
+    answer: "Most projects take between three and eight weeks depending on scope, stakeholder feedback, and content readiness. We focus on a clear process and a realistic timeline from the beginning."
   },
   {
-    question: "Do you use templates like WordPress or Wix?",
-    answer: "No. We build modern, edge-deployed web applications. We use frameworks like React to ensure the site loads instantly, is incredibly secure, and out-performs standard WordPress templates in both speed and search rankings."
+    question: "Do you build custom solutions or use templates?",
+    answer: "We lean into custom builds that are designed for performance, flexibility, and a polished user experience. That gives the product room to grow without feeling limited by generic templates."
   },
   {
-    question: "Will this actually get me more leads?",
-    answer: "Yes. By optimizing the user experience, improving load times, establishing trust through design, and making it frictionless for homeowners to contact you, your conversion rate will increase. If you are already running ads or have organic traffic, you will see a higher return on that existing traffic."
+    question: "Will this actually help my business?",
+    answer: "The goal is to create a digital presence that feels credible, communicates clearly, and supports the actions you want users to take. Better clarity and UX usually improve trust, engagement, and conversion."
   },
   {
-    question: "Do you write the content?",
-    answer: "Yes. We have copywriters who specialize in home services. We write all the service pages, location pages, and value propositions based on the information gathered during discovery to ensure it resonates with homeowners."
+    question: "Do you help with content and messaging?",
+    answer: "Yes. We can support structure, messaging, and content direction so the site communicates your value clearly and consistently across the customer journey."
   },
   {
-    question: "What happens after the site launches?",
-    answer: "We offer ongoing support and optimization packages. We handle the hosting, security, and technical maintenance, while also continuously tracking user behavior to make data-driven conversion improvements."
+    question: "What happens after launch?",
+    answer: "We can support refinements, future updates, and ongoing improvements as your brand or product evolves. A website should stay useful long after the initial launch."
   }
 ];
 

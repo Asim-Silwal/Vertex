@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex flex-col gap-5 lg:max-w-sm">
           <img src={whiteLogo} alt="Vertex Digital logo" className="h-36 w-auto object-contain" />
           <p className="max-w-sm text-sm leading-7 text-[#D1D5DB]">
-            Premium digital experiences for U.S. home service businesses that want stronger trust, better leads, and a more professional presence.
+            Vertex Digital is a digital design and development studio creating brands, websites, and digital experiences built for growth.
           </p>
           <a href={`mailto:${businessEmail}`} className="text-sm font-medium text-[#A1ACBE] transition duration-300 hover:text-white">
             {businessEmail}
@@ -28,17 +28,10 @@ export default function Footer() {
         <div className="flex flex-col gap-4 lg:items-center">
           <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-[#A1ACBE] lg:justify-center">
             <a href="/" className="transition duration-300 hover:text-white">Home</a>
-            <a href="/about" className="transition duration-300 hover:text-white">About</a>
             <a href="/services" className="transition duration-300 hover:text-white">Services</a>
             <a href="/work" className="transition duration-300 hover:text-white">Work</a>
+            <a href="/about" className="transition duration-300 hover:text-white">About</a>
             <a href="/contact" className="transition duration-300 hover:text-white">Contact</a>
-          </nav>
-
-          <nav className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-[#8B95A4] lg:justify-center">
-            <a href="/#services" className="transition duration-300 hover:text-white"> Services Section</a>
-            <a href="/#portfolio" className="transition duration-300 hover:text-white">Work Section</a>
-            <a href="/#process" className="transition duration-300 hover:text-white">Process Section</a>
-            <a href="/#faq" className="transition duration-300 hover:text-white">FAQ Section</a>
           </nav>
         </div>
 

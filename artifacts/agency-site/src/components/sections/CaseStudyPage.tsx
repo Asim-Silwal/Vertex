@@ -36,11 +36,11 @@ export type CaseStudyPageData = {
   overview: string;
   liveRedesignHref: string;
   liveRedesignLabel: string;
-  originalWebsiteHref: string;
-  originalWebsiteLabel: string;
+  originalWebsiteHref?: string;
+  originalWebsiteLabel?: string;
   summary: { label: string; value: string }[];
   challengeCards?: { title: string; description: string }[];
-  beforeAfterComparison: {
+  beforeAfterComparison?: {
     beforeLabel?: string;
     afterLabel?: string;
     beforeDescription: string;
@@ -148,6 +148,9 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
     canonicalPath,
   } = caseStudy;
 
+  const heroImage = beforeAfterComparison?.afterImage ?? gallery[0]?.image ?? '';
+  const heroImageAlt = beforeAfterComparison?.afterImageAlt ?? gallery[0]?.imageAlt ?? title;
+
   const challengeCardsToRender =
     challengeCards && challengeCards.length
       ? challengeCards
@@ -208,15 +211,17 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                   {liveRedesignLabel}
                   <ArrowRight size={16} />
                 </a>
-                <a
-                  href={originalWebsiteHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-transparent px-5 py-3 text-sm font-medium text-white transition duration-300 hover:border-white/30"
-                >
-                  {originalWebsiteLabel}
-                  <ExternalLink size={16} />
-                </a>
+                {originalWebsiteHref && originalWebsiteLabel ? (
+                  <a
+                    href={originalWebsiteHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-transparent px-5 py-3 text-sm font-medium text-white transition duration-300 hover:border-white/30"
+                  >
+                    {originalWebsiteLabel}
+                    <ExternalLink size={16} />
+                  </a>
+                ) : null}
               </div>
             </FadeIn>
 
@@ -229,8 +234,8 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                   </div>
                 </div>
                 <img
-                  src={beforeAfterComparison.afterImage}
-                  alt={beforeAfterComparison.afterImageAlt}
+                  src={heroImage}
+                  alt={heroImageAlt}
                   className="h-[440px] w-full object-cover object-top md:h-[520px]"
                   loading="eager"
                   decoding="async"
@@ -266,72 +271,76 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
           </div>
         </Section>
 
-        <Section className="py-10">
-          <div className="page-gutter">
-            <SectionHeading eyebrow="Before vs After" title="The centerpiece of the case study" description="Large screenshots show the change first; the comparisons stay concise." />
-            <div className="grid gap-4 lg:grid-cols-2">
-              <article className="overflow-hidden rounded-[2rem] border border-white/8 bg-[#0D0D0D]">
-                <div className="border-b border-white/8 px-5 py-4">
-                  <div className="text-xs font-medium uppercase tracking-[0.32em] text-[#8F7CFF]">
-                    {beforeAfterComparison.beforeLabel ?? 'Original website'}
+        {beforeAfterComparison ? (
+          <Section className="py-10">
+            <div className="page-gutter">
+              <SectionHeading eyebrow="Before vs After" title="The centerpiece of the case study" description="Large screenshots show the change first; the comparisons stay concise." />
+              <div className="grid gap-4 lg:grid-cols-2">
+                <article className="overflow-hidden rounded-[2rem] border border-white/8 bg-[#0D0D0D]">
+                  <div className="border-b border-white/8 px-5 py-4">
+                    <div className="text-xs font-medium uppercase tracking-[0.32em] text-[#8F7CFF]">
+                      {beforeAfterComparison.beforeLabel ?? 'Original website'}
+                    </div>
+                    <p className="mt-2 text-sm leading-7 text-[#A3ACB9]">{beforeAfterComparison.beforeDescription}</p>
                   </div>
-                  <p className="mt-2 text-sm leading-7 text-[#A3ACB9]">{beforeAfterComparison.beforeDescription}</p>
-                </div>
-                <div className="aspect-[4/3] overflow-hidden bg-black/20">
-                  <img
-                    src={beforeAfterComparison.beforeImage}
-                    alt={beforeAfterComparison.beforeImageAlt}
-                    className="h-full w-full object-cover object-top"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="border-t border-white/8 px-5 py-4">
-                  <a href={originalWebsiteHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-[#CBBFFF] transition hover:text-white">
-                    Open original website
-                    <ExternalLink size={14} />
-                  </a>
-                </div>
-              </article>
+                  <div className="aspect-[4/3] overflow-hidden bg-black/20">
+                    <img
+                      src={beforeAfterComparison.beforeImage}
+                      alt={beforeAfterComparison.beforeImageAlt}
+                      className="h-full w-full object-cover object-top"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="border-t border-white/8 px-5 py-4">
+                    {originalWebsiteHref ? (
+                      <a href={originalWebsiteHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-[#CBBFFF] transition hover:text-white">
+                        Open original website
+                        <ExternalLink size={14} />
+                      </a>
+                    ) : null}
+                  </div>
+                </article>
 
-              <article className="overflow-hidden rounded-[2rem] border border-[#765EFF]/20 bg-[#765EFF]/10">
-                <div className="border-b border-white/10 px-5 py-4">
-                  <div className="text-xs font-medium uppercase tracking-[0.32em] text-[#D8D0FF]">
-                    {beforeAfterComparison.afterLabel ?? 'Redesigned version'}
+                <article className="overflow-hidden rounded-[2rem] border border-[#765EFF]/20 bg-[#765EFF]/10">
+                  <div className="border-b border-white/10 px-5 py-4">
+                    <div className="text-xs font-medium uppercase tracking-[0.32em] text-[#D8D0FF]">
+                      {beforeAfterComparison.afterLabel ?? 'Redesigned version'}
+                    </div>
+                    <p className="mt-2 text-sm leading-7 text-[#ECE8FF]">{beforeAfterComparison.afterDescription}</p>
                   </div>
-                  <p className="mt-2 text-sm leading-7 text-[#ECE8FF]">{beforeAfterComparison.afterDescription}</p>
-                </div>
-                <div className="aspect-[4/3] overflow-hidden bg-black/20">
-                  <img
-                    src={beforeAfterComparison.afterImage}
-                    alt={beforeAfterComparison.afterImageAlt}
-                    className="h-full w-full object-cover object-top"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="border-t border-white/10 px-5 py-4">
-                  <a href={liveRedesignHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-white transition hover:text-[#ECE8FF]">
-                    Open redesigned website
-                    <ArrowRight size={14} />
-                  </a>
-                </div>
-              </article>
-            </div>
+                  <div className="aspect-[4/3] overflow-hidden bg-black/20">
+                    <img
+                      src={beforeAfterComparison.afterImage}
+                      alt={beforeAfterComparison.afterImageAlt}
+                      className="h-full w-full object-cover object-top"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="border-t border-white/10 px-5 py-4">
+                    <a href={liveRedesignHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-white transition hover:text-[#ECE8FF]">
+                      Open redesigned website
+                      <ArrowRight size={14} />
+                    </a>
+                  </div>
+                </article>
+              </div>
 
-            <div className="mt-4 overflow-hidden rounded-[2rem] border border-white/8 bg-[#0D0D0D]">
-              <div className="grid divide-y divide-white/8 md:grid-cols-2 xl:grid-cols-3 md:divide-y-0 md:divide-x">
-                {beforeAfterComparison.rows.map((item) => (
-                  <div key={item.label} className="grid gap-px border-b border-white/8 last:border-b-0 md:border-b-0 md:p-5">
-                    <div className="text-sm font-semibold text-white">{item.label}</div>
-                    <div className="mt-2 text-sm leading-7 text-[#A3ACB9]">{item.original}</div>
-                    <div className="mt-3 text-sm leading-7 text-[#E8E4FF]">{item.redesign}</div>
-                  </div>
-                ))}
+              <div className="mt-4 overflow-hidden rounded-[2rem] border border-white/8 bg-[#0D0D0D]">
+                <div className="grid divide-y divide-white/8 md:grid-cols-2 xl:grid-cols-3 md:divide-y-0 md:divide-x">
+                  {beforeAfterComparison.rows.map((item) => (
+                    <div key={item.label} className="grid gap-px border-b border-white/8 last:border-b-0 md:border-b-0 md:p-5">
+                      <div className="text-sm font-semibold text-white">{item.label}</div>
+                      <div className="mt-2 text-sm leading-7 text-[#A3ACB9]">{item.original}</div>
+                      <div className="mt-3 text-sm leading-7 text-[#E8E4FF]">{item.redesign}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </Section>
+          </Section>
+        ) : null}
 
         <Section className="py-10">
           <div className="page-gutter">

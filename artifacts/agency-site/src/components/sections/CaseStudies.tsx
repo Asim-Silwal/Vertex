@@ -2,6 +2,7 @@ import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import { ArrowRight } from 'lucide-react';
 import CaseStudyCard, { type CaseStudy } from './CaseStudyCard';
 import usaStormImg from '@assets/usa-storm-roofing-screenshot.jpg';
+import paintingServiceImg from '/Print_Service_Nepal.png';
 
 const caseStudies: CaseStudy[] = [
   {
@@ -37,29 +38,62 @@ const caseStudies: CaseStudy[] = [
       },
     ],
   },
+  {
+    projectType: 'Brand & Website Refresh',
+    title: 'Painting Service Nepal',
+    description:
+      'A service-focused brand experience for interior, exterior, texture, and waterproofing work, designed around clearer offerings and an easier quote path.',
+    label: 'Portfolio Project',
+    image: paintingServiceImg,
+    imageAlt: 'Painting Service Nepal business website preview',
+    ctaLabel: 'Read Case Study',
+    ctaHref: '/case-studies/painting-service',
+    features: [
+      {
+        title: 'Service clarity',
+        description:
+          'The brand message makes interior, exterior, texture, and waterproofing work easier to understand at a glance.',
+      },
+      {
+        title: 'Frictionless inquiry path',
+        description:
+          'The experience supports quick quoting and confident decision-making for service-based customer journeys.',
+      },
+    ],
+    stats: [
+      {
+        label: 'Project type',
+        value: 'Service business website',
+      },
+      {
+        label: 'Focus',
+        value: 'Brand clarity, trust, conversion',
+      },
+    ],
+  },
 ];
 
 export default function CaseStudies() {
   return (
     <Section id="portfolio" className="py-24 bg-[#070707]" data-testid="section-case-studies">
       <div className="page-gutter">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-16">
+        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl space-y-4">
             <div className="inline-block">
-              <span className="text-xs font-medium bg-[#765EFF]/10 text-[#765EFF] border border-[#765EFF]/20 rounded-full px-3 py-1">
+              <span className="rounded-full border border-[#765EFF]/20 bg-[#765EFF]/10 px-3 py-1 text-xs font-medium text-[#765EFF]">
                 Case Studies
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white">Concepts built to feel like the real thing.</h2>
-            <p className="text-[#666] text-lg">
-              These case studies show how a home service site can be reorganized around clarity, trust, and a better path to inquiry.
+            <h2 className="text-3xl font-bold text-white md:text-5xl">Selected work built around real business goals.</h2>
+            <p className="text-lg text-[#A6B0C0]">
+              We create digital experiences that help brands communicate clearly, build trust, and move customers toward action.
             </p>
           </div>
           <a
-            href="#contact"
-            className="inline-flex items-center gap-2 text-[#765EFF] font-medium hover:text-[#8B7AFF] transition-colors"
+            href="/work"
+            className="inline-flex items-center gap-2 font-medium text-[#765EFF] transition-colors hover:text-[#8B7AFF]"
           >
-            Start a Project <ArrowRight size={18} />
+            See all work <ArrowRight size={18} />
           </a>
         </div>
 

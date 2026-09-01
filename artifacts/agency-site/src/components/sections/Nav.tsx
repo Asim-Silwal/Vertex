@@ -96,7 +96,7 @@ export default function Nav() {
             className="bg-[#765EFF] text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#8F7CFF] transition-colors"
             data-testid="button-nav-audit"
           >
-            Get a Free Audit
+            Start a Project
           </AnimatedButton>
         </div>
 
@@ -132,7 +132,7 @@ export default function Nav() {
             className="bg-[#765EFF] text-center text-white px-5 py-2.5 rounded-lg text-sm font-medium w-full mt-2"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Get a Free Audit
+            Start a Project
           </AnimatedButton>
         </nav>
       )}

@@ -4,6 +4,46 @@ import Footer from '@/components/sections/Footer';
 import PageMeta from '@/components/seo/page-meta';
 import { FadeIn, Section } from '@/components/ui/section';
 import { usaStormRoofingCaseStudy } from '@/pages/case-studies/usa-storm-roofing';
+import paintingServiceImg from '/Print_Service_Nepal.png';
+
+const paintingServiceCaseStudy: {
+  title: string;
+  type: string;
+  description: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  external?: boolean;
+} = {
+  title: 'Painting Service Nepal',
+  type: 'Case study',
+  description:
+    'A modern, conversion-focused website designed for a professional painting service, built to establish trust, showcase services, and turn visitors into potential customers.',
+  href: '/case-studies/painting-service',
+  image: paintingServiceImg,
+  imageAlt: 'Painting Service Nepal website preview',
+  external: false,
+};
+
+const portfolioProjects: Array<{
+  title: string;
+  type: string;
+  description: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  external?: boolean;
+}> = [
+  {
+    title: 'USA Storm Roofing',
+    type: 'Featured case study',
+    description: usaStormRoofingCaseStudy.description,
+    href: '/case-studies/usa-storm-roofing',
+    image: usaStormRoofingCaseStudy.beforeAfterComparison?.afterImage ?? usaStormRoofingCaseStudy.gallery[0]?.image ?? '',
+    imageAlt: usaStormRoofingCaseStudy.beforeAfterComparison?.afterImageAlt ?? usaStormRoofingCaseStudy.gallery[0]?.imageAlt ?? 'USA Storm Roofing case study preview',
+  },
+  paintingServiceCaseStudy,
+];
 
 export default function Work() {
   return (
@@ -36,43 +76,39 @@ export default function Work() {
         </Section>
 
         <Section className="py-10 md:py-16">
-          <div className="page-gutter">
-            <FadeIn>
-              <article className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0D0D0D] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
-                <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
-                  <div className="p-8 md:p-10">
-                    <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#8F7CFF]">Featured Case Study</p>
-                    <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-white">USA Storm Roofing</h2>
-                    <p className="mt-4 max-w-2xl text-base leading-8 text-[#BBC4D2]">{usaStormRoofingCaseStudy.description}</p>
-                    <a href="/case-studies/usa-storm-roofing" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#8F7CFF]">
-                      View Case Study
-                      <ArrowRight size={16} />
-                    </a>
-                  </div>
+          <div className="page-gutter space-y-6">
+            {portfolioProjects.map((project) => (
+              <FadeIn key={project.title}>
+                <article className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0D0D0D] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
+                  <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+                    <div className="p-8 md:p-10">
+                      <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#8F7CFF]">{project.type}</p>
+                      <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-white">{project.title}</h2>
+                      <p className="mt-4 max-w-2xl text-base leading-8 text-[#BBC4D2]">{project.description}</p>
+                      <a
+                        href={project.href}
+                        target={project.external ? '_blank' : undefined}
+                        rel={project.external ? 'noopener noreferrer' : undefined}
+                        className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#8F7CFF]"
+                      >
+                        {project.external ? 'Visit Live Site' : 'View Case Study'}
+                        <ArrowRight size={16} />
+                      </a>
+                    </div>
 
-                  <div className="relative bg-black/20">
-                    <img
-                      src={usaStormRoofingCaseStudy.beforeAfterComparison.afterImage}
-                      alt={usaStormRoofingCaseStudy.beforeAfterComparison.afterImageAlt}
-                      className="h-full w-full object-cover object-top"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    <div className="relative bg-black/20">
+                      <img
+                        src={project.image}
+                        alt={project.imageAlt}
+                        className="h-full w-full object-cover object-top"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
                   </div>
-                </div>
-              </article>
-            </FadeIn>
-          </div>
-        </Section>
-
-        <Section className="py-14 md:py-20">
-          <div className="page-gutter">
-            <FadeIn className="rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-8 text-center md:p-12">
-              <h3 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">More work coming soon.</h3>
-              <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-[#AEB7C6] md:text-lg">
-                We&apos;re building a portfolio of work focused on meaningful business outcomes, not just pretty screens.
-              </p>
-            </FadeIn>
+                </article>
+              </FadeIn>
+            ))}
           </div>
         </Section>
 

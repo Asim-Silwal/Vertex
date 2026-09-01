@@ -6,21 +6,21 @@ import test3Img from "@assets/testimonial-3.jpg";
 
 const testimonials = [
   {
-    quote: "We were spending $5k/month on Google Ads sending traffic to a template website. Vertex Digital rebuilt the site and our conversion rate went from 2% to 8%. We're booking an extra 15 roof replacements a month from the exact same ad spend.",
-    author: "James Mitchell",
-    role: "USA Storm Roofing",
+    quote: "The process felt thoughtful from day one. We had a clear direction, a polished design language, and a final website that finally matched the quality of the business behind it.",
+    author: "Founder",
+    role: "Services Brand",
     image: test1Img
   },
   {
-    quote: "They don't just know web design, they know the HVAC business. The new site highlights our emergency service and financing options perfectly. The ROI was realized in the first two weeks of launch.",
-    author: "Sarah Jenkins",
-    role: "Climate Masters",
+    quote: "They understood both the product and the audience. The design feels premium without losing clarity, which made the final experience feel more confident and easier to trust.",
+    author: "Product Lead",
+    role: "Digital Business",
     image: test2Img
   },
   {
-    quote: "Finally, an agency that actually delivers. Our old site looked like it was from 2005. Vertex Digital gave us a digital presence that matches the quality of our actual plumbing work. It's night and day.",
-    author: "David Chen",
-    role: "Precision Flow",
+    quote: "Working with Vertex Digital felt like bringing on a strategic design partner. We ended up with a site that communicates our value clearly and creates a much stronger first impression.",
+    author: "Marketing Director",
+    role: "Modern Brand",
     image: test3Img
   }
 ];

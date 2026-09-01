@@ -11,6 +11,7 @@ import Contact from '@/pages/Contact';
 import Privacy from '@/pages/privacy';
 import Terms from '@/pages/terms';
 import USAStormRoofingCaseStudy from '@/pages/case-studies/usa-storm-roofing';
+import PaintingServiceCaseStudy from '@/pages/case-studies/painting-service';
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/case-studies/usa-storm-roofing" component={USAStormRoofingCaseStudy} />
+      <Route path="/case-studies/painting-service" component={PaintingServiceCaseStudy} />
       <Route component={NotFound} />
     </Switch>
   );

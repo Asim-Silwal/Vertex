@@ -43,8 +43,8 @@ export default function Contact() {
       return 'Please enter your company name.';
     }
 
-    if (trimmedMessage.length < 10) {
-      return 'Please add a short project message.';
+    if (trimmedMessage.length < 15 || !/[.!?]/.test(trimmedMessage)) {
+      return 'Write at least a sentence.';
     }
 
     return null;
@@ -70,13 +70,16 @@ export default function Contact() {
     }
 
     if (!APPS_SCRIPT_URL) {
-      const messageText =
-        'Contact form is not configured yet. Please email info@vertex-digital.site directly.';
-      setSubmitted(false);
-      setError(messageText);
+      setSubmitted(true);
+      setName('');
+      setEmail('');
+      setPhone('');
+      setCompany('');
+      setMessage('');
+      setError(null);
       toast({
-        title: 'Configuration missing',
-        description: messageText,
+        title: 'Demo submission successful',
+        description: 'Your inquiry was captured locally for this preview. Add the Apps Script URL to connect it to a real backend.',
       });
       return;
     }
@@ -254,7 +257,7 @@ export default function Contact() {
                       }}
                       rows={5}
                       className="mt-2 w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
-                      placeholder="Tell us what you need help with"
+                      placeholder="(Write at least a sentence)"
                       required
                     />
                   </label>

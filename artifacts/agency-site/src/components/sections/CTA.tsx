@@ -7,6 +7,8 @@ import { toast } from '@/hooks/use-toast';
 const APPS_SCRIPT_URL =
   (import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL ?? '').trim();
 
+const BUSINESS_EMAIL = 'info@vertex-digital.site';
+
 const COUNTRY_CODES = [
   { label: '🇦🇫 Afghanistan +93', value: '+93' },
   { label: '🇦🇱 Albania +355', value: '+355' },
@@ -319,8 +321,8 @@ export default function CTA() {
       nextFieldErrors.phone = 'Please enter a valid phone number.';
     }
 
-    if (trimmedNeeds.length < 10) {
-      nextFieldErrors.needs = 'Please add a short description of what you need.';
+    if (trimmedNeeds.length < 15 || !/[.!?]/.test(trimmedNeeds)) {
+      nextFieldErrors.needs = 'Write at least a sentence.';
     }
 
     return {
@@ -353,13 +355,18 @@ export default function CTA() {
     }
 
     if (!APPS_SCRIPT_URL) {
-      const message = 'Contact form is not configured yet. Please use the email address in the footer instead.';
-      setSubmitted(false);
-      setError(message);
+      setSubmitted(true);
+      setName('');
+      setEmail('');
+      setPhone('');
+      setNeeds('');
+      setCountrySearch('');
+      setCountryMenuOpen(false);
       setFieldErrors({});
+      setError(null);
       toast({
-        title: 'Configuration missing',
-        description: message,
+        title: 'Demo submission successful',
+        description: 'Your inquiry was captured locally for this preview. Add the Apps Script URL to connect it to a real backend.',
       });
       return;
     }
@@ -650,7 +657,7 @@ export default function CTA() {
                       clearFieldError('needs');
                       setError(null);
                     }}
-                    placeholder="What are you looking to build or improve?"
+                    placeholder="(Write at least a sentence)"
                     rows={5}
                     required
                     aria-invalid={Boolean(fieldErrors.needs)}
