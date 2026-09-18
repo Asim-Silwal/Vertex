@@ -12,11 +12,11 @@ export default function WhyUs() {
               Why Vertex Digital
             </span>
           </div>
-          <h2 className="mb-4 font-display text-4xl font-bold text-white md:text-5xl">
-            WE BRIDGE DESIGN AND TECHNOLOGY.
+          <h2 className="mb-4 font-display text-4xl font-semibold tracking-tight text-white md:text-5xl">
+            Design that understands the business.
           </h2>
           <p className="max-w-2xl text-lg text-[#9CA7B7]">
-            Vertex Digital combines creative design, thoughtful UX, and modern development to turn ideas into digital experiences that are built to perform.
+            We bring messaging, interface design, and development together to make service businesses easier to understand and contact.
           </p>
         </div>
 
@@ -28,12 +28,12 @@ export default function WhyUs() {
                   <Layers3 className="size-6 text-[#765EFF]" />
                 </div>
                 <span className="rounded border border-white/5 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.24em] text-[#555]">
-                  Design Thinking
+                  Design
                 </span>
               </div>
-              <div className="font-serif text-3xl font-bold text-white">Thoughtful design from the start.</div>
-              <p className="mt-4 text-sm leading-relaxed text-[#6E7786]">
-                We shape the product around how people think, navigate, and decide so digital experiences feel clear and premium.
+              <h3 className="font-display text-2xl font-semibold leading-tight text-white">Thoughtful design from the start.</h3>
+              <p className="mt-4 text-sm leading-7 text-[#A3ACB9]">
+                We structure pages around the questions customers ask before they call or request a quote.
               </p>
             </div>
           </FadeIn>
@@ -44,12 +44,12 @@ export default function WhyUs() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/10 transition-transform duration-500 group-hover:scale-110">
                   <Wrench className="size-6 text-emerald-400" />
                 </div>
-                <span className="rounded border border-white/5 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.24em] text-[#555]">
+                <span className="rounded border border-white/10 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#A3ACB9]">
                   Development
                 </span>
               </div>
-              <div className="font-serif text-3xl font-bold text-white">Built to perform in the real world.</div>
-              <p className="mt-4 text-sm leading-relaxed text-[#6E7786]">
+              <h3 className="font-display text-2xl font-semibold leading-tight text-white">Built to perform in the real world.</h3>
+              <p className="mt-4 text-sm leading-7 text-[#A3ACB9]">
                 We design with technical constraints in mind so the final product is fast, responsive, accessible, and maintainable.
               </p>
             </div>
@@ -61,12 +61,12 @@ export default function WhyUs() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-yellow-500/20 bg-yellow-500/10 transition-transform duration-500 group-hover:scale-110">
                   <Sparkles className="size-6 text-yellow-400" />
                 </div>
-                <span className="rounded border border-white/5 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.24em] text-[#555]">
+                <span className="rounded border border-white/10 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#A3ACB9]">
                   Business Understanding
                 </span>
               </div>
-              <div className="font-serif text-3xl font-bold text-white">Strategy shaped around business goals.</div>
-              <p className="mt-4 text-sm leading-relaxed text-[#6E7786]">
+              <h3 className="font-display text-2xl font-semibold leading-tight text-white">Strategy shaped around business goals.</h3>
+              <p className="mt-4 text-sm leading-7 text-[#A3ACB9]">
                 Every decision is guided by what the business needs to achieve, not just what looks impressive in a portfolio.
               </p>
             </div>
@@ -78,12 +78,12 @@ export default function WhyUs() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-400/10 transition-transform duration-500 group-hover:scale-110">
                   <BarChart3 className="size-6 text-blue-400" />
                 </div>
-                <span className="rounded border border-white/5 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.24em] text-[#555]">
+                <span className="rounded border border-white/10 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#A3ACB9]">
                   Long-Term Collaboration
                 </span>
               </div>
-              <div className="font-serif text-3xl font-bold text-white">Support that lasts beyond launch.</div>
-              <p className="mt-4 text-sm leading-relaxed text-[#6E7786]">
+              <h3 className="font-display text-2xl font-semibold leading-tight text-white">Support that lasts beyond launch.</h3>
+              <p className="mt-4 text-sm leading-7 text-[#A3ACB9]">
                 We help teams iterate, refine, and maintain digital experiences as their business grows and evolves.
               </p>
             </div>

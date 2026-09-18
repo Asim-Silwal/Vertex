@@ -45,16 +45,16 @@ export default function CaseStudyCard({ caseStudy, featured = false }: CaseStudy
       className={`group overflow-hidden rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(18,18,18,0.96),rgba(9,9,9,0.98))] shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_18px_48px_rgba(0,0,0,0.28)] transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_24px_80px_rgba(0,0,0,0.35)]`}
     >
       <div className={`grid ${containerClasses} items-stretch`}>
-        <div className={`${imagePanelClasses} relative overflow-hidden border-b border-white/8 bg-black/20 lg:border-b-0 lg:border-r lg:border-white/8`}>
+        <div className={`${imagePanelClasses} relative flex items-center overflow-hidden border-b border-white/8 bg-[#171922] p-4 lg:border-b-0 lg:border-r lg:border-white/8 lg:p-6`}>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(143,124,255,0.24),transparent_45%)]" />
           <img
             src={caseStudy.image}
             alt={caseStudy.imageAlt}
-            className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            className="relative z-10 h-auto max-h-[34rem] w-full rounded-lg border border-white/10 object-contain object-top shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
             loading="lazy"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           <div className="absolute left-4 top-4 inline-flex rounded-full border border-white/10 bg-black/60 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.28em] text-white/70 backdrop-blur-md">
             {caseStudy.label}
           </div>
@@ -107,9 +107,7 @@ export default function CaseStudyCard({ caseStudy, featured = false }: CaseStudy
               {caseStudy.ctaLabel}
               <ArrowRight size={16} />
             </a>
-            <span className="text-sm text-[#748091]">
-              Independent concept work for portfolio use.
-            </span>
+            {caseStudy.projectType.toLowerCase().includes('independent') ? <span className="text-sm text-[#748091]">Independent concept work for portfolio use.</span> : null}
           </div>
         </div>
       </div>

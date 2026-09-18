@@ -1,6 +1,5 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
-import processVisualImg from '@assets/process-visual.jpg';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Check, Search, LayoutTemplate, Code2, Rocket } from 'lucide-react';
 
 const steps = [
   {
@@ -49,31 +48,25 @@ export default function Process() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           
-          {/* Left col - Sticky visual panel */}
           <div className="lg:col-span-2">
             <FadeIn>
               <div className="sticky top-24">
-                <div className="rounded-2xl p-1 border border-white/8 bg-[#0D0D0D] overflow-hidden group hover:border-[#765EFF]/30 transition-colors duration-500 shadow-[0_0_20px_rgba(118,94,255,0.03)] hover:shadow-[0_0_30px_rgba(118,94,255,0.1)]">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <img 
-                      src={processVisualImg} 
-                      alt="Process comparison visual" 
-                      className="w-full aspect-[4/5] object-cover opacity-90 group-hover:opacity-100 transition-transform duration-700 group-hover:scale-105" 
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 border border-white/5 rounded-xl pointer-events-none"></div>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="bg-[#0D0D0D] rounded-xl border border-white/8 p-4">
-                    <div className="text-[#666] text-xs uppercase tracking-wider mb-1">Avg. time to launch</div>
-                    <div className="text-white font-semibold text-xl">3–4 weeks</div>
-                  </div>
-                  <div className="bg-[#0D0D0D] rounded-xl border border-white/8 p-4">
-                    <div className="text-[#666] text-xs uppercase tracking-wider mb-1">Client satisfaction</div>
-                    <div className="text-white font-semibold text-xl">100%</div>
+                <div className="rounded-2xl border border-white/10 bg-[#111218] p-6 shadow-[0_24px_60px_rgba(0,0,0,.25)] sm:p-8">
+                  <p className="text-xs font-semibold uppercase tracking-[.25em] text-[#a99aff]">From idea to launch</p>
+                  <h3 className="mt-4 text-2xl font-semibold text-white">A clear path, at every step.</h3>
+                  <div className="mt-8 space-y-3">
+                    {[
+                      { icon: Search, label: 'Understand the business' },
+                      { icon: LayoutTemplate, label: 'Design the experience' },
+                      { icon: Code2, label: 'Build and refine' },
+                      { icon: Rocket, label: 'Launch and improve' },
+                    ].map(({ icon: Icon, label }, index) => (
+                      <div key={label} className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[.025] p-3 text-sm text-[#c4cbd7]">
+                        <span className="grid h-9 w-9 place-items-center rounded-lg bg-[#765EFF]/15 text-[#ae9fff]"><Icon size={17} /></span>
+                        <span className="flex-1">{label}</span>
+                        {index < 3 ? <Check size={15} className="text-[#a99aff]" /> : <span className="h-2 w-2 rounded-full bg-[#a99aff]" />}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

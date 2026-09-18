@@ -449,10 +449,10 @@ export default function CTA() {
           <FadeIn className="space-y-6">
             <div className="text-[#765EFF] text-sm font-medium uppercase tracking-[0.35em]">Ready to grow?</div>
             <h2 className="font-display font-bold text-5xl md:text-6xl text-white mb-4 tracking-tight">
-              Dominate Your Local Market.
+              Show customers what you do best.
             </h2>
             <p className="text-[#999] text-lg leading-relaxed max-w-2xl">
-              Stop losing premium jobs to competitors with better marketing. Let's build a digital presence that reflects the true quality of your work.
+              Tell us about your business and the work you want more of. We can help shape a website that presents your value clearly and makes inquiries easier.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <button
@@ -472,7 +472,7 @@ export default function CTA() {
                 See Our Work
               </button>
             </div>
-            <p className="text-sm text-[#6B7280]">Currently accepting 2 new projects for next month.</p>
+            <p className="text-sm text-[#8B95A4]">Tell us about your project and we’ll get back to you.</p>
           </FadeIn>
 
           <FadeIn>

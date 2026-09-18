@@ -1,60 +1,28 @@
-import test1Img from "@assets/testimonial-1.jpg";
-import test2Img from "@assets/testimonial-2.jpg";
-import test3Img from "@assets/testimonial-3.jpg";
+import { ArrowUpRight, Gauge, MessageSquareText, ShieldCheck } from 'lucide-react';
+
+const principles = [
+  { icon: ShieldCheck, title: 'Build confidence', text: 'Show visitors why your business is the right choice.' },
+  { icon: Gauge, title: 'Keep it fast', text: 'Make every page feel smooth on any screen.' },
+  { icon: MessageSquareText, title: 'Make contact easy', text: 'Help customers call or request a quote without friction.' },
+];
 
 export default function Credibility() {
-  const logos = [
-    { name: "Brand-led teams", weight: "font-bold", size: "text-xl", color: "text-white/60", prefix: "" },
-    { name: "Startups", weight: "font-black", size: "text-xl", color: "text-white/40", prefix: "// " },
-    { name: "Service brands", weight: "font-medium", size: "text-xl", color: "text-[#765EFF]/50", prefix: "● " },
-    { name: "Product teams", weight: "font-semibold", size: "text-xl", color: "text-white/50", prefix: "" },
-    { name: "Modern businesses", weight: "font-extrabold", size: "text-xl", color: "text-white/40", prefix: "" },
-    { name: "Founders", weight: "font-bold", size: "text-xl", color: "text-[#765EFF]/60", prefix: "⚡ " },
-    { name: "Agencies", weight: "font-black", size: "text-xl", color: "text-white/50", prefix: "" },
-    { name: "Organizations", weight: "font-medium", size: "text-xl", color: "text-white/40", prefix: "~ " }
-  ] as { name: string; weight: string; size: string; color: string; prefix: string }[];
-
-  const owners = [
-    { name: "A founder", company: "Product-led team", img: test1Img },
-    { name: "A brand lead", company: "Service business", img: test2Img },
-    { name: "A marketing director", company: "Growing organization", img: test3Img }
-  ];
-
   return (
-    <section className="py-20 border-t border-white/5 bg-[#0A0A0A]" data-testid="section-credibility">
+    <section className="border-b border-white/10 bg-[#0d0e13] py-16 sm:py-20" data-testid="section-credibility">
       <div className="page-gutter">
-        <p className="text-sm text-[#666] text-center mb-10">
-          Built for ambitious teams and growing businesses.
-        </p>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto mb-14 text-center items-center">
-          {logos.map((logo, i) => (
-            <div key={i} className="flex items-center justify-center">
-              <span className={`font-display tracking-tight ${logo.weight} ${logo.size} ${logo.color} uppercase`}>
-                {logo.prefix}{logo.name}
-              </span>
-            </div>
-          ))}
+        <div className="mb-9 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[.22em] text-[#a99aff]">Why the details matter</p>
+            <h2 className="max-w-xl text-3xl font-semibold leading-tight text-white sm:text-4xl">A better website should do more than look better.</h2>
+          </div>
+          <a href="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-[#c2b9ff] hover:text-white">Explore our approach <ArrowUpRight size={16} /></a>
         </div>
-
-        <p className="text-sm text-[#666] text-center mt-8 mb-6">
-          And teams who value clarity, craft, and momentum.
-        </p>
-
-        <div className="flex flex-wrap justify-center items-center gap-8">
-          {owners.map((owner, i) => (
-            <div key={i} className="flex flex-col items-center gap-3">
-              <img
-                src={owner.img}
-                alt={owner.name}
-                className="w-12 h-12 rounded-full object-cover border-2 border-white/10"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="text-center">
-                <div className="text-white text-sm font-medium">{owner.name}</div>
-                <div className="text-[#666] text-xs">{owner.company}</div>
-              </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          {principles.map(({ icon: Icon, title, text }, index) => (
+            <div key={title} className="rounded-2xl border border-white/10 bg-white/[.025] p-6 sm:p-7">
+              <div className="mb-8 flex items-start justify-between"><span className="grid h-11 w-11 place-items-center rounded-xl border border-[#765EFF]/25 bg-[#765EFF]/10 text-[#aa9bff]"><Icon size={20} /></span><span className="text-xs text-[#687386]">0{index + 1}</span></div>
+              <h3 className="text-lg font-semibold text-white">{title}</h3>
+              <p className="mt-2 max-w-xs text-sm leading-6 text-[#9ca7b8]">{text}</p>
             </div>
           ))}
         </div>

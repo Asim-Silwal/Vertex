@@ -69,7 +69,7 @@ export default function Work() {
                 businesses forward.
               </h1>
               <p className="max-w-3xl text-lg leading-8 text-[#B7BFCC]">
-                A selection of digital experiences, brand systems, and growth-focused work created with purpose.
+                Explore the thinking, design decisions, and finished screens behind our selected website projects.
               </p>
             </FadeIn>
           </div>
@@ -96,11 +96,11 @@ export default function Work() {
                       </a>
                     </div>
 
-                    <div className="relative bg-black/20">
+                    <div className="flex items-center bg-[#171922] p-4 md:p-7">
                       <img
                         src={project.image}
                         alt={project.imageAlt}
-                        className="h-full w-full object-cover object-top"
+                        className="h-auto max-h-[32rem] w-full rounded-xl border border-white/10 object-contain object-top shadow-2xl"
                         loading="lazy"
                         decoding="async"
                       />

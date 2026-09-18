@@ -1,9 +1,9 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 import { motion } from 'framer-motion';
-import webdesignImg from '@assets/service-webdesign.jpg';
-import seoImg from '@assets/service-seo.jpg';
-import croImg from '@assets/service-cro.jpg';
-import reviewsImg from '@assets/service-reviews.jpg';
+import brandingImg from '@assets/service-branding-v2.png';
+import uxImg from '@assets/service-ux-v2.png';
+import webImg from '@assets/service-web-v2.png';
+import productImg from '@assets/service-product-v2.png';
 
 const services = [
   {
@@ -11,32 +11,36 @@ const services = [
     label: 'BRANDING',
     title: 'Distinctive brands that build recognition.',
     description: 'Build a distinctive visual identity that makes your business recognizable and memorable.',
-    image: webdesignImg,
-    alt: 'Brand identity and visual direction',
+    image: brandingImg,
+    alt: 'Editorial brand identity materials in the Vertex Digital palette',
+    deliverables: ['Identity system', 'Brand guidelines', 'Visual direction'],
   },
   {
     id: '02',
     label: 'UI/UX DESIGN',
     title: 'Interfaces designed for clarity and confidence.',
     description: 'Design intuitive digital experiences that look great and make complex products easier to use.',
-    image: seoImg,
-    alt: 'UI and UX design process',
+    image: uxImg,
+    alt: 'Wireframe layouts and interface planning materials',
+    deliverables: ['User journeys', 'Page layouts', 'Design systems'],
   },
   {
     id: '03',
     label: 'WEB DESIGN & DEVELOPMENT',
     title: 'High-impact websites built around goals.',
     description: 'Create fast, responsive websites designed around your business goals and users.',
-    image: croImg,
-    alt: 'Website design and development',
+    image: webImg,
+    alt: 'Website design displayed on a studio laptop',
+    deliverables: ['Responsive build', 'Performance', 'Easy updates'],
   },
   {
     id: '04',
     label: 'APP DEVELOPMENT',
     title: 'Digital products built to be useful and scalable.',
     description: 'Turn digital product ideas into functional mobile and web applications.',
-    image: reviewsImg,
-    alt: 'Application design and product development',
+    image: productImg,
+    alt: 'Digital product interfaces on tablet and phone',
+    deliverables: ['Product planning', 'Interface design', 'Development'],
   },
 ];
 
@@ -54,9 +58,7 @@ export default function Services() {
             Design. Development.<br />
             <span className="text-[#8B95A4]">Digital growth.</span>
           </h2>
-          <p className="max-w-2xl text-lg text-[#A5AEBD]">
-            Vertex Digital helps businesses turn ideas into modern digital experiences through strategy, design, technology, and practical execution.
-          </p>
+          <p className="max-w-2xl text-lg text-[#A5AEBD]">A clear view of what we can design, build, and deliver for your business.</p>
         </div>
 
         <FadeInStagger className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -66,14 +68,11 @@ export default function Services() {
                 whileHover={{ y: -4, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
                 className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/8 bg-[#0D0D0D] p-6 transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)]"
               >
-                <div className="mb-6 overflow-hidden rounded-2xl border border-white/8 bg-[#111111]">
-                  <img
-                    src={service.image}
-                    alt={service.alt}
-                    className="h-48 w-full object-cover opacity-80 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                <div className="mb-6 overflow-hidden rounded-2xl border border-white/8 bg-[#171822]">
+                  <img src={service.image} alt={service.alt} className="aspect-[3/2] w-full object-contain" loading="lazy" decoding="async" />
+                </div>
+                <div className="mb-5 flex flex-wrap gap-2">
+                  {service.deliverables.map((item) => <span key={item} className="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-[11px] text-[#b5becc]">{item}</span>)}
                 </div>
                 <div className="flex items-center justify-between gap-3">
                   <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#8F7CFF]">{service.id}</span>

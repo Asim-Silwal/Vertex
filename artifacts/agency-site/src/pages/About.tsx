@@ -42,8 +42,8 @@ export default function About() {
   return (
     <div className="bg-background text-foreground min-h-[100dvh] flex flex-col font-sans">
       <PageMeta
-        title="About Vertex Digital | Digital Experiences Built for Growth"
-        description="Learn how Vertex Digital combines strategy, design, technology, and growth to build digital experiences that help businesses move forward."
+        title="About Vertex Digital | Website Design Studio"
+        description="Meet Vertex Digital through our focus, capabilities, process, and selected website work for service businesses."
         canonicalPath="/about"
       />
       <Nav />
@@ -57,12 +57,12 @@ export default function About() {
             <FadeIn className="space-y-6">
               <p className="text-xs font-medium uppercase tracking-[0.36em] text-[#8F7CFF]">About Vertex Digital</p>
               <h1 className="font-display text-5xl font-bold tracking-tight text-white md:text-7xl">
-                Digital Experiences
+                Websites with purpose.
                 <br />
-                Built for Growth.
+                Work you can inspect.
               </h1>
               <p className="max-w-3xl text-lg leading-8 text-[#B7BFCC]">
-                We combine strategy, design, technology, and growth thinking to build digital experiences that help businesses earn attention, build trust, and generate more opportunities.
+                Vertex Digital is a design and development studio focused on clear, useful digital experiences for service businesses. Explore what we do, how we work, and the projects behind our approach.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#8F7CFF]">
@@ -74,6 +74,27 @@ export default function About() {
                 </a>
               </div>
             </FadeIn>
+          </div>
+        </Section>
+
+        <Section className="py-8 md:py-12">
+          <div className="page-gutter grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-[#111218] p-7">
+              <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#a99aff]">Focus</p>
+              <h2 className="mt-5 text-xl font-semibold text-white">Websites for service businesses</h2>
+              <p className="mt-3 text-sm leading-7 text-[#aab3c4]">Clear offers, credible presentation, and simple ways for customers to get in touch.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#111218] p-7">
+              <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#a99aff]">Capabilities</p>
+              <h2 className="mt-5 text-xl font-semibold text-white">Strategy to launch</h2>
+              <p className="mt-3 text-sm leading-7 text-[#aab3c4]">Messaging, interface design, responsive development, and ongoing improvements.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-[#111218] p-7">
+              <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#a99aff]">Portfolio</p>
+              <h2 className="mt-5 text-xl font-semibold text-white">See the work itself</h2>
+              <p className="mt-3 text-sm leading-7 text-[#aab3c4]">Project screenshots and case studies show the decisions behind the design.</p>
+              <a href="/work" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#c2b9ff] hover:text-white">View selected work <ArrowRight size={15} /></a>
+            </div>
           </div>
         </Section>
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -37,7 +37,6 @@
 
   --font-sans: var(--app-font-sans);
   --font-display: var(--app-font-display);
-  --font-serif: var(--app-font-serif);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -80,7 +79,6 @@
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-display: 'Space Grotesk', sans-serif;
-  --app-font-serif: 'Instrument Serif', serif;
 }
 
 @layer base {
@@ -133,8 +131,6 @@
 }
 
 @layer utilities {
-  .font-serif { font-family: var(--app-font-serif); }
-  .italic-serif { font-family: var(--app-font-serif); font-style: italic; }
   .bg-gradient-radial { background-image: radial-gradient(var(--tw-gradient-stops)); }
   .page-gutter {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12;

@@ -236,7 +236,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                 <img
                   src={heroImage}
                   alt={heroImageAlt}
-                  className="h-[440px] w-full object-cover object-top md:h-[520px]"
+                  className="max-h-[620px] w-full bg-[#171922] object-contain object-top"
                   loading="eager"
                   decoding="async"
                 />
@@ -287,7 +287,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                     <img
                       src={beforeAfterComparison.beforeImage}
                       alt={beforeAfterComparison.beforeImageAlt}
-                      className="h-full w-full object-cover object-top"
+                      className="h-full w-full object-contain object-top"
                       loading="lazy"
                       decoding="async"
                     />
@@ -313,7 +313,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                     <img
                       src={beforeAfterComparison.afterImage}
                       alt={beforeAfterComparison.afterImageAlt}
-                      className="h-full w-full object-cover object-top"
+                      className="h-full w-full object-contain object-top"
                       loading="lazy"
                       decoding="async"
                     />
@@ -376,7 +376,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                 <FadeIn key={item.title}>
                   <article className="overflow-hidden rounded-[1.75rem] border border-white/8 bg-[#0D0D0D]">
                     <div className="aspect-[4/3] overflow-hidden bg-black/20">
-                      <img src={item.image} alt={item.imageAlt} className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105" loading="lazy" decoding="async" />
+                      <img src={item.image} alt={item.imageAlt} className="h-full w-full object-contain object-top" loading="lazy" decoding="async" />
                     </div>
                     <div className="p-5">
                       <h3 className="text-base font-semibold text-white">{item.title}</h3>

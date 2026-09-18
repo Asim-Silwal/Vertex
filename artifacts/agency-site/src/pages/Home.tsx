@@ -6,7 +6,6 @@ import Services from '@/components/sections/Services';
 import CaseStudies from '@/components/sections/CaseStudies';
 import WhyUs from '@/components/sections/WhyUs';
 import Process from '@/components/sections/Process';
-import Testimonials from '@/components/sections/Testimonials';
 import FAQ from '@/components/sections/FAQ';
 import CTA from '@/components/sections/CTA';
 import Footer from '@/components/sections/Footer';
@@ -18,8 +17,8 @@ export default function Home() {
   return (
     <div className="bg-background text-foreground min-h-[100dvh] flex flex-col font-sans">
       <PageMeta
-        title="Vertex Digital — Digital Design, Development & Growth"
-        description="Vertex Digital creates modern brands, websites, applications, and digital experiences designed to help businesses grow."
+        title="Vertex Digital — Websites for Home Service Businesses"
+        description="Vertex Digital builds clear, fast websites for home service businesses that need to earn trust and turn visitors into calls and quote requests."
         canonicalPath="/"
       />
       <CursorGlow />
@@ -33,7 +32,6 @@ export default function Home() {
         <CaseStudies />
         <WhyUs />
         <Process />
-        <Testimonials />
         <FAQ />
         <CTA />
       </main>
