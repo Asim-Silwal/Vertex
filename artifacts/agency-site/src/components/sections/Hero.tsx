@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDownRight, ArrowUpRight, Check, MousePointer2 } from 'lucide-react';
 import { AnimatedButton } from '@/components/ui/animated-button';
-import roofingPreview from '@assets/usa-storm-roofing-screenshot.jpg';
+const roofingPreview = '/work/usa-desktop.png';
 
 export default function Hero() {
   return (

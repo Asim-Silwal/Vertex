@@ -1,131 +1,15 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Nav from '@/components/sections/Nav';
 import Footer from '@/components/sections/Footer';
+import ProjectGrid from '@/components/sections/ProjectGrid';
 import PageMeta from '@/components/seo/page-meta';
-import { FadeIn, Section } from '@/components/ui/section';
-import { usaStormRoofingCaseStudy } from '@/pages/case-studies/usa-storm-roofing';
-import paintingServiceImg from '/Print_Service_Nepal.png';
-
-const paintingServiceCaseStudy: {
-  title: string;
-  type: string;
-  description: string;
-  href: string;
-  image: string;
-  imageAlt: string;
-  external?: boolean;
-} = {
-  title: 'Painting Service Nepal',
-  type: 'Case study',
-  description:
-    'A modern, conversion-focused website designed for a professional painting service, built to establish trust, showcase services, and turn visitors into potential customers.',
-  href: '/case-studies/painting-service',
-  image: paintingServiceImg,
-  imageAlt: 'Painting Service Nepal website preview',
-  external: false,
-};
-
-const portfolioProjects: Array<{
-  title: string;
-  type: string;
-  description: string;
-  href: string;
-  image: string;
-  imageAlt: string;
-  external?: boolean;
-}> = [
-  {
-    title: 'USA Storm Roofing',
-    type: 'Featured case study',
-    description: usaStormRoofingCaseStudy.description,
-    href: '/case-studies/usa-storm-roofing',
-    image: usaStormRoofingCaseStudy.beforeAfterComparison?.afterImage ?? usaStormRoofingCaseStudy.gallery[0]?.image ?? '',
-    imageAlt: usaStormRoofingCaseStudy.beforeAfterComparison?.afterImageAlt ?? usaStormRoofingCaseStudy.gallery[0]?.imageAlt ?? 'USA Storm Roofing case study preview',
-  },
-  paintingServiceCaseStudy,
-];
-
 export default function Work() {
-  return (
-    <div className="bg-background text-foreground min-h-[100dvh] flex flex-col font-sans">
-      <PageMeta
-        title="Our Work | Vertex Digital"
-        description="Explore selected digital experiences, websites, branding, and growth-focused work from Vertex Digital."
-        canonicalPath="/work"
-      />
-      <Nav />
-
-      <main className="flex-1 pt-28">
-        <Section className="relative overflow-hidden py-20 md:py-28">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-[6%] top-[8%] h-[22rem] w-[22rem] rounded-full bg-[radial-gradient(circle,_rgba(118,94,255,0.24),_transparent_72%)] blur-[120px]" />
-          </div>
-          <div className="page-gutter relative z-10 max-w-5xl">
-            <FadeIn className="space-y-6">
-              <p className="text-xs font-medium uppercase tracking-[0.36em] text-[#8F7CFF]">Selected Work</p>
-              <h1 className="font-display text-5xl font-bold tracking-tight text-white md:text-7xl">
-                Work that moves
-                <br />
-                businesses forward.
-              </h1>
-              <p className="max-w-3xl text-lg leading-8 text-[#B7BFCC]">
-                Explore the thinking, design decisions, and finished screens behind our selected website projects.
-              </p>
-            </FadeIn>
-          </div>
-        </Section>
-
-        <Section className="py-10 md:py-16">
-          <div className="page-gutter space-y-6">
-            {portfolioProjects.map((project) => (
-              <FadeIn key={project.title}>
-                <article className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0D0D0D] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
-                  <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
-                    <div className="p-8 md:p-10">
-                      <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#8F7CFF]">{project.type}</p>
-                      <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-white">{project.title}</h2>
-                      <p className="mt-4 max-w-2xl text-base leading-8 text-[#BBC4D2]">{project.description}</p>
-                      <a
-                        href={project.href}
-                        target={project.external ? '_blank' : undefined}
-                        rel={project.external ? 'noopener noreferrer' : undefined}
-                        className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#8F7CFF]"
-                      >
-                        {project.external ? 'Visit Live Site' : 'View Case Study'}
-                        <ArrowRight size={16} />
-                      </a>
-                    </div>
-
-                    <div className="flex items-center bg-[#171922] p-4 md:p-7">
-                      <img
-                        src={project.image}
-                        alt={project.imageAlt}
-                        className="h-auto max-h-[32rem] w-full rounded-xl border border-white/10 object-contain object-top shadow-2xl"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                  </div>
-                </article>
-              </FadeIn>
-            ))}
-          </div>
-        </Section>
-
-        <Section className="py-14 md:py-24">
-          <div className="page-gutter">
-            <FadeIn className="rounded-[2.25rem] border border-[#765EFF]/20 bg-[linear-gradient(135deg,rgba(118,94,255,0.18),rgba(13,13,13,0.95))] p-8 md:p-12">
-              <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-5xl">Have a project in mind?</h2>
-              <a href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-[#F1F0FF]">
-                Start a Conversation
-                <ArrowRight size={16} />
-              </a>
-            </FadeIn>
-          </div>
-        </Section>
-      </main>
-
-      <Footer />
-    </div>
-  );
+  return <div className="min-h-screen bg-[#0a0b10] text-white">
+    <PageMeta title="Selected Work & Website Case Studies | Vertex Digital" description="Explore four Vertex Digital website projects: USA Storm Roofing, Painting Service Nepal, Jireh Roofing, and Pacific Northwest X-Ray. See real screens, design decisions, and live websites." canonicalPath="/work" />
+    <Nav /><main className="pt-32 md:pt-44">
+      <header className="page-gutter pb-16 md:pb-24"><div className="flex items-center gap-3 text-xs uppercase tracking-[.24em] text-[#a99bff]"><span className="h-px w-9 bg-[#a99bff]" />Our work</div><h1 className="mt-7 max-w-4xl font-display text-5xl font-semibold leading-[1.06] tracking-[-.045em] md:text-7xl">Good businesses deserve<br /><span className="text-[#a99bff]">a better first impression.</span></h1><div className="mt-9 flex flex-col justify-between gap-7 border-t border-white/10 pt-7 md:flex-row md:items-end"><p className="max-w-xl text-lg leading-8 text-[#aab3c4]">A closer look at how we bring strategy, design, and development together. Four distinct businesses. Four experiences built around the people who use them.</p><p className="text-sm text-[#aab3c4]">04 projects <span className="mx-3 text-white/20">/</span> Design & development</p></div></header>
+      <section className="page-gutter pb-20 md:pb-28" aria-label="Website portfolio"><ProjectGrid /><p className="mt-12 max-w-3xl text-sm leading-7 text-[#939dad]">These are independent redesigns and portfolio builds, presented to show our capabilities. Screenshots are captured from the linked live websites. Business names and source imagery remain the property of their respective owners.</p></section>
+      <section className="border-t border-white/10 bg-[#11121a] py-16 md:py-24"><div className="page-gutter flex flex-col justify-between gap-8 md:flex-row md:items-center"><div><p className="text-xs uppercase tracking-[.2em] text-[#a99bff]">Your project could be next</p><h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">Let’s build your next chapter.</h2></div><a href="/contact" className="inline-flex w-fit items-center gap-3 rounded-full bg-[#765EFF] px-7 py-4 text-sm font-semibold text-white hover:bg-[#8b77ff]">Start a project <ArrowUpRight size={18} /></a></div></section>
+    </main><Footer />
+  </div>;
 }
