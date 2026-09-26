@@ -8,17 +8,11 @@ export default function Footer() {
   
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#050608] py-16" data-testid="section-footer">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[-8%] top-24 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(118,94,255,0.24),transparent_55%)] blur-3xl opacity-70 animate-drift-slow" />
-        <div className="absolute right-[-14%] top-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(99,102,241,0.18),transparent_60%)] blur-3xl opacity-60 animate-gradient-shift" />
-        <div className="absolute left-1/2 top-16 h-60 w-60 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(103,232,249,0.16),transparent_60%)] blur-3xl opacity-60 animate-drift-slow" />
-      </div>
-
       <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-col gap-5 lg:max-w-sm">
           <img src={whiteLogo} alt="Vertex Digital logo" className="h-36 w-auto object-contain" />
           <p className="max-w-sm text-sm leading-7 text-[#D1D5DB]">
-            Vertex Digital is a digital design and development studio creating brands, websites, and digital experiences built for growth.
+            Vertex Digital designs and builds clear, fast websites that help service businesses earn trust and receive more inquiries.
           </p>
           <a href={`mailto:${businessEmail}`} className="text-sm font-medium text-[#A1ACBE] transition duration-300 hover:text-white">
             {businessEmail}

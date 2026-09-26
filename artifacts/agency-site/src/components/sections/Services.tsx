@@ -1,9 +1,4 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
-import { motion } from 'framer-motion';
-import brandingImg from '@assets/service-branding-v2.png';
-import uxImg from '@assets/service-ux-v2.png';
-import webImg from '@assets/service-web-v2.png';
-import productImg from '@assets/service-product-v2.png';
 
 const services = [
   {
@@ -11,8 +6,8 @@ const services = [
     label: 'BRANDING',
     title: 'Distinctive brands that build recognition.',
     description: 'Build a distinctive visual identity that makes your business recognizable and memorable.',
-    image: brandingImg,
-    alt: 'Editorial brand identity materials in the Vertex Digital palette',
+    image: '/work/usa-desktop.png',
+    alt: 'USA Storm Roofing website designed and built by Vertex Digital',
     deliverables: ['Identity system', 'Brand guidelines', 'Visual direction'],
   },
   {
@@ -20,8 +15,8 @@ const services = [
     label: 'UI/UX DESIGN',
     title: 'Interfaces designed for clarity and confidence.',
     description: 'Design intuitive digital experiences that look great and make complex products easier to use.',
-    image: uxImg,
-    alt: 'Wireframe layouts and interface planning materials',
+    image: '/work/painting-desktop.png',
+    alt: 'Painting Service Nepal website designed and built by Vertex Digital',
     deliverables: ['User journeys', 'Page layouts', 'Design systems'],
   },
   {
@@ -29,8 +24,8 @@ const services = [
     label: 'WEB DESIGN & DEVELOPMENT',
     title: 'High-impact websites built around goals.',
     description: 'Create fast, responsive websites designed around your business goals and users.',
-    image: webImg,
-    alt: 'Website design displayed on a studio laptop',
+    image: '/work/jireh-desktop.png',
+    alt: 'Jireh Roofing website designed and built by Vertex Digital',
     deliverables: ['Responsive build', 'Performance', 'Easy updates'],
   },
   {
@@ -38,8 +33,8 @@ const services = [
     label: 'APP DEVELOPMENT',
     title: 'Digital products built to be useful and scalable.',
     description: 'Turn digital product ideas into functional mobile and web applications.',
-    image: productImg,
-    alt: 'Digital product interfaces on tablet and phone',
+    image: '/work/pnwx-desktop.png',
+    alt: 'Pacific Northwest Imaging Collective website designed and built by Vertex Digital',
     deliverables: ['Product planning', 'Interface design', 'Development'],
   },
 ];
@@ -50,7 +45,7 @@ export default function Services() {
       <div className="page-gutter">
         <div className="mb-16 max-w-3xl">
           <div className="mb-4 inline-block">
-            <span className="rounded-full border border-[#765EFF]/20 bg-[#765EFF]/10 px-3 py-1 text-xs font-medium text-[#765EFF]">
+            <span className="rounded-md border border-[#765EFF]/20 bg-[#765EFF]/10 px-3 py-1 text-xs font-medium text-[#765EFF]">
               What We Build
             </span>
           </div>
@@ -64,15 +59,14 @@ export default function Services() {
         <FadeInStagger className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {services.map((service) => (
             <FadeIn key={service.id}>
-              <motion.div
-                whileHover={{ y: -4, transition: { type: 'spring', stiffness: 300, damping: 20 } }}
+              <div
                 className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/8 bg-[#0D0D0D] p-6 transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_0_30px_rgba(118,94,255,0.08)]"
               >
                 <div className="mb-6 overflow-hidden rounded-2xl border border-white/8 bg-[#171822]">
-                  <img src={service.image} alt={service.alt} className="aspect-[3/2] w-full object-contain" loading="lazy" decoding="async" />
+                  <img src={service.image} alt={service.alt} className="aspect-[3/2] w-full object-cover object-top" loading="lazy" decoding="async" />
                 </div>
                 <div className="mb-5 flex flex-wrap gap-2">
-                  {service.deliverables.map((item) => <span key={item} className="rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 text-[11px] text-[#b5becc]">{item}</span>)}
+                  {service.deliverables.map((item) => <span key={item} className="rounded-md border border-white/10 bg-white/[.04] px-3 py-1.5 text-[11px] text-[#b5becc]">{item}</span>)}
                 </div>
                 <div className="flex items-center justify-between gap-3">
                   <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#8F7CFF]">{service.id}</span>
@@ -80,7 +74,7 @@ export default function Services() {
                 </div>
                 <h3 className="mt-4 text-2xl font-semibold text-white">{service.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-[#A3ACB9] md:text-base">{service.description}</p>
-              </motion.div>
+              </div>
             </FadeIn>
           ))}
         </FadeInStagger>

@@ -28,7 +28,6 @@ export default function Industries() {
             return (
               <FadeIn key={i}>
                 <motion.div
-                  whileHover={{ scale: 1.02, y: -2, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
                   className="group flex h-full flex-col rounded-[1.5rem] border border-white/10 bg-[#111218] p-6 transition-all duration-300 hover:border-[#765EFF]/40 hover:bg-[#171725]"
                 >
                   <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]">

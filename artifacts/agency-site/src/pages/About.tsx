@@ -50,9 +50,6 @@ export default function About() {
 
       <main className="flex-1 pt-28">
         <Section className="relative overflow-hidden py-20 md:py-28">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-1/2 top-[-12%] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(118,94,255,0.28),_transparent_68%)] blur-[130px]" />
-          </div>
           <div className="page-gutter relative z-10 max-w-5xl">
             <FadeIn className="space-y-6">
               <p className="text-xs font-medium uppercase tracking-[0.36em] text-[#8F7CFF]">About Vertex Digital</p>
@@ -65,11 +62,11 @@ export default function About() {
                 Vertex Digital is a design and development studio focused on clear, useful digital experiences for service businesses. Explore what we do, how we work, and the projects behind our approach.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#8F7CFF]">
+                <a href="/contact" className="inline-flex items-center gap-2 rounded-lg bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#8F7CFF]">
                   Let&apos;s Talk
                   <ArrowRight size={16} />
                 </a>
-                <a href="/work" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-transparent px-6 py-3 text-sm font-medium text-white transition duration-300 hover:border-white/30">
+                <a href="/work" className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-transparent px-6 py-3 text-sm font-medium text-white transition duration-300 hover:border-white/30">
                   View Our Work
                 </a>
               </div>
@@ -163,10 +160,10 @@ export default function About() {
 
         <Section className="py-16 md:py-24">
           <div className="page-gutter">
-            <FadeIn className="rounded-[2.25rem] border border-[#765EFF]/20 bg-[linear-gradient(135deg,rgba(118,94,255,0.2),rgba(13,13,13,0.96))] p-8 md:p-12">
+            <FadeIn className="rounded-[2.25rem] border border-white/10 bg-[#111218] p-8 md:p-12">
               <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-5xl">Ready to build something that works?</h2>
               <p className="mt-4 text-base leading-8 text-[#E2DCFF] md:text-lg">Let&apos;s turn your digital presence into an advantage.</p>
-              <a href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-[#F1F0FF]">
+              <a href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-[#F1F0FF]">
                 Start a Conversation
                 <ArrowRight size={16} />
               </a>

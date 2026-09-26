@@ -46,7 +46,7 @@ export default function LegalPage({
           <div className="flex items-center gap-3">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
             >
               <ArrowLeft size={16} />
               Back home
@@ -56,7 +56,6 @@ export default function LegalPage({
       </header>
 
       <main className="mx-auto max-w-5xl px-4 py-16 md:px-6 md:py-20">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[28rem] bg-[radial-gradient(circle_at_top,rgba(118,94,255,0.18),transparent_60%)]" />
 
         <section className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.3)] backdrop-blur-md md:p-10">
           <div className="mb-8 flex flex-col gap-4 border-b border-white/10 pb-6">

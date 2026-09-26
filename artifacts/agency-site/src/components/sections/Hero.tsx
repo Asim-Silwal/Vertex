@@ -6,22 +6,22 @@ const roofingPreview = '/work/usa-desktop.png';
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden border-b border-white/10 bg-[#08090d] pt-32 sm:pt-40" data-testid="section-hero">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_75%_15%,rgba(118,94,255,.18),transparent_42%),linear-gradient(rgba(255,255,255,.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.025)_1px,transparent_1px)] bg-[size:auto,72px_72px,72px_72px]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.025)_1px,transparent_1px)] bg-[size:72px_72px]" />
       <div className="page-gutter relative grid min-h-[700px] items-center gap-14 pb-20 lg:grid-cols-[1.05fr_.95fr] lg:gap-8 lg:pb-28">
         <div className="max-w-2xl">
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .5 }} className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#765EFF]/30 bg-[#765EFF]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[.17em] text-[#b8adff]">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .35 }} className="mb-8 inline-flex items-center gap-2 rounded-lg border border-[#765EFF]/30 bg-[#765EFF]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[.17em] text-[#b8adff]">
             <span className="h-1.5 w-1.5 rounded-full bg-[#9b8aff] shadow-[0_0_12px_#9b8aff]" />
             Digital growth for service businesses
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .1 }} className="max-w-3xl text-[clamp(3rem,6vw,6.5rem)] font-semibold leading-[.99] tracking-[-.075em] text-white">
-            Make your first impression <span className="text-[#9e8eff]">work harder.</span>
+            Websites that turn traffic into <span className="text-[#9e8eff]">calls and quote requests.</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .2 }} className="mt-8 max-w-xl text-lg leading-8 text-[#aab3c4] sm:text-xl">
             We build sharp, fast websites for home service businesses that need to earn trust and turn more visitors into calls and quote requests.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65, delay: .3 }} className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <AnimatedButton href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#765EFF] px-7 py-4 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(118,94,255,.22)]" data-testid="button-hero-primary">Start a Project <ArrowUpRight size={17} /></AnimatedButton>
-            <AnimatedButton href="/work" variant="secondary" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/[.04] px-7 py-4 text-sm font-semibold text-white" data-testid="button-hero-secondary">See Our Work <ArrowDownRight size={17} /></AnimatedButton>
+            <AnimatedButton href="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#765EFF] px-7 py-4 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(118,94,255,.22)]" data-testid="button-hero-primary">Start a Project <ArrowUpRight size={17} /></AnimatedButton>
+            <AnimatedButton href="/work" variant="secondary" className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/[.04] px-7 py-4 text-sm font-semibold text-white" data-testid="button-hero-secondary">See Our Work <ArrowDownRight size={17} /></AnimatedButton>
           </motion.div>
           <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/10 pt-7 text-sm text-[#aab3c4]">
             <span className="inline-flex items-center gap-2"><Check size={15} className="text-[#a799ff]" /> Clearer offers</span>

@@ -46,7 +46,7 @@ export default function CaseStudyCard({ caseStudy, featured = false }: CaseStudy
     >
       <div className={`grid ${containerClasses} items-stretch`}>
         <div className={`${imagePanelClasses} relative flex items-center overflow-hidden border-b border-white/8 bg-[#171922] p-4 lg:border-b-0 lg:border-r lg:border-white/8 lg:p-6`}>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(143,124,255,0.24),transparent_45%)]" />
+          <div className="absolute inset-0 bg-[#14151d]" />
           <img
             src={caseStudy.image}
             alt={caseStudy.imageAlt}
@@ -102,7 +102,7 @@ export default function CaseStudyCard({ caseStudy, featured = false }: CaseStudy
               href={caseStudy.ctaHref}
               target={caseStudy.ctaExternal ? '_blank' : undefined}
               rel={caseStudy.ctaExternal ? 'noopener noreferrer' : undefined}
-              className="inline-flex items-center gap-2 rounded-full bg-[#765EFF] px-5 py-3 text-sm font-medium text-white shadow-[0_12px_28px_rgba(118,94,255,0.28)] transition duration-300 hover:bg-[#8F7CFF] hover:shadow-[0_16px_32px_rgba(118,94,255,0.4)] focus-visible:outline-none"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#765EFF] px-5 py-3 text-sm font-medium text-white shadow-[0_12px_28px_rgba(118,94,255,0.28)] transition duration-300 hover:bg-[#8F7CFF] hover:shadow-[0_16px_32px_rgba(118,94,255,0.4)] focus-visible:outline-none"
             >
               {caseStudy.ctaLabel}
               <ArrowRight size={16} />

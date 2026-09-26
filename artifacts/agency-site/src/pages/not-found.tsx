@@ -15,7 +15,6 @@ export default function NotFound() {
 
       <div className="mx-auto flex min-h-screen max-w-4xl items-center justify-center px-4 py-16 md:px-6">
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 text-center shadow-[0_24px_80px_rgba(0,0,0,0.3)] backdrop-blur-md md:p-12">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(118,94,255,0.16),transparent_55%)]" />
           <div className="relative mx-auto flex max-w-xl flex-col items-center gap-6">
             <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-[#8F7CFF]">
               <Home className="h-8 w-8" />
@@ -31,14 +30,14 @@ export default function NotFound() {
             <div className="flex flex-col items-center gap-3 sm:flex-row">
               <Link
                 to="/"
-                className="inline-flex items-center gap-2 rounded-full bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#8F7CFF]"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#8F7CFF]"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to home
               </Link>
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-transparent px-6 py-3 text-sm font-medium text-white transition hover:border-white/30"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-transparent px-6 py-3 text-sm font-medium text-white transition hover:border-white/30"
               >
                 Contact Vertex Digital
               </a>

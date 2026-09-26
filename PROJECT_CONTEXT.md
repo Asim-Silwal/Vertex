@@ -77,6 +77,26 @@ Guidelines:
 - Avoid unnecessary effects
 - Preserve clarity over spectacle
 
+## Non-Negotiable Design Rules
+- Never use purple gradients.
+- Never use pill-shaped buttons.
+- Never use fake reviews, fake metrics, or fake customer counters.
+- Never use vague hero copy.
+- Never use emoji as interface icons.
+- Never use em dashes in website copy.
+- Never use distracting or excessive scroll animation.
+- Never use cursor-following animation.
+- Never use AI-generated stock-style photography or generic AI copy.
+
+## Launch Checklist
+Do not launch or publish a website update until all of these are verified:
+- The custom domain is connected and HTTPS works.
+- The favicon uses the Vertex Digital company logo.
+- No "made with AI" or similar labels are present.
+- A Privacy Policy page is published and linked.
+- A Terms and Conditions page is published and linked.
+- All visible claims can be supported.
+
 ## UX Philosophy
 Every page should quickly answer:
 - Who are we?

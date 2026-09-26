@@ -162,12 +162,12 @@ export default function Contact() {
             <FadeIn className="max-w-4xl space-y-6">
               <p className="text-xs font-medium uppercase tracking-[0.36em] text-[#8F7CFF]">Let&apos;s Talk</p>
               <h1 className="font-display text-5xl font-bold tracking-tight text-white md:text-7xl">
-                Have an idea?
+                Planning a website?
                 <br />
-                Let&apos;s make it happen.
+                Tell us what you need.
               </h1>
               <p className="max-w-3xl text-lg leading-8 text-[#B7BFCC]">
-                Tell us what you&apos;re working on, what you&apos;re trying to achieve, or where you&apos;re stuck. We&apos;ll take it from there.
+                Share your services, goals, current website, and timeline. We&apos;ll reply with practical next steps for your project.
               </p>
             </FadeIn>
           </div>
@@ -182,7 +182,6 @@ export default function Contact() {
                 className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.3)] backdrop-blur-md"
                 noValidate
               >
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#765EFF]/20 to-transparent" />
 
                 <div className="space-y-5">
                   <label className="block text-sm font-medium text-[#B0B7C3]">
@@ -265,7 +264,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-2xl bg-[#765EFF] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-[#8F7CFF] disabled:cursor-not-allowed disabled:opacity-60"
+                    className="relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-lg bg-[#765EFF] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-[#8F7CFF] disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     <span className={submitting ? 'opacity-40' : ''}>
                       {submitting ? 'Sending...' : 'Start the Conversation'}
@@ -318,7 +317,7 @@ export default function Contact() {
               <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-7">
                 <h3 className="font-display text-2xl font-bold text-white">Prefer email?</h3>
                 <p className="mt-3 text-sm leading-7 text-[#BEC7D4]">Send us a message directly and we&apos;ll get back to you.</p>
-                <a href="mailto:info@vertex-digital.site" className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-transparent px-5 py-2.5 text-sm font-medium text-white transition hover:border-white/30">
+                <a href="mailto:info@vertex-digital.site" className="mt-5 inline-flex items-center gap-2 rounded-lg border border-white/15 bg-transparent px-5 py-2.5 text-sm font-medium text-white transition hover:border-white/30">
                   info@vertex-digital.site
                   <ArrowRight size={16} />
                 </a>

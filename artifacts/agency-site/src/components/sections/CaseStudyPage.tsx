@@ -183,7 +183,6 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
       <main className="flex-1 pb-20 pt-28">
         <section className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-1/2 top-[-8%] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_rgba(118,94,255,0.18),_transparent_68%)] blur-[120px]" />
           </div>
 
           <div className="page-gutter relative grid gap-10 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-start lg:py-20">
@@ -206,7 +205,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                   href={liveRedesignHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#765EFF] px-5 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#8F7CFF]"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#765EFF] px-5 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#8F7CFF]"
                 >
                   {liveRedesignLabel}
                   <ArrowRight size={16} />
@@ -216,7 +215,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                     href={originalWebsiteHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-transparent px-5 py-3 text-sm font-medium text-white transition duration-300 hover:border-white/30"
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-transparent px-5 py-3 text-sm font-medium text-white transition duration-300 hover:border-white/30"
                   >
                     {originalWebsiteLabel}
                     <ExternalLink size={16} />

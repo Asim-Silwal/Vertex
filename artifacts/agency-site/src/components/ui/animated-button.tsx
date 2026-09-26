@@ -42,7 +42,7 @@ export function AnimatedButton({ children, className = '', href, variant = 'prim
 
   const shimmer = variant === 'primary' ? (
     <motion.span
-      className="absolute inset-0 rounded-full pointer-events-none overflow-hidden"
+      className="absolute inset-0 rounded-[inherit] pointer-events-none overflow-hidden"
       initial={false}
     >
       <motion.span
