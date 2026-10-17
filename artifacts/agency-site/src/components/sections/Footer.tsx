@@ -65,7 +65,7 @@ export default function Footer() {
           <a href="/privacy" className="inline-flex min-h-11 items-center hover:text-white">Privacy Policy</a>
         </div>
 
-        <div aria-hidden="true" className="mt-4 translate-y-[0.12em] font-display text-[clamp(4.5rem,11.3vw,9rem)] font-normal leading-[0.72] tracking-[-0.065em] text-[#f5f5f7]">
+        <div aria-hidden="true" className="mt-4 translate-y-[0.12em] font-display text-[clamp(4.5rem,11.3vw,9rem)] font-normal leading-[0.72] tracking-[-0.065em] text-[#f5f5f7] opacity-[0.32]">
           <span className="block md:inline">VERTEX</span>{' '}
           <span className="block text-[#765EFF] md:inline">DIGITAL</span>
         </div>
