@@ -4,7 +4,7 @@ import PageMeta from '@/components/seo/page-meta';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#050608] text-white">
+    <div className="min-h-screen bg-black text-[#f5f5f7]">
       <PageMeta
         title="Page Not Found | Vertex Digital"
         description="The page you requested could not be found. Return to Vertex Digital's homepage or explore the site."
@@ -14,9 +14,9 @@ export default function NotFound() {
       />
 
       <div className="mx-auto flex min-h-screen max-w-4xl items-center justify-center px-4 py-16 md:px-6">
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 text-center shadow-[0_24px_80px_rgba(0,0,0,0.3)] backdrop-blur-md md:p-12">
+        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#1d1d1f] p-8 text-center md:p-12">
           <div className="relative mx-auto flex max-w-xl flex-col items-center gap-6">
-            <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-[#8F7CFF]">
+            <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#8F7CFF]">
               <Home className="h-8 w-8" />
             </div>
             <div className="space-y-3">

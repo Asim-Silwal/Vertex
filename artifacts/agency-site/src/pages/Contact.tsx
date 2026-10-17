@@ -135,7 +135,7 @@ export default function Contact() {
       });
     } catch {
       const messageText =
-        'We could not send your request right now. Please try again or email us directly at info@vertex-digital.site.';
+        'We could not send your request right now. Please try again or email us directly at vertex.d10@gmail.com.';
       setError(messageText);
       toast({
         title: 'Send failed',
@@ -150,24 +150,24 @@ export default function Contact() {
   return (
     <div className="bg-background text-foreground min-h-[100dvh] flex flex-col font-sans">
       <PageMeta
-        title="Contact Vertex Digital | Let's Build Something That Works"
-        description="Have a project in mind? Talk to Vertex Digital about web design, branding, SEO, and growth strategy."
+        title="Contact Vertex Digital | Plan Your Website"
+        description="Tell Vertex Digital about your business, current website, goals, and timeline. We will reply with practical next steps for a premium website project."
         canonicalPath="/contact"
       />
       <Nav />
 
       <main className="flex-1 pt-28">
-        <Section className="py-20 md:py-28">
+        <Section className="py-24 md:py-36">
           <div className="page-gutter">
-            <FadeIn className="max-w-4xl space-y-6">
+            <FadeIn className="mx-auto max-w-4xl space-y-6 text-center">
               <p className="text-xs font-medium uppercase tracking-[0.36em] text-[#8F7CFF]">Let&apos;s Talk</p>
-              <h1 className="font-display text-5xl font-bold tracking-tight text-white md:text-7xl">
+              <h1 className="font-display text-5xl font-semibold leading-[1.04] tracking-[-0.045em] text-[#f5f5f7] md:text-7xl">
                 Planning a website?
                 <br />
                 Tell us what you need.
               </h1>
-              <p className="max-w-3xl text-lg leading-8 text-[#B7BFCC]">
-                Share your services, goals, current website, and timeline. We&apos;ll reply with practical next steps for your project.
+              <p className="mx-auto max-w-3xl text-lg leading-8 text-[#a1a1a6]">
+                Share your services, goals, current website, and timeline. We&apos;ll reply with practical next steps and a clear path forward.
               </p>
             </FadeIn>
           </div>
@@ -179,7 +179,7 @@ export default function Contact() {
               <form
                 id="contact-page-form"
                 onSubmit={handleSubmit}
-                className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.3)] backdrop-blur-md"
+                className="relative overflow-hidden rounded-xl border border-white/10 bg-[#1d1d1f] p-8"
                 noValidate
               >
 
@@ -193,7 +193,7 @@ export default function Contact() {
                         setError(null);
                       }}
                       autoComplete="name"
-                      className="mt-2 w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                      className="mt-2 w-full rounded-lg border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                       placeholder="Your full name"
                       required
                     />
@@ -209,7 +209,7 @@ export default function Contact() {
                         setError(null);
                       }}
                       autoComplete="email"
-                      className="mt-2 w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                      className="mt-2 w-full rounded-lg border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                       placeholder="you@company.com"
                       required
                     />
@@ -225,7 +225,7 @@ export default function Contact() {
                         setError(null);
                       }}
                       autoComplete="tel"
-                      className="mt-2 w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                      className="mt-2 w-full rounded-lg border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                       placeholder="123 456 7890"
                       required
                     />
@@ -240,7 +240,7 @@ export default function Contact() {
                         setError(null);
                       }}
                       autoComplete="organization"
-                      className="mt-2 w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                      className="mt-2 w-full rounded-lg border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                       placeholder="Your company"
                       required
                     />
@@ -255,7 +255,7 @@ export default function Contact() {
                         setError(null);
                       }}
                       rows={5}
-                      className="mt-2 w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                      className="mt-2 w-full rounded-lg border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
                       placeholder="(Write at least a sentence)"
                       required
                     />
@@ -281,13 +281,13 @@ export default function Contact() {
                   </button>
 
                   {submitted ? (
-                    <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-100">
+                    <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-100">
                       Inquiry sent successfully. We&apos;ll be in touch soon.
                     </div>
                   ) : null}
 
                   {error ? (
-                    <div className="rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                    <div className="rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-100">
                       {error}
                     </div>
                   ) : null}
@@ -296,13 +296,13 @@ export default function Contact() {
             </FadeIn>
 
             <FadeIn className="space-y-4">
-              <div className="rounded-[1.75rem] border border-white/10 bg-[#0D0D0D] p-7">
+              <div className="rounded-xl border border-white/10 bg-[#1d1d1f] p-7">
                 <h2 className="font-display text-2xl font-bold text-white">Direct Contact</h2>
                 <div className="mt-4 space-y-2 text-sm leading-7 text-[#BEC7D4]">
                   <p>
                     Email:{' '}
-                    <a className="font-medium text-white transition hover:text-[#8F7CFF]" href="mailto:info@vertex-digital.site">
-                      info@vertex-digital.site
+                    <a className="font-medium text-white transition hover:text-[#8F7CFF]" href="mailto:vertex.d10@gmail.com">
+                      vertex.d10@gmail.com
                     </a>
                   </p>
                   <p>
@@ -314,11 +314,11 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-7">
+              <div className="rounded-xl border border-white/10 bg-[#1d1d1f] p-7">
                 <h3 className="font-display text-2xl font-bold text-white">Prefer email?</h3>
                 <p className="mt-3 text-sm leading-7 text-[#BEC7D4]">Send us a message directly and we&apos;ll get back to you.</p>
-                <a href="mailto:info@vertex-digital.site" className="mt-5 inline-flex items-center gap-2 rounded-lg border border-white/15 bg-transparent px-5 py-2.5 text-sm font-medium text-white transition hover:border-white/30">
-                  info@vertex-digital.site
+                <a href="mailto:vertex.d10@gmail.com" className="mt-5 inline-flex items-center gap-2 rounded-lg border border-white/15 bg-transparent px-5 py-2.5 text-sm font-medium text-white transition hover:border-white/30">
+                  vertex.d10@gmail.com
                   <ArrowRight size={16} />
                 </a>
               </div>

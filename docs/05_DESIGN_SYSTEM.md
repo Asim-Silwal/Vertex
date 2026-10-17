@@ -15,6 +15,15 @@ The design should support a premium digital agency feel without becoming flashy 
 The current site already uses a dark, premium aesthetic with strong contrast, purple accent color usage, polished cards, and motion-led section transitions.
 That direction is compatible with the brand if it remains restrained and readable.
 
+The interface also draws from Apple ecosystem design principles:
+- Let typography and imagery carry the hierarchy
+- Give each section one clear idea
+- Use glass only for functional navigation
+- Prefer flat semantic surfaces over decorative shadows
+- Keep one restrained interactive accent
+- Use subtle, fast feedback and respect reduced-motion preferences
+- Maintain at least 44px touch targets on compact screens
+
 ## Typography
 Typography should support:
 - Clear hierarchy

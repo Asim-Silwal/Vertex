@@ -27,7 +27,7 @@ const approachCards = [
     id: '04',
     title: 'Growth',
     description:
-      'Connect the experience to measurable business goals - visibility, leads, conversions, and growth.',
+      'Connect every decision to a practical business goal such as clearer positioning, stronger trust, or more qualified inquiries.',
   },
 ];
 
@@ -49,19 +49,19 @@ export default function About() {
       <Nav />
 
       <main className="flex-1 pt-28">
-        <Section className="relative overflow-hidden py-20 md:py-28">
-          <div className="page-gutter relative z-10 max-w-5xl">
+        <Section className="relative overflow-hidden py-24 md:py-36">
+          <div className="page-gutter relative z-10 mx-auto max-w-4xl text-center">
             <FadeIn className="space-y-6">
               <p className="text-xs font-medium uppercase tracking-[0.36em] text-[#8F7CFF]">About Vertex Digital</p>
-              <h1 className="font-display text-5xl font-bold tracking-tight text-white md:text-7xl">
-                Websites with purpose.
+              <h1 className="font-display text-5xl font-semibold leading-[1.04] tracking-[-0.045em] text-[#f5f5f7] md:text-7xl">
+                Premium websites.
                 <br />
-                Work you can inspect.
+                Clear business thinking.
               </h1>
-              <p className="max-w-3xl text-lg leading-8 text-[#B7BFCC]">
-                Vertex Digital is a design and development studio focused on clear, useful digital experiences for service businesses. Explore what we do, how we work, and the projects behind our approach.
+              <p className="mx-auto max-w-3xl text-lg leading-8 text-[#a1a1a6]">
+                Vertex Digital is a web design and development studio for service businesses that want to look established, communicate clearly, and make it easier for customers to take the next step.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap justify-center gap-3">
                 <a href="/contact" className="inline-flex items-center gap-2 rounded-lg bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#8F7CFF]">
                   Let&apos;s Talk
                   <ArrowRight size={16} />
@@ -76,17 +76,17 @@ export default function About() {
 
         <Section className="py-8 md:py-12">
           <div className="page-gutter grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-[#111218] p-7">
+            <div className="rounded-xl border border-white/10 bg-[#1d1d1f] p-7">
               <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#a99aff]">Focus</p>
               <h2 className="mt-5 text-xl font-semibold text-white">Websites for service businesses</h2>
               <p className="mt-3 text-sm leading-7 text-[#aab3c4]">Clear offers, credible presentation, and simple ways for customers to get in touch.</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-[#111218] p-7">
+            <div className="rounded-xl border border-white/10 bg-[#1d1d1f] p-7">
               <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#a99aff]">Capabilities</p>
               <h2 className="mt-5 text-xl font-semibold text-white">Strategy to launch</h2>
               <p className="mt-3 text-sm leading-7 text-[#aab3c4]">Messaging, interface design, responsive development, and ongoing improvements.</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-[#111218] p-7">
+            <div className="rounded-xl border border-white/10 bg-[#1d1d1f] p-7">
               <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#a99aff]">Portfolio</p>
               <h2 className="mt-5 text-xl font-semibold text-white">See the work itself</h2>
               <p className="mt-3 text-sm leading-7 text-[#aab3c4]">Project screenshots and case studies show the decisions behind the design.</p>
@@ -97,18 +97,18 @@ export default function About() {
 
         <Section className="py-16 md:py-20">
           <div className="page-gutter">
-            <FadeIn className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_24px_80px_rgba(0,0,0,0.3)] backdrop-blur-md md:p-12">
+            <FadeIn className="rounded-xl border border-white/10 bg-[#1d1d1f] p-8 md:p-12">
               <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-5xl">
-                We don&apos;t just build websites.
+                We build more than pages.
                 <br />
-                We build growth systems.
+                We build confidence in the business.
               </h2>
               <div className="mt-6 space-y-5 text-base leading-8 text-[#C7CEDA] md:text-lg">
                 <p>
                   Your website is often the first interaction a customer has with your business. It should do more than look professional. It should communicate your value, build trust, and move the right people toward action.
                 </p>
                 <p>
-                  At Vertex Digital, we bring strategy, design, technology, and growth together to create digital experiences built around business outcomes.
+                  At Vertex Digital, we bring positioning, content, design, and development together so every part of the website supports the same clear story.
                 </p>
               </div>
             </FadeIn>
@@ -125,7 +125,7 @@ export default function About() {
             <FadeInStagger className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {approachCards.map((card) => (
                 <FadeIn key={card.id}>
-                  <article className="h-full rounded-[1.75rem] border border-white/10 bg-[#0D0D0D] p-6 transition-colors duration-300 hover:border-[#765EFF]/30">
+                  <article className="h-full rounded-xl border border-white/10 bg-[#1d1d1f] p-6 transition-colors duration-200 hover:bg-[#242426]">
                     <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#8F7CFF]">{card.id}</p>
                     <h3 className="mt-4 text-xl font-semibold text-white">{card.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-[#A3ACB9]">{card.description}</p>
@@ -149,7 +149,7 @@ export default function About() {
             <FadeInStagger className="grid gap-4 md:grid-cols-2">
               {beliefCards.map((belief) => (
                 <FadeIn key={belief}>
-                  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 text-lg font-medium text-white md:text-xl">
+                  <div className="rounded-[1.5rem] bg-[#1d1d1f] p-6 text-lg font-medium text-[#f5f5f7] md:text-xl">
                     {belief}
                   </div>
                 </FadeIn>
@@ -160,9 +160,9 @@ export default function About() {
 
         <Section className="py-16 md:py-24">
           <div className="page-gutter">
-            <FadeIn className="rounded-[2.25rem] border border-white/10 bg-[#111218] p-8 md:p-12">
-              <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-5xl">Ready to build something that works?</h2>
-              <p className="mt-4 text-base leading-8 text-[#E2DCFF] md:text-lg">Let&apos;s turn your digital presence into an advantage.</p>
+            <FadeIn className="rounded-xl border border-white/10 bg-[#1d1d1f] p-8 md:p-12">
+              <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-5xl">Ready for a website that reflects the quality of your work?</h2>
+              <p className="mt-4 text-base leading-8 text-[#E2DCFF] md:text-lg">Let&apos;s plan a clearer, more credible digital presence.</p>
               <a href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-[#F1F0FF]">
                 Start a Conversation
                 <ArrowRight size={16} />

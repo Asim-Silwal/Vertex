@@ -57,12 +57,12 @@ export default function Nav() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="fixed top-6 left-0 right-0 flex justify-center z-50 px-4">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="inline-flex items-center justify-between gap-8 px-6 py-3 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_12px_40px_rgba(0,0,0,0.35)]"
+        transition={{ duration: 0.35, ease: [0.28, 0.11, 0.32, 1] }}
+        className="page-gutter flex min-h-16 items-center justify-between gap-8"
         data-testid="header-nav"
       >
         <button
@@ -79,7 +79,7 @@ export default function Nav() {
             <motion.a 
               key={link.name} 
               href={link.href}
-              className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+              className="text-[13px] font-normal text-[#d2d2d7] hover:text-white transition-colors"
               whileHover={{ color: '#ffffff' }}
               transition={{ duration: 0.15 }}
               data-testid={`link-nav-${link.name.toLowerCase()}`}
@@ -93,7 +93,7 @@ export default function Nav() {
           <AnimatedButton 
             href="/contact"
             variant="primary"
-            className="bg-[#765EFF] text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#8F7CFF] transition-colors"
+            className="min-h-10 rounded-lg bg-[#765EFF] px-5 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[#8F7CFF]"
             data-testid="button-nav-audit"
           >
             Start a Project
@@ -103,7 +103,7 @@ export default function Nav() {
         <button 
           ref={mobileMenuButtonRef}
           type="button"
-          className="md:hidden text-white p-1"
+          className="grid min-h-11 min-w-11 place-items-center text-white md:!hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close mobile navigation' : 'Open mobile navigation'}
           aria-expanded={mobileMenuOpen}
@@ -115,12 +115,12 @@ export default function Nav() {
       </motion.div>
 
       {mobileMenuOpen && (
-        <nav ref={mobileMenuRef} id="mobile-navigation" aria-label="Mobile navigation" className="absolute top-20 left-4 right-4 bg-black/40 border border-white/10 p-4 rounded-2xl flex flex-col gap-4 z-40 md:hidden backdrop-blur-xl">
+        <nav ref={mobileMenuRef} id="mobile-navigation" aria-label="Mobile navigation" className="absolute left-4 right-4 top-20 z-40 flex flex-col gap-2 rounded-xl border border-white/10 bg-[#111113]/95 p-4 backdrop-blur-2xl md:hidden">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
-              className="text-sm font-medium text-white/70 hover:text-white py-2"
+              className="min-h-11 rounded-lg px-3 py-3 text-sm font-medium text-[#d2d2d7] hover:bg-white/5 hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}

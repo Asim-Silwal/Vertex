@@ -7,7 +7,8 @@ import { toast } from '@/hooks/use-toast';
 const APPS_SCRIPT_URL =
   (import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL ?? '').trim();
 
-const BUSINESS_EMAIL = 'info@vertex-digital.site';
+const BUSINESS_EMAIL = 'vertex.d10@gmail.com';
+const CTA_BACKGROUND = '/work/usa-desktop.png';
 
 const COUNTRY_CODES = [
   { label: 'Afghanistan +93', value: '+93' },
@@ -423,7 +424,7 @@ export default function CTA() {
         description: "Your inquiry was delivered successfully. We will review it and follow up soon.",
       });
     } catch (err) {
-      const friendlyMessage = 'We could not send your request right now. Please try again or email us directly at info@vertex-digital.site.';
+      const friendlyMessage = 'We could not send your request right now. Please try again or email us directly at vertex.d10@gmail.com.';
       setError(friendlyMessage);
       toast({
         title: "Send failed",
@@ -435,49 +436,29 @@ export default function CTA() {
     }
   };
 
-  const scrollToPortfolio = () => {
-    const portfolioSection = document.getElementById('portfolio');
-    if (portfolioSection) {
-      portfolioSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
-    <Section id="contact" className="py-32 relative overflow-hidden bg-[#0A0A0A]" data-testid="section-cta">
+    <Section id="contact" className="relative isolate overflow-hidden border-t border-white/10 bg-black py-20 md:py-32" data-testid="section-cta">
+      <img
+        src={CTA_BACKGROUND}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-top opacity-25"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 -z-10 bg-black/80" aria-hidden="true" />
       <div className="page-gutter relative z-10">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
-          <FadeIn className="space-y-6">
-            <div className="text-[#765EFF] text-sm font-medium uppercase tracking-[0.35em]">Ready to grow?</div>
-            <h2 className="font-display font-bold text-5xl md:text-6xl text-white mb-4 tracking-tight">
-              Show customers what you do best.
-            </h2>
-            <p className="text-[#999] text-lg leading-relaxed max-w-2xl">
-              Tell us about your business and the work you want more of. We can help shape a website that presents your value clearly and makes inquiries easier.
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <button
-                type="submit"
-                form="contact-form"
-                className="inline-flex items-center justify-center rounded-lg bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition duration-300 hover:bg-[#8F7CFF]"
-                aria-busy={submitting}
-                disabled={submitting}
-              >
-                {submitting ? 'Sending...' : 'Submit Inquiry'}
-              </button>
-              <button
-                type="button"
-                onClick={scrollToPortfolio}
-                className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-transparent px-6 py-3 text-sm font-medium text-white transition duration-300 hover:border-white/30 hover:text-white"
-              >
-                See Our Work
-              </button>
-            </div>
-            <p className="text-sm text-[#8B95A4]">Tell us about your project and we’ll get back to you.</p>
-          </FadeIn>
-
-          <FadeIn>
-            <form id="contact-form" onSubmit={handleSubmit} className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-[0_40px_120px_rgba(0,0,0,0.3)] backdrop-blur-md" aria-busy={submitting} noValidate>
+        <FadeIn className="mx-auto max-w-[720px]">
+            <form id="contact-form" onSubmit={handleSubmit} className="relative overflow-hidden rounded-xl border border-white/15 bg-[#111113]/95 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.36)] backdrop-blur-md sm:p-10" aria-busy={submitting} noValidate>
               <div className="space-y-6">
+                <div className="border-b border-white/10 pb-8 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8f7cff]">Start a project</p>
+                  <h2 className="mx-auto mt-4 max-w-xl text-4xl font-normal leading-[1] text-[#f5f5f7] sm:text-5xl">
+                    Tell us what your next website needs to achieve.
+                  </h2>
+                  <p className="mx-auto mt-4 max-w-lg text-sm leading-6 text-[#a1a1a6]">
+                    Share the essentials. We will use them to shape a practical recommendation for your business.
+                  </p>
+                </div>
                 <div className="sr-only" aria-live="polite" aria-atomic="true">
                   {submitting ? 'Sending your inquiry.' : submitted ? 'Inquiry sent successfully.' : error || ''}
                 </div>
@@ -489,13 +470,13 @@ export default function CTA() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 16, scale: 0.98 }}
                       transition={{ duration: 0.35, ease: 'easeOut' }}
-                      className="rounded-[1.75rem] border border-emerald-500/20 bg-emerald-500/5 p-4 shadow-[0_20px_60px_rgba(16,185,129,0.12)]"
+                      className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4"
                       tabIndex={-1}
                       ref={successRef}
                       aria-live="polite"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-300 shadow-[0_0_0_8px_rgba(16,185,129,0.05)]">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-300">
                           <Check className="h-5 w-5" />
                         </div>
                         <div>
@@ -525,7 +506,7 @@ export default function CTA() {
                     required
                     aria-invalid={Boolean(fieldErrors.name)}
                     aria-describedby={fieldErrors.name ? 'contact-name-error' : undefined}
-                    className="w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                    className="h-14 w-full rounded-lg border border-white/10 bg-[#070707] px-4 text-white outline-none transition focus:border-[#765EFF] focus:ring-0"
                   />
                   {fieldErrors.name ? (
                     <p id="contact-name-error" className="mt-2 text-xs text-red-200">
@@ -550,7 +531,7 @@ export default function CTA() {
                       required
                       aria-invalid={Boolean(fieldErrors.email)}
                       aria-describedby={fieldErrors.email ? 'contact-email-error' : undefined}
-                      className="w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                      className="h-14 w-full rounded-lg border border-white/10 bg-[#070707] px-4 text-white outline-none transition focus:border-[#765EFF] focus:ring-0"
                     />
                     {fieldErrors.email ? (
                       <p id="contact-email-error" className="mt-2 text-xs text-red-200">
@@ -569,15 +550,15 @@ export default function CTA() {
                         aria-haspopup="listbox"
                         aria-expanded={countryMenuOpen}
                         aria-controls="country-code-listbox"
-                        className="flex h-14 w-full items-center justify-between rounded-lg border border-white/10 bg-[#070707] px-4 text-left text-white transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                        className="flex h-14 w-full items-center justify-between rounded-lg border border-white/10 bg-[#070707] px-4 text-left text-white transition focus:border-[#765EFF] focus:ring-0"
                       >
                         <span className="truncate text-sm">{selectedCountry.label}</span>
                         <ChevronDown className="h-4 w-4 text-white/70" />
                       </button>
                       {countryMenuOpen && (
-                        <div id="country-code-listbox" role="listbox" aria-label="Country code options" className="absolute inset-x-0 top-full z-50 mt-2 max-h-[28rem] overflow-hidden rounded-3xl border border-white/10 bg-[#020202] shadow-2xl">
+                        <div id="country-code-listbox" role="listbox" aria-label="Country code options" className="absolute inset-x-0 top-full z-50 mt-2 max-h-[28rem] overflow-hidden rounded-lg border border-white/10 bg-[#020202] shadow-2xl">
                           <div className="border-b border-white/10 p-3">
-                            <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[#0D0D0D] px-3 py-2">
+                            <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-[#0D0D0D] px-3 py-2">
                               <Search className="h-4 w-4 text-white/60" />
                               <input
                                 aria-label="Search country codes"
@@ -635,7 +616,7 @@ export default function CTA() {
                         required
                         aria-invalid={Boolean(fieldErrors.phone)}
                         aria-describedby={fieldErrors.phone ? 'contact-phone-error' : undefined}
-                        className="w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                        className="h-14 w-full rounded-lg border border-white/10 bg-[#070707] px-4 text-white outline-none transition focus:border-[#765EFF] focus:ring-0"
                       />
                       {fieldErrors.phone ? (
                         <p id="contact-phone-error" className="mt-2 text-xs text-red-200">
@@ -656,12 +637,12 @@ export default function CTA() {
                       clearFieldError('needs');
                       setError(null);
                     }}
-                    placeholder="(Write at least a sentence)"
+                    placeholder="What are you building, and what should it accomplish?"
                     rows={5}
                     required
                     aria-invalid={Boolean(fieldErrors.needs)}
                     aria-describedby={fieldErrors.needs ? 'contact-needs-error' : undefined}
-                    className="w-full rounded-2xl border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-2 focus:ring-[#765EFF]/20"
+                    className="w-full resize-y rounded-lg border border-white/10 bg-[#070707] px-4 py-3 text-white outline-none transition focus:border-[#765EFF] focus:ring-0"
                   />
                   {fieldErrors.needs ? (
                     <p id="contact-needs-error" className="mt-2 text-xs text-red-200">
@@ -674,7 +655,7 @@ export default function CTA() {
                   disabled={submitting}
                   className="relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-lg bg-[#765EFF] px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-[#8F7CFF] focus:outline-none focus:ring-2 focus:ring-[#765EFF]/40 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  <span className={submitting ? 'opacity-40' : ''}>{submitting ? 'Sending Request' : 'Send Request'}</span>
+                  <span className={submitting ? 'opacity-40' : ''}>{submitting ? 'Sending project details' : 'Plan my website'}</span>
                   {submitting && (
                     <motion.span
                       className="absolute inset-y-0 left-0 flex w-full items-center justify-center"
@@ -686,15 +667,19 @@ export default function CTA() {
                   )}
                 </button>
                 {error ? (
-                  <div ref={errorRef} tabIndex={-1} role="alert" aria-live="assertive" className="rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                  <div ref={errorRef} tabIndex={-1} role="alert" aria-live="assertive" className="rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-100">
                     {error}
                   </div>
                 ) : null}
+                <p className="text-center text-xs leading-6 text-[#8B95A4]">
+                  Prefer email?{' '}
+                  <a className="font-medium text-[#d2d2d7] underline decoration-white/25 underline-offset-4 hover:text-white" href={`mailto:${BUSINESS_EMAIL}`}>
+                    {BUSINESS_EMAIL}
+                  </a>
+                </p>
               </div>
             </form>
-          </FadeIn>
-        </div>
-
+        </FadeIn>
       </div>
     </Section>
   );

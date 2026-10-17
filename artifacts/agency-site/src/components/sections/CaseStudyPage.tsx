@@ -76,17 +76,17 @@ function SectionHeading({
   description?: string;
 }) {
   return (
-    <div className="mb-8 max-w-3xl space-y-3">
-      <div className="text-[10px] font-medium uppercase tracking-[0.38em] text-[#8F7CFF]">{eyebrow}</div>
-      <h2 className="text-2xl font-bold text-white md:text-3xl">{title}</h2>
-      {description ? <p className="text-sm leading-7 text-[#A3ACB9] md:text-base">{description}</p> : null}
+    <div className="mb-10 max-w-3xl space-y-4">
+      <div className="text-sm font-semibold text-[#8F7CFF]">{eyebrow}</div>
+      <h2 className="text-3xl font-semibold leading-tight text-[#f5f5f7] md:text-5xl">{title}</h2>
+      {description ? <p className="text-base leading-7 text-[#a1a1a6] md:text-lg">{description}</p> : null}
     </div>
   );
 }
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[1.5rem] border border-white/8 bg-white/[0.03] p-4 md:p-5">
+    <div className="rounded-[1.5rem] bg-[#1d1d1f] p-4 md:p-5">
       <div className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#8E97A8]">{label}</div>
       <div className="mt-2 text-sm font-medium leading-6 text-white md:text-base">{value}</div>
     </div>
@@ -95,7 +95,7 @@ function StatCard({ label, value }: { label: string; value: string }) {
 
 function CompactCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="rounded-[1.5rem] border border-white/8 bg-[#0D0D0D] p-4 md:p-5">
+    <div className="rounded-[1.5rem] bg-[#1d1d1f] p-4 md:p-5">
       <div className="text-sm font-semibold text-white">{title}</div>
       <p className="mt-2 text-sm leading-6 text-[#A3ACB9]">{description}</p>
     </div>
@@ -104,8 +104,8 @@ function CompactCard({ title, description }: { title: string; description: strin
 
 function IconCard({ Icon, title, description }: { Icon: LucideIcon; title: string; description: string }) {
   return (
-    <div className="rounded-[1.5rem] border border-white/8 bg-[#0D0D0D] p-5">
-      <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-[#8F7CFF]">
+    <div className="rounded-[1.5rem] bg-[#1d1d1f] p-5">
+      <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-[#8F7CFF]">
         <Icon size={18} />
       </div>
       <div className="mt-4 text-sm font-semibold text-white">{title}</div>
@@ -116,7 +116,7 @@ function IconCard({ Icon, title, description }: { Icon: LucideIcon; title: strin
 
 function Badge({ children }: { children: string }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-[#D8DDEA]">
+    <span className="inline-flex items-center rounded-lg bg-[#1d1d1f] px-3 py-1.5 text-sm text-[#d2d2d7]">
       {children}
     </span>
   );
@@ -185,18 +185,18 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
           <div className="pointer-events-none absolute inset-0">
           </div>
 
-          <div className="page-gutter relative grid gap-10 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-start lg:py-20">
+          <div className="page-gutter relative grid gap-12 py-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-start lg:py-28">
             <FadeIn className="space-y-8">
               <div className="space-y-4">
-                <span className="inline-flex rounded-full border border-[#765EFF]/20 bg-[#765EFF]/10 px-3 py-1 text-xs font-medium tracking-[0.28em] text-[#8F7CFF] uppercase">
+                <span className="inline-flex rounded-lg bg-[#765EFF]/10 px-3 py-1.5 text-xs font-semibold text-[#8F7CFF]">
                   {caseStudy.projectType}
                 </span>
-                <p className="text-sm font-medium uppercase tracking-[0.35em] text-[#8F7CFF]">{industry}</p>
-                <h1 className="font-display text-4xl font-bold tracking-tight md:text-6xl">{title}</h1>
-                <p className="max-w-2xl text-lg leading-8 text-[#B7BFCC]">{subtitle}</p>
+                <p className="text-sm font-semibold text-[#8F7CFF]">{industry}</p>
+                <h1 className="font-display text-5xl font-semibold leading-[1.04] tracking-[-0.045em] text-[#f5f5f7] md:text-7xl">{title}</h1>
+                <p className="max-w-2xl text-lg leading-8 text-[#a1a1a6]">{subtitle}</p>
               </div>
 
-              <div className="max-w-2xl rounded-[1.75rem] border border-white/8 bg-white/[0.03] p-5 md:p-6">
+              <div className="max-w-2xl rounded-xl border border-white/10 bg-[#1d1d1f] p-5 md:p-6">
                 <p className="text-base leading-7 text-white md:text-lg">{overview}</p>
               </div>
 
@@ -225,7 +225,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
             </FadeIn>
 
             <FadeIn>
-              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-md">
+              <div className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-md">
                 <div className="border-b border-white/10 px-4 py-3">
                   <div className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.32em] text-[#8E97A8]">
                     <span className="h-2 w-2 rounded-full bg-[#765EFF]" />
@@ -275,7 +275,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
             <div className="page-gutter">
               <SectionHeading eyebrow="Before vs After" title="The centerpiece of the case study" description="Large screenshots show the change first; the comparisons stay concise." />
               <div className="grid gap-4 lg:grid-cols-2">
-                <article className="overflow-hidden rounded-[2rem] border border-white/8 bg-[#0D0D0D]">
+                <article className="overflow-hidden rounded-xl border border-white/8 bg-[#0D0D0D]">
                   <div className="border-b border-white/8 px-5 py-4">
                     <div className="text-xs font-medium uppercase tracking-[0.32em] text-[#8F7CFF]">
                       {beforeAfterComparison.beforeLabel ?? 'Original website'}
@@ -301,7 +301,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                   </div>
                 </article>
 
-                <article className="overflow-hidden rounded-[2rem] border border-[#765EFF]/20 bg-[#765EFF]/10">
+                <article className="overflow-hidden rounded-xl border border-[#765EFF]/20 bg-[#765EFF]/10">
                   <div className="border-b border-white/10 px-5 py-4">
                     <div className="text-xs font-medium uppercase tracking-[0.32em] text-[#D8D0FF]">
                       {beforeAfterComparison.afterLabel ?? 'Redesigned version'}
@@ -326,7 +326,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
                 </article>
               </div>
 
-              <div className="mt-4 overflow-hidden rounded-[2rem] border border-white/8 bg-[#0D0D0D]">
+              <div className="mt-4 overflow-hidden rounded-xl border border-white/8 bg-[#0D0D0D]">
                 <div className="grid divide-y divide-white/8 md:grid-cols-2 xl:grid-cols-3 md:divide-y-0 md:divide-x">
                   {beforeAfterComparison.rows.map((item) => (
                     <div key={item.label} className="grid gap-px border-b border-white/8 last:border-b-0 md:border-b-0 md:p-5">
@@ -373,7 +373,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
             <FadeInStagger className="grid gap-4 lg:grid-cols-3">
               {gallery.map((item) => (
                 <FadeIn key={item.title}>
-                  <article className="overflow-hidden rounded-[1.75rem] border border-white/8 bg-[#0D0D0D]">
+                  <article className="overflow-hidden rounded-xl border border-white/8 bg-[#0D0D0D]">
                     <div className="aspect-[4/3] overflow-hidden bg-black/20">
                       <img src={item.image} alt={item.imageAlt} className="h-full w-full object-contain object-top" loading="lazy" decoding="async" />
                     </div>
@@ -391,7 +391,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
         <Section className="py-10">
           <div className="page-gutter grid gap-4 lg:grid-cols-[1fr_0.95fr]">
             <FadeIn>
-              <div className="rounded-[2rem] border border-white/8 bg-[#0D0D0D] p-6 md:p-8">
+              <div className="rounded-xl border border-white/8 bg-[#0D0D0D] p-6 md:p-8">
                 <SectionHeading eyebrow="Technology" title="Built with the existing Vertex Digital stack" description="Badges only, no explanatory text." />
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((technology) => (
@@ -402,7 +402,7 @@ export default function CaseStudyPage({ caseStudy }: CaseStudyPageProps) {
             </FadeIn>
 
             <FadeIn>
-              <div className="rounded-[2rem] border border-[#765EFF]/20 bg-[#765EFF]/10 p-6 md:p-8">
+              <div className="rounded-xl border border-[#765EFF]/20 bg-[#765EFF]/10 p-6 md:p-8">
                 <SectionHeading eyebrow="Outcome" title="A simpler story with stronger visual clarity" />
                 <div className="space-y-4 text-sm leading-7 text-[#E8E4FF] md:text-base">
                   {finalOutcomeToRender.map((line) => (

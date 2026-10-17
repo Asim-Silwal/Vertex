@@ -7,64 +7,64 @@ import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
 const services = [
   {
     id: '01',
-    label: 'Web Design & Development',
-    title: 'Websites built to convert.',
+    label: 'Website Strategy',
+    title: 'A clear plan before design begins.',
     description:
-      'We design and develop fast, modern websites that communicate value clearly, build trust, and guide visitors toward action.',
+      'We clarify the audience, offer, page structure, and customer journey so every design decision has a reason.',
     items: [
-      'UX/UI Design',
+      'Audience & Offer Review',
+      'Page Architecture',
+      'Customer Journey',
+      'Content Priorities',
+      'Conversion Paths',
+      'Project Roadmap',
+    ],
+    cta: 'Plan My Website',
+  },
+  {
+    id: '02',
+    label: 'Web Design',
+    title: 'A premium experience built around your business.',
+    description:
+      'We create a distinct visual system and responsive page designs that make your business feel credible, current, and easy to understand.',
+    items: [
+      'Visual Direction',
+      'Responsive Layouts',
+      'Service Page Design',
+      'Design System',
+      'Prototype Review',
+    ],
+    cta: 'Design My Website',
+  },
+  {
+    id: '03',
+    label: 'Web Development',
+    title: 'Fast, responsive, and ready for real use.',
+    description:
+      'We build the approved design carefully, with clean responsive behavior, strong performance, and straightforward content updates.',
+    items: [
       'Responsive Development',
-      'Conversion-focused Structure',
       'Performance Optimization',
+      'Technical SEO Setup',
       'CMS Integration',
-      'Website Maintenance',
+      'Accessibility Review',
     ],
     cta: 'Build My Website',
   },
   {
-    id: '02',
-    label: 'Branding',
-    title: 'Brands people remember.',
-    description:
-      'We create clear, distinctive identities that help businesses look credible, communicate consistently, and stand apart from the competition.',
-    items: [
-      'Brand Strategy',
-      'Visual Identity',
-      'Logo Systems',
-      'Brand Guidelines',
-      'Marketing Assets',
-    ],
-    cta: 'Build My Brand',
-  },
-  {
-    id: '03',
-    label: 'SEO',
-    title: 'Get found by the right people.',
-    description:
-      'We build search strategies designed to improve visibility, attract qualified traffic, and create sustainable organic growth.',
-    items: [
-      'Technical SEO',
-      'On-page SEO',
-      'Local SEO',
-      'Content Strategy',
-      'Search Performance Tracking',
-    ],
-    cta: 'Grow My Visibility',
-  },
-  {
     id: '04',
-    label: 'Growth Strategy',
-    title: 'Turn digital activity into growth.',
+    label: 'Launch & Support',
+    title: 'A smooth launch and practical support afterward.',
     description:
-      'We connect strategy, digital experiences, and measurable goals to create a clearer path from attention to opportunity.',
+      'We handle the final checks, deployment, analytics setup, and ongoing improvements needed to keep the website useful.',
     items: [
-      'Digital Strategy',
-      'Conversion Optimization',
-      'Growth Planning',
-      'Analytics',
-      'Performance Tracking',
+      'Launch Checklist',
+      'Domain & Deployment',
+      'Analytics Setup',
+      'Content Updates',
+      'Ongoing Improvements',
     ],
-    cta: 'Plan My Growth',
+    cta: 'Plan My Launch',
   },
 ];
 
@@ -72,24 +72,24 @@ export default function Services() {
   return (
     <div className="bg-background text-foreground min-h-[100dvh] flex flex-col font-sans">
       <PageMeta
-        title="Services | Web Design, Branding, SEO & Growth Strategy | Vertex Digital"
-        description="Explore Vertex Digital's web design, branding, SEO, and growth strategy services built to help businesses stand out and grow."
+        title="Website Strategy, Design & Development Services | Vertex Digital"
+        description="Explore Vertex Digital's website strategy, premium web design, responsive development, launch, and ongoing support services."
         canonicalPath="/services"
       />
       <Nav />
 
       <main className="flex-1 pt-28">
-        <Section className="relative overflow-hidden py-20 md:py-28">
-          <div className="page-gutter relative z-10 max-w-5xl">
+        <Section className="relative overflow-hidden py-24 md:py-36">
+          <div className="page-gutter relative z-10 mx-auto max-w-4xl text-center">
             <FadeIn className="space-y-6">
               <p className="text-xs font-medium uppercase tracking-[0.36em] text-[#8F7CFF]">What We Do</p>
-              <h1 className="font-display text-5xl font-bold tracking-tight text-white md:text-7xl">
+              <h1 className="font-display text-5xl font-semibold leading-[1.04] tracking-[-0.045em] text-[#f5f5f7] md:text-7xl">
                 Websites planned,
                 <br />
                 designed, and built.
               </h1>
-              <p className="max-w-3xl text-lg leading-8 text-[#B7BFCC]">
-                We clarify your offer, organize the customer journey, design the interface, and build a fast responsive website ready for real inquiries.
+              <p className="mx-auto max-w-3xl text-lg leading-8 text-[#a1a1a6]">
+                From positioning and page structure to responsive design, development, and launch, every step supports one clear business story.
               </p>
             </FadeIn>
           </div>
@@ -100,7 +100,7 @@ export default function Services() {
             <FadeInStagger className="grid gap-4 xl:grid-cols-2">
               {services.map((service) => (
                 <FadeIn key={service.id}>
-                  <article className="h-full rounded-[2rem] border border-white/10 bg-[#0D0D0D] p-7 shadow-[0_20px_70px_rgba(0,0,0,0.25)]">
+                  <article className="h-full rounded-xl border border-white/10 bg-[#1d1d1f] p-7">
                     <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#8F7CFF]">{service.id}</p>
                     <p className="mt-3 text-xs font-medium uppercase tracking-[0.24em] text-[#9AA3B2]">{service.label}</p>
                     <h2 className="mt-4 text-3xl font-bold tracking-tight text-white">{service.title}</h2>
@@ -128,10 +128,10 @@ export default function Services() {
 
         <Section className="py-14 md:py-20">
           <div className="page-gutter">
-            <FadeIn className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10">
+            <FadeIn className="rounded-xl border border-white/10 bg-[#1d1d1f] p-8 md:p-10">
               <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">Not sure what you need?</h2>
               <p className="mt-4 max-w-3xl text-base leading-8 text-[#C6CDDA] md:text-lg">
-                You don&apos;t need to figure it all out before talking to us. Tell us where your business is today and where you want to go. We&apos;ll help identify the opportunities.
+                You don&apos;t need a finished brief. Tell us about your business, your current website, and what needs to improve. We&apos;ll help define the right scope.
               </p>
               <a href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-lg bg-[#765EFF] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#8F7CFF]">
                 Let&apos;s Talk

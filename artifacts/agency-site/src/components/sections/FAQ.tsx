@@ -35,22 +35,23 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <Section id="faq" className="py-24 bg-[#070707]" data-testid="section-faq">
+    <Section id="faq" className="bg-[#111113] py-20 md:py-32" data-testid="section-faq">
       <div className="page-gutter">
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Got Questions.</h2>
-          <p className="text-[#666] text-lg">
-            Everything you need to know about working with us.
+        <div className="mx-auto mb-14 max-w-3xl text-center md:mb-20">
+          <p className="mb-4 text-sm font-semibold text-[#8f7cff]">Frequently asked questions</p>
+          <h2 className="text-4xl font-semibold leading-[1.08] tracking-[-0.035em] text-[#f5f5f7] md:text-6xl">Straight answers to practical questions.</h2>
+          <p className="mt-6 text-lg text-[#a1a1a6]">
+            What to expect when you work with Vertex Digital.
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="mx-auto w-full max-w-2xl">
+        <Accordion type="single" collapsible className="mx-auto w-full max-w-3xl border-t border-white/10">
           {faqs.map((faq, i) => (
             <AccordionItem key={i} value={`item-${i}`} className="border-b border-white/6">
-              <AccordionTrigger className="text-white font-medium text-base py-5 hover:text-[#765EFF] hover:no-underline">
+              <AccordionTrigger className="min-h-16 py-5 text-left text-base font-semibold text-[#f5f5f7] hover:text-[#b8adff] hover:no-underline md:text-lg">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-[#666] text-sm leading-relaxed pb-5">
+              <AccordionContent className="pb-6 text-base leading-7 text-[#a1a1a6]">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

@@ -36,13 +36,14 @@ const steps = [
 
 export default function Process() {
   return (
-    <Section id="process" className="py-24 bg-[#070707]" data-testid="section-process">
+    <Section id="process" className="bg-black py-20 md:py-32" data-testid="section-process">
       <div className="page-gutter">
         
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Our Process.</h2>
-          <p className="text-[#666] text-lg">
-            A clear six-step process built for trust, clarity, and smooth delivery.
+        <div className="mx-auto mb-14 max-w-3xl text-center md:mb-20">
+          <p className="mb-4 text-sm font-semibold text-[#8f7cff]">How we work</p>
+          <h2 className="text-4xl font-semibold leading-[1.08] tracking-[-0.035em] text-[#f5f5f7] md:text-6xl">Clear decisions. Visible progress. No mystery.</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#a1a1a6]">
+            A focused process keeps strategy, design, development, and launch moving in the same direction.
           </p>
         </div>
 
@@ -51,8 +52,8 @@ export default function Process() {
           <div className="lg:col-span-2">
             <FadeIn>
               <div className="sticky top-24">
-                <div className="rounded-2xl border border-white/10 bg-[#111218] p-6 shadow-[0_24px_60px_rgba(0,0,0,.25)] sm:p-8">
-                  <p className="text-xs font-semibold uppercase tracking-[.25em] text-[#a99aff]">From idea to launch</p>
+                <div className="rounded-xl border border-white/10 bg-[#1d1d1f] p-6 sm:p-8">
+                  <p className="text-sm font-semibold text-[#8f7cff]">From idea to launch</p>
                   <h3 className="mt-4 text-2xl font-semibold text-white">A clear path, at every step.</h3>
                   <div className="mt-8 space-y-3">
                     {[
@@ -61,7 +62,7 @@ export default function Process() {
                       { icon: Code2, label: 'Build and refine' },
                       { icon: Rocket, label: 'Launch and improve' },
                     ].map(({ icon: Icon, label }, index) => (
-                      <div key={label} className="flex items-center gap-3 rounded-xl border border-white/8 bg-white/[.025] p-3 text-sm text-[#c4cbd7]">
+                      <div key={label} className="flex min-h-12 items-center gap-3 rounded-xl bg-[#2c2c2e] p-3 text-sm text-[#d2d2d7]">
                         <span className="grid h-9 w-9 place-items-center rounded-lg bg-[#765EFF]/15 text-[#ae9fff]"><Icon size={17} /></span>
                         <span className="flex-1">{label}</span>
                         {index < 3 ? <Check size={15} className="text-[#a99aff]" /> : <span className="h-2 w-2 rounded-full bg-[#a99aff]" />}
@@ -90,7 +91,7 @@ export default function Process() {
                     </div>
                     
                     <div className="pl-13 lg:max-h-0 lg:overflow-hidden lg:group-hover:max-h-24 transition-all duration-500 ease-in-out">
-                      <p className="text-[#555] text-sm leading-relaxed mt-2 lg:mt-3 lg:pb-2">
+                      <p className="mt-2 text-sm leading-7 text-[#a1a1a6] lg:mt-3 lg:pb-2">
                         {step.desc}
                       </p>
                     </div>

@@ -24,10 +24,10 @@ export default function LegalPage({
   canonicalPath,
   sections,
 }: LegalPageProps) {
-  const businessEmail = 'info@vertex-digital.site';
+  const businessEmail = 'vertex.d10@gmail.com';
 
   return (
-    <div className="min-h-screen bg-[#050608] text-white">
+    <div className="min-h-screen bg-black text-[#f5f5f7]">
       <PageMeta
         title={`${title} | Vertex Digital`}
         description={description}
@@ -57,7 +57,7 @@ export default function LegalPage({
 
       <main className="mx-auto max-w-5xl px-4 py-16 md:px-6 md:py-20">
 
-        <section className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.3)] backdrop-blur-md md:p-10">
+        <section className="rounded-xl border border-white/10 bg-[#1d1d1f] p-6 md:p-10">
           <div className="mb-8 flex flex-col gap-4 border-b border-white/10 pb-6">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#8F7CFF]">Last updated {updatedAt}</p>
             <h1 className="font-display text-3xl font-bold tracking-tight md:text-5xl">{title}</h1>

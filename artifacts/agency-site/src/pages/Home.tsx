@@ -4,6 +4,7 @@ import Credibility from '@/components/sections/Credibility';
 import Industries from '@/components/sections/Industries';
 import Services from '@/components/sections/Services';
 import CaseStudies from '@/components/sections/CaseStudies';
+import VisualCTA from '@/components/sections/VisualCTA';
 import WhyUs from '@/components/sections/WhyUs';
 import Process from '@/components/sections/Process';
 import FAQ from '@/components/sections/FAQ';
@@ -15,8 +16,8 @@ export default function Home() {
   return (
     <div className="bg-background text-foreground min-h-[100dvh] flex flex-col font-sans">
       <PageMeta
-        title="Vertex Digital | Websites for Home Service Businesses"
-        description="Vertex Digital builds clear, fast websites for home service businesses that need to earn trust and turn visitors into calls and quote requests."
+        title="Vertex Digital | Premium Websites for Home Service Businesses"
+        description="Vertex Digital designs and builds premium websites for home service businesses that need clearer positioning, stronger trust, and more qualified inquiries."
         canonicalPath="/"
       />
       <Nav />
@@ -26,6 +27,7 @@ export default function Home() {
         <Industries />
         <Services />
         <CaseStudies />
+        <VisualCTA />
         <WhyUs />
         <Process />
         <FAQ />

@@ -1,42 +1,41 @@
 import { FadeIn, FadeInStagger, Section } from '@/components/ui/section';
-import { ArrowRight, Droplets, Flame, Hammer, House, Paintbrush, Trees } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const industries = [
-  { name: 'ROOFING', icon: House, hook: 'Help homeowners find the right service and request an inspection.', color: 'text-violet-400' },
-  { name: 'HVAC', icon: Flame, hook: 'Make urgent repairs and planned installations easy to discover.', color: 'text-cyan-400' },
-  { name: 'PLUMBING', icon: Droplets, hook: 'Put the services, service areas, and contact path upfront.', color: 'text-amber-400' },
-  { name: 'REMODELING', icon: Hammer, hook: 'Show the quality of your work and make inquiries feel simple.', color: 'text-sky-400' },
-  { name: 'PAINTING', icon: Paintbrush, hook: 'Turn project imagery and clear offers into stronger first impressions.', color: 'text-emerald-400' },
-  { name: 'LANDSCAPING', icon: Trees, hook: 'Give local customers a compelling reason to get in touch.', color: 'text-pink-400' },
+  { name: 'Roofing', hook: 'Help homeowners find the right service and request an inspection.' },
+  { name: 'HVAC', hook: 'Make urgent repairs and planned installations easy to discover.' },
+  { name: 'Plumbing', hook: 'Put the services, service areas, and contact path upfront.' },
+  { name: 'Remodeling', hook: 'Show the quality of your work and make inquiries feel simple.' },
+  { name: 'Painting', hook: 'Turn project imagery and clear offers into stronger first impressions.' },
+  { name: 'Landscaping', hook: 'Give local customers a compelling reason to get in touch.' },
 ];
 
 export default function Industries() {
   return (
-    <Section id="industries" className="py-24 bg-[#0A0A0A]" data-testid="section-industries">
+    <Section id="industries" className="bg-black py-20 md:py-32" data-testid="section-industries">
       <div className="page-gutter">
-        <div className="mb-16 max-w-3xl">
-          <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">Built for the businesses that build our communities.</h2>
-          <p className="text-lg text-[#9CA7B7]">
-            From roofers to remodelers, we help home service teams present their work clearly and make the next step easy for customers.
+        <div className="mx-auto mb-14 max-w-3xl text-center md:mb-20">
+          <p className="mb-4 text-sm font-semibold text-[#8f7cff]">Industry focus</p>
+          <h2 className="text-4xl font-semibold leading-[1.08] tracking-[-0.035em] text-[#f5f5f7] md:text-6xl">Websites for the businesses customers rely on every day.</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#a1a1a6]">
+            We focus on service businesses where trust, local relevance, and a clear route to contact shape the buying decision.
           </p>
         </div>
 
-        <FadeInStagger className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+        <FadeInStagger className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {industries.map((ind, i) => {
-            const Icon = ind.icon;
             return (
               <FadeIn key={i}>
-                <motion.div
-                  className="group flex h-full flex-col rounded-[1.5rem] border border-white/10 bg-[#111218] p-6 transition-all duration-300 hover:border-[#765EFF]/40 hover:bg-[#171725]"
-                >
-                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]">
-                    <Icon size={20} className={ind.color} />
+                <article className="group flex h-full min-h-56 flex-col justify-between rounded-xl border border-white/10 bg-[#1d1d1f] p-7 transition-colors duration-200 hover:bg-[#242426]">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="text-sm font-medium text-[#86868b]">0{i + 1}</span>
+                    <ArrowRight size={18} className="text-[#8f7cff] transition-transform duration-200 group-hover:translate-x-1" />
                   </div>
-                  <h3 className="text-base font-semibold text-white">{ind.name}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#7B8595]">{ind.hook}</p>
-                  <div className="mt-6 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-[#A8AEEA]">Built for growth <ArrowRight size={12} /></div>
-                </motion.div>
+                  <div className="mt-12">
+                    <h3 className="text-2xl font-semibold text-[#f5f5f7]">{ind.name}</h3>
+                    <p className="mt-3 text-base leading-7 text-[#a1a1a6]">{ind.hook}</p>
+                  </div>
+                </article>
               </FadeIn>
             );
           })}

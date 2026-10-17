@@ -42,7 +42,7 @@ export default function CaseStudyCard({ caseStudy, featured = false }: CaseStudy
   return (
     <motion.article
       whileHover={{ y: -4, transition: { type: 'spring', stiffness: 300, damping: 24 } }}
-      className={`group overflow-hidden rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(18,18,18,0.96),rgba(9,9,9,0.98))] shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_18px_48px_rgba(0,0,0,0.28)] transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_24px_80px_rgba(0,0,0,0.35)]`}
+      className={`group overflow-hidden rounded-xl border border-white/8 bg-[linear-gradient(180deg,rgba(18,18,18,0.96),rgba(9,9,9,0.98))] shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_18px_48px_rgba(0,0,0,0.28)] transition-all duration-300 hover:border-[#765EFF]/30 hover:shadow-[0_24px_80px_rgba(0,0,0,0.35)]`}
     >
       <div className={`grid ${containerClasses} items-stretch`}>
         <div className={`${imagePanelClasses} relative flex items-center overflow-hidden border-b border-white/8 bg-[#171922] p-4 lg:border-b-0 lg:border-r lg:border-white/8 lg:p-6`}>
@@ -77,7 +77,7 @@ export default function CaseStudyCard({ caseStudy, featured = false }: CaseStudy
             {caseStudy.features?.length ? (
               <div className="space-y-3">
                 {caseStudy.features.map((feature) => (
-                  <div key={feature.title} className="rounded-2xl border border-white/6 bg-white/[0.03] px-4 py-3">
+                  <div key={feature.title} className="rounded-lg border border-white/6 bg-white/[0.03] px-4 py-3">
                     <div className="text-sm font-semibold text-white">{feature.title}</div>
                     <p className="mt-1 text-sm leading-6 text-[#8A93A2]">{feature.description}</p>
                   </div>
@@ -88,7 +88,7 @@ export default function CaseStudyCard({ caseStudy, featured = false }: CaseStudy
             {caseStudy.stats?.length ? (
               <div className="grid gap-3 sm:grid-cols-2">
                 {caseStudy.stats.map((stat) => (
-                  <div key={stat.label} className="rounded-2xl border border-white/6 bg-white/[0.03] px-4 py-3">
+                  <div key={stat.label} className="rounded-lg border border-white/6 bg-white/[0.03] px-4 py-3">
                     <div className="text-xs uppercase tracking-[0.28em] text-[#6F7582]">{stat.label}</div>
                     <div className="mt-2 text-lg font-semibold text-white">{stat.value}</div>
                   </div>

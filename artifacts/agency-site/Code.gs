@@ -1,6 +1,6 @@
 const SPREADSHEET_ID = '14NfuKCLz_PjEDzVk7-9dMdXZVpHgKXbkXLMtTNSuNeQ';
 const SHEET_NAME = 'Sheet1';
-const NOTIFICATION_EMAIL = 'info@vertex-digital.site';
+const NOTIFICATION_EMAIL = 'vertex.d10@gmail.com';
 const SHEET_HEADERS = [
   'Timestamp',
   'Name',
